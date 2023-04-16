@@ -176,19 +176,16 @@ nav:visited
     position : absolute ;
     right : 5px;
     bottom : 5px;
-    background : url('images/fond_degraderouge.png') repeat-x;
+    background-color: #ff6e71;
     border : 1px solid #ffffff ;
     border-radius : 5px;
     font-size : 1.2em;
     text-align : center ;
     padding : 3px 8px 0px 8px;
-    color : white ;
+    color : rgb(0, 0, 0) ;
     text-decoration : none ;
 }
-.bouton_rouge img
-{
-    border : 0;
-}
+
 
 
 article
