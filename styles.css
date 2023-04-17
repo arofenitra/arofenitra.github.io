@@ -27,9 +27,10 @@
 
  body
  {
-    background : url('visakhapatnam.jpeg');
+    background-color:#eeeeee;
     font-family : 'Trebuchet MS ', Arial , sans-serif ;
-    color : #181818 ;
+    color : #111111 ;
+    border-color: black;
 }
 
 #bloc_page
@@ -45,19 +46,18 @@ section h1 , footer h1 , nav a
 }
 header
 {
-    background : url('images/separateur.png') repeat-x bottom ;
+    background-color:#0329ff;
 }
 
 #titre_principal
 {
     display : inline-block ;
-    width:890px;
+    width:880px;
     margin-right : 15px ;
     position : relative ;
-    background-color : gray;
+    background-color : rgb(0, 6, 71);
     box-shadow : 0px 2px 5px #1c1a19 ;
     border-radius : 5px;
-    padding : 10px ;
     color :#ffffff;
     margin: 5px 5px 5px 5px;
 padding:5px 5px 5px 5px;
@@ -76,7 +76,7 @@ header h1
 {
     display : inline-block ;
     margin-bottom : 0px;
-    width:890px;
+    width:880px;
 }
 
 header h2
@@ -89,16 +89,17 @@ header h2
 
 nav
 {
-    background-color: #c1c0c0;
-    width : 900px ;
+    background-color: yellow;
+    width : 896px ;
     text-align : left ;
-    text-shadow:#706b64;
+    text-shadow:gray;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight:bold;
-    border:inset;
-    box-shadow:3px 3px 0px gray;
+    border:solid;
     display: inline-block;
     border-radius : 5px;
+    color:blue;
+
 }
 
 nav ul
@@ -110,9 +111,8 @@ nav ul
 
 nav li
 {
-    margin-right : 15px ;
     display: inline-block;
-    margin: 5px;
+    margin: 5px 5px 5px 5px;
     margin-bottom: 15px;
 }
 
@@ -127,13 +127,13 @@ nav a
 
 nav a:hover
 {
-    color : #003169 ;
-    border-bottom : 3px solid #760001 ;
+    color : #001155 ;
+    border-bottom : 3px solid blue ;
     display: inline-block;
 }
 nav:active
 {
-    background-color:#fff5f0;
+    background-color:#ffffff;
 } 
 nav:focus
 {
@@ -143,14 +143,14 @@ nav:focus
     
 nav:visited
 {
-    color :#5e3f02 ;
+    color :blueviolet;
 }
 
 #banniere_image
 {
     margin-top: 15px ;
     border-radius : 5px;
-    background : url('maths_logo.png') no-repeat ;
+    background-color: #000;
     position : relative ;
     box-shadow : 0px 4px 4px #1c1a19 ;
     margin-bottom : 25px ;
@@ -160,11 +160,10 @@ nav:visited
 {
     position : absolute ;
     bottom : 0px;
-    border-radius : 0px 0px 5px 5px;
-    width : 100%;
-    padding-top: 15px ;
-    padding-left : 4px;
-    background-color : rgb(55, 55, 55);
+    border-radius :0px 0px 5px 5px ;
+    width : 900px;
+    padding:10px 0px 5px 0px;
+    background-color : rgb(0, 0, 0);
     color : white ;
     font-size : 0.8em ;
 }
@@ -176,7 +175,7 @@ nav:visited
     position : absolute ;
     right : 5px;
     bottom : 5px;
-    background-color: #ff6e71;
+    background-color: #332277;
     border : 1px solid #ffffff ;
     border-radius : 5px;
     font-size : 1.2em;
@@ -184,6 +183,7 @@ nav:visited
     padding : 3px 8px 0px 8px;
     color : rgb(0, 0, 0) ;
     text-decoration : none ;
+    color:white;
 }
 
 
@@ -197,11 +197,11 @@ article
     box-shadow : 0px 2px 5px #1c1a19 ;
     border-radius : 5px;
     padding : 10px ;
-    color :#333333;
+    color :#222222;
     margin: 5px 5px 5px 5px;
 padding:5px 5px 5px 5px;
     font-size : 1em;
-
+height:300px
 }
 
 
@@ -209,11 +209,11 @@ aside
 {
     position : relative ;
     width : 260px ;
-    background-color : #706b64 ;
+    height:300px;
+    background-color : white ;
     box-shadow : 0px 2px 5px #1c1a19 ;
     border-radius : 5px;
-    padding : 10px ;
-    color : white ;
+    color : black ;
     font-size : 0.9em;
     margin: 5px 5px 5px 5px;
 padding:5px 5px 5px 5px;
@@ -228,51 +228,27 @@ article , aside
     display:inline-block;
     height:300px
 }
-#Faculty_members
-{
-    
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size:1em;
-    font-weight:lighter;
-    font-style:italic;
-    text-decoration:solid;
-    text-align:center;
-    vertical-align:middle;
-    text-shadow:#777777;
-    background-color:#c1c0c0;
-color:#000;
-opacity:100%;
-width:400px;
-margin: 5px 5px 5px 5px;
-padding:5px 5px 5px 5px;
-border:2px  #6b6c6c solid;
-border-radius: 5px;
-box-shadow:#706b64;
-}
-#important_links
-{
-    
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size:1em;
-    font-weight:lighter;
-    font-style:italic;
-    text-decoration:solid;
-    text-align:center;
-    vertical-align:middle;
-    text-shadow:#777777;
-    background-color:#c1c0c0;
-color:#000;
-opacity:100%;
-width:400px;
-margin: 5px 5px 5px 5px;
-padding:5px 5px 5px 5px;
-border:2px  #6b6c6c solid;
-border-radius: 5px;
-box-shadow:#706b64;
-}
+
 #Faculty_members,#important_links
 {
     display: inline-block;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:1em;
+    font-weight:lighter;
+    text-decoration:solid;
+    text-align:center;
+    vertical-align:left;
+    text-shadow:#777777;
+    background-color:#ffffff;
+color:#000;
+opacity:100%;
+width:400px;
+margin: 5px 5px 5px 5px;
+padding:5px 5px 5px 5px;
+border:2px  #6b6c6c solid;
+border-radius: 5px;
+box-shadow:#706b64;
+height:300px;
 }
 
 .ico_categorie
@@ -286,27 +262,6 @@ article p
     font-size : 0.8em;
 }
 
-#fleche_bulle
-{
-    position : absolute ;
-    top : 100px ;
-    left : -12px ;
-}
-
-#photo_zozor
-{
-    text-align : center ;
- }
- 
- #photo_zozor img
- {
-    border : 1px solid #181818 ;
-}
-
-aside img
-{
-    margin-right : 5px;
-}
 footer
 {
     display: inline-block;
@@ -323,47 +278,7 @@ footer h1
     font-size : 1.1em;
     display: inline-block;
 }
-#tweet , #mes_photos , #mes_amis
-{
-    display : inline-block ;
-    vertical-align : top ;
-}
 
-#tweet
-{
-    width : 28%;
- }
-
- #mes_photos
- {
-    width : 35%;
-}
-#mes_amis
-{
-    width : 31%;
-}
-
-#mes_photos img
-{
-    border : 1px solid #181818 ;
-    margin-right : 2px;
-}
-
-#mes_amis ul
-{
-    display : inline-block ;
-    vertical-align : top ;
-    margin-top: 0;
-    width : 48%;
-    list-style-image : url('images/ico_liensexterne.png');
-    padding-left : 2px;
-}
-
-#mes_amis a
-{
-    text-decoration : none ;
-    color : #760001 ;
-}
 
 
 #ending
@@ -381,13 +296,14 @@ footer h1
     background-color:#efefef;
 
 opacity:50%;
-width:870px;
+width:890px;
 height:80px;
 margin: 5px 5px 5px 5px;
 padding:5px 5px 5px 5px;
-border:5px  #003169 inset;
 border-radius: 5px;
 box-shadow:#706b64;
+background-color: whhite;
+color:white;
 
 }
 #curriculum_and_syllabus
@@ -429,11 +345,6 @@ margin: 5px 5px 5px 5px;
 padding:5px 5px 5px 5px;
 border:2px  #6b6c6c solid;
 border-radius: 5px;
-box-shadow:#706b64;
+box-shadow:#050505;
 }
 
-#group_images{
-    background-image: url("msc_2023.jpg") ;
-    height:150%;
-    width:150%;
-}
