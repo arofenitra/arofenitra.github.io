@@ -1,0 +1,65 @@
+// Define a variable for the font family
+$font-family: Arial, Helvetica, sans-serif;
+
+// Use the variable for the body element
+body {
+  font-family: $font-family;
+}
+
+// Style the header element
+header {
+  // Use a nested selector for the nav element
+  nav {
+    // Use a nested selector for the ul element
+    ul {
+      // Use the display property to create a horizontal list
+      display: flex;
+      // Use the list-style property to remove the bullets
+      list-style: none;
+      // Use the margin and padding properties to remove the default spaces
+      margin: 0;
+      padding: 0;
+    }
+    // Use a nested selector for the li element
+    li {
+      // Use the flex property to distribute the space evenly
+      flex: 1;
+      // Use the text-align property to center the text
+      text-align: center;
+    }
+    // Use a nested selector for the a element
+    a {
+      // Use the display property to create a block-level element
+      display: block;
+      // Use the padding property to add some space around the text
+      padding: 10px;
+      // Use the text-decoration property to remove the underline
+      text-decoration: none;
+      // Use the color property to set the text color to white
+      color: white;
+      // Use the class selector to add a class to the element
+      &.theme {
+        // Use the background-color property to set the background color to a variable
+        background-color: $theme-color;
+      }
+    }
+  }
+}
+
+// Style the main element
+main {
+  // Use the padding property to add some space around the content
+  padding: 20px;
+}
+
+// Style the h1 element
+h1 {
+  // Use the class selector to add a class to the element
+  &.theme {
+    // Use the background-color property to set the background color to a variable
+    background-color: $theme-color;
+  }
+}
+
+// Define a variable for the theme color
+$theme-color: #1abc9c;
