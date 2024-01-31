@@ -1,0 +1,529 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #ecf0f1;
+  width:100%;
+}
+
+header {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px #e74c3c;
+}
+
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li {
+  padding: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #d6dcde;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #ed7264;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+main section {
+  margin-bottom: 20px;
+}
+
+main section h1 {
+  color: #2c3e50;
+  text-align: center;
+}
+
+main section input {
+  margin: 0 auto;
+  display: block;
+}
+
+main section h2 {
+  color: #e74c3c;
+  text-align: center;
+}
+
+main section h3 {
+  color: #2c3e50;
+  text-align: center;
+}
+
+main section p {
+  text-align: justify;
+}
+
+main section ul {
+  list-style: none;
+}
+
+main section ul li {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #2c3e50;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #2c3e50;
+}
+
+main section ul li:hover {
+  background-color: #3980c7;
+  color: #ecf0f1;
+}
+
+main section ul li a {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-weight: bold;
+  display: block;
+}
+
+main section ul li a:hover {
+  color: #e74c3c;
+}
+
+.theme {
+  background-color: #2c3e50;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+  header {
+    height: 60px;
+  }
+  
+  nav {
+    width: 100%;
+    display: flex; /* use flexbox layout */
+  justify-content: center; /* center the items horizontally */
+  align-items: center; 
+  }
+
+  nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  nav ul li {
+    display: inline-block;
+    padding: 5px;
+  }
+ 
+  
+  main {
+    width: 100%;
+  }
+
+  
+  main section h1 {
+    font-size: 24px;
+  }
+
+  main section h2 {
+    font-size: 18px;
+  }
+
+  main section h3 {
+    font-size: 16px;
+  }
+
+  main section input {
+    width: 90%;
+  }
+
+  main section ul li {
+    margin: 5px;
+    padding: 5px;
+  }
+}
+
+
+
+/* This is the CSS code for the contact section */
+
+/* Set the background color and font family for the contact section */
+#contact {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+/* Set the width and margin for the container */
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Set the contact section title font size, color, and margin */
+#contact h2 {
+  font-size: 32px;
+  color: #333;
+  margin: 20px 0;
+}
+
+/* Set the contact section paragraph font size, color, and margin */
+#contact p {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Set the form group display and margin */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+/* Set the form label font size, color, and margin */
+.form-group label {
+  font-size: 16px;
+  color: #333;
+  margin: 5px 0;
+}
+
+/* Set the form input and textarea width, padding, border, and outline */
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* Change the form input and textarea border color on focus */
+.form-group input:focus, .form-group textarea:focus {
+  border-color: #333;
+}
+
+/* Set the form button width, padding, background color, border, color, and cursor */
+.form-group button {
+  width: 100px;
+  padding: 10px;
+  background-color: #333;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Change the form button background color on hover */
+.form-group button:hover {
+  background-color: #ffcc00;
+}
+
+
+/**Left side CSS**/
+.left-box{
+  float: left;
+  box-shadow: 10px 10px 5px grey;
+  background-color: #3322c4;
+  height: 961px;
+  width: 300px;
+  box-sizing: border-box;
+  margin: 15px 15px 15px 15px;
+}
+
+/**Left side content CSS**/
+.top-left{
+  position: relative;
+  border-style: solid;
+  border-width: 0px 0px 3px 0px;
+  box-sizing: border-box;
+  height: 25%;
+  margin: 0px;
+}
+
+.name {
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    bottom: 8px;
+    left: 16px;
+    box-sizing: border-box;
+}
+
+img { 
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.objective {
+   border-style: solid;
+   border-width: 0px 0px 2px 0px ;
+   margin: 15px;
+   padding: 10px;
+   box-sizing: border-box;
+}
+
+.objective-img{
+  float: left;
+  border: solid;
+  border-width: 3px;
+  box-sizing: border-box;
+  width: 30px;
+  height: auto;
+}
+
+.objective-text{
+  display: inline-block;
+  text-align: left;
+  color: white;
+  box-sizing: border-box;
+  margin: 15px 15px 15px 15px;
+}
+
+.phone{
+   border-style: solid;
+   border-width: 0px 0px 2px 0px;
+   box-sizing: border-box;
+   margin: 15px;
+   padding: 10px;
+}
+
+.phone-text {
+  display: inline-block;
+  text-align: left;
+  font-size: 20px;
+  color: white;
+  margin: 15px 15px 15px 15px;
+  box-sizing: border-box;
+}
+
+.email{
+   border-style: solid;
+   border-width: 0px 0px 0px 0px;
+   box-sizing: border-box;
+   margin: 15px;
+   padding: 10px;
+}
+
+.email-text {
+  display: inline-block;
+  text-align: left;
+  font-size: 20px;
+  color: white;
+  margin: 15px 15px 15px 15px;
+  box-sizing: border-box;
+}
+/**work experience box**/
+.work-experience {
+  float: left;
+  box-shadow: 10px 10px 5px grey;
+  background-color: white;
+  height: 300px;
+  width: 850px;
+  margin: 15px 15px 15px 15px;
+  box-sizing: border-box;
+}
+
+.work-img {
+  float: left;
+  background-color: #0000b3;
+  height: auto;
+  width: 50px;
+  margin: 25px 30px 100% 30px;
+  box-sizing: border-box;
+}
+
+.job-box{
+  float: left;
+  border: solid;
+  border-width: 0px 0px 3px 0px;
+  box-sizing: border-box;
+  margin: 0px 10px 0px 0px;
+  padding: 10px 10px 10px 10px;
+  width: 200px;
+  height: auto;
+}
+
+.job-box:hover {
+  background-color: gray;
+}
+
+.job-title {
+  font-weight: bold;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.job-date{
+  color: #b30000;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+
+.job-description{
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+/**Education box**/
+.education {
+  float: left;
+  box-shadow: 10px 10px 5px grey;
+  background-color: white;
+  box-sizing: border-box;
+  height: 300px;
+  width: 850px;
+  margin: 15px 15px 15px 15px;
+}
+
+/**interest box**/
+.interest {
+  float: left;
+  box-shadow: 10px 10px 5px grey;
+  background-color: white;
+  box-sizing: border-box;
+  height: 300px;
+  width: 410px;
+  margin: 15px 15px 15px 15px;
+}
+
+/**Skills box**/
+.skills {
+  float: left;
+  box-shadow: 10px 10px 5px grey;
+  background-color: white;
+  box-sizing: border-box;
+  height: 300px;
+  width: 410px;
+  margin: 15px 15px 15px 15px;
+}
+
+ {
+  list-style-type: none;
+}
+
+ul {
+  list-style: none;
+  margin: 10px 20px 20px 45px;
+}
+
+li.l1 {
+  border: solid;
+  border-width: 1px;
+  background-color: #aabbee;
+  margin: 10px 110px 10px 0px;
+}
+
+li.l2 {
+  border: solid;
+  border-width: 1px;
+  background-color: #aabbee;
+  margin: 10px 130px 10px 0px;
+}
+
+li.l3 {
+  border: solid;
+  border-width: 1px;
+  background-color: #aabbee;
+  margin: 10px 0px 10px 0px;
+}
+
+li.l4 {
+  border: solid;
+  border-width: 1px;
+  background-color: #aabbee;
+  margin: 10px 90px 10px 0px;
+  padding: 0px 101px 0px 0px;
+}
+
+li {
+  display: inline-block; /* display the items inline */
+  margin: 10px; /* 10 pixels of margin around the items */
+}
+
+a:link {
+  color: rgb(36, 18, 241);
+}
+
+
+
+
+
+
+
+a{
+  color: rgb(142, 85, 85); /* white text color */
+  text-decoration: none; /* remove the underline */
+  font-family: Arial, sans-serif; /* Arial font */
+  font-size: 18px; /* 18 pixels of font size */
+}
+a:hover {
+  color: red; /* cyan text color */
+  text-decoration: underline; /* add the underline */
+}
+
+
+#profile_image{
+  border-radius:50%;
+  width: 300px;
+  height:300px;
+  box-shadow: #0000b3;
+  border:#0000b3 solid;
+}
+
+#main_page{
+  display:flex;
+  align-items:center;
+  width:100%;
+  height:720px;
+  background-image: url('star.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  background-attachment: fixed;
+}
+  }
+#name{
+    margin-left:auto;
+    align-items: center;
+  }
+
+
+
+#name_1{
+  width:100px;
+  height:70px;
+  margin:20px 20px 20px 20px;
+  padding:20px 20px 20px 20px;
+  border: 3px solid blue;
+  border-radius:50px;
+  box-shadow: 6px 6px 6px 0px #2c3e50;
+text-align:right;
+  background-color: white;
+  align-items: center;
+}
+
+#name_2{
+  width:100px;
+  height:70px;
+  margin:20px 20px 20px 20px;
+  padding:20px 20px 20px 20px;
+  border: 3px solid blue;
+  border-radius:50px;
+  box-shadow: 6px 6px 6px 0px #2c3e50;
+  text-align:right;
+  background-color: white;
+  color:#3322c4;
+  align-items: center;
+}
