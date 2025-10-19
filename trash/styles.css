@@ -1,0 +1,350 @@
+
+
+@font-face
+{
+    font-family : 'BallparkWeiner ';
+    src : url('polices/ballpark.eot');
+    src : url('polices/ballpark.eot?#iefix')format ('embedded-opentype ') ,
+    url ('polices/ballpark.woff') format ('woff') ,
+    url ('polices/ballpark.ttf') format ('truetype') ,
+    url ('polices/ballpark.svg# BallparkWeiner') format('svg');
+    font-weight : normal ;
+    font-style : normal ;
+ }
+ 
+ @font-face
+ {
+    font-family : 'Dayrom';
+    src : url('polices/Dayrom.eot');
+    src : url('polices/Dayrom.eot?#iefix')format ('embedded-opentype ') ,
+    url ('polices/Dayrom.woff') format ('woff') ,
+    url ('polices/Dayrom.ttf') format ('truetype') ,
+    url ('polices/Dayrom.svg#Dayrom') format('svg');
+    font-weight : normal ;
+    font-style : normal ;
+ }
+
+
+ body
+ {
+    background-color:#eeeeee;
+    font-family : 'Trebuchet MS ', Arial , sans-serif ;
+    color : #111111 ;
+    border-color: black;
+}
+
+#bloc_page
+{
+    width : 900px ;
+    margin : auto ;
+}
+section h1 , footer h1 , nav a
+{
+    font-family : Dayrom , serif ;
+    font-weight : normal ;
+    text-transform : uppercase ;
+}
+header
+{
+    background-color:#0329ff;
+}
+
+#titre_principal
+{
+    display : inline-block ;
+    width:880px;
+    margin-right : 15px ;
+    position : relative ;
+    background-color : rgb(0, 6, 71);
+    box-shadow : 0px 2px 5px #1c1a19 ;
+    border-radius : 5px;
+    color :#ffffff;
+    margin: 5px 5px 5px 5px;
+padding:5px 5px 5px 5px;
+    font-size : 1em;
+
+
+}
+header h1
+{
+    font-family : 'BallparkWeiner ', serif ;
+    font-size : 2.5em ;
+    font-weight : normal ;
+}
+
+#logo , header h1
+{
+    display : inline-block ;
+    margin-bottom : 0px;
+    width:880px;
+}
+
+header h2
+{
+    font-family : Dayrom , serif ;
+    font-size : 1.1em ;
+    margin-top: 0px;
+    font-weight : normal ;
+}
+
+nav
+{
+    background-color: yellow;
+    width : 896px ;
+    text-align : left ;
+    text-shadow:gray;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight:bold;
+    border:solid;
+    display: inline-block;
+    border-radius : 5px;
+    color:blue;
+
+}
+
+nav ul
+{
+    list-style-type : none ;
+    display: inline-block;
+    
+}
+
+nav li
+{
+    display: inline-block;
+    margin: 5px 5px 5px 5px;
+    margin-bottom: 15px;
+}
+
+nav a
+{
+    font-size : 1.3em ;
+    color : #181818 ;
+    padding-bottom : 3px ;
+    text-decoration : none ;
+    display: inline-block;
+}
+
+nav a:hover
+{
+    color : #001155 ;
+    border-bottom : 3px solid blue ;
+    display: inline-block;
+}
+nav:active
+{
+    background-color:#ffffff;
+} 
+nav:focus
+{
+    color :#FFCC66 ;
+
+}
+    
+nav:visited
+{
+    color :blueviolet;
+}
+
+#banniere_image
+{
+    margin-top: 15px ;
+    border-radius : 5px;
+    background-color: #000;
+    position : relative ;
+    box-shadow : 0px 4px 4px #1c1a19 ;
+    margin-bottom : 25px ;
+}
+
+#banniere_description
+{
+    position : absolute ;
+    bottom : 0px;
+    border-radius :0px 0px 5px 5px ;
+    width : 900px;
+    padding:10px 0px 5px 0px;
+    background-color : rgb(0, 0, 0);
+    color : white ;
+    font-size : 0.8em ;
+}
+
+.bouton_rouge
+{
+    display : inline-block ;
+    height : 25px ;
+    position : absolute ;
+    right : 5px;
+    bottom : 5px;
+    background-color: #332277;
+    border : 1px solid #ffffff ;
+    border-radius : 5px;
+    font-size : 1.2em;
+    text-align : center ;
+    padding : 3px 8px 0px 8px;
+    color : rgb(0, 0, 0) ;
+    text-decoration : none ;
+    color:white;
+}
+
+
+
+article
+{
+    margin-right : 15px ;
+    position : relative ;
+    width : 260px ;
+    background-color : #eeeeee;
+    box-shadow : 0px 2px 5px #1c1a19 ;
+    border-radius : 5px;
+    padding : 10px ;
+    color :#222222;
+    margin: 5px 5px 5px 5px;
+padding:5px 5px 5px 5px;
+    font-size : 1em;
+height:300px
+}
+
+
+aside
+{
+    position : relative ;
+    width : 260px ;
+    height:300px;
+    background-color : white ;
+    box-shadow : 0px 2px 5px #1c1a19 ;
+    border-radius : 5px;
+    color : black ;
+    font-size : 0.9em;
+    margin: 5px 5px 5px 5px;
+padding:5px 5px 5px 5px;
+}
+
+article , aside
+{
+    display : inline-block ;
+    vertical-align : top ;
+    text-align : justify ;
+    vertical-align: top;
+    display:inline-block;
+    height:300px
+}
+
+#Faculty_members,#important_links
+{
+    display: inline-block;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:1em;
+    font-weight:lighter;
+    text-decoration:solid;
+    text-align:center;
+    vertical-align:left;
+    text-shadow:#777777;
+    background-color:#ffffff;
+color:#000;
+opacity:100%;
+width:400px;
+margin: 5px 5px 5px 5px;
+padding:5px 5px 5px 5px;
+border:2px  #6b6c6c solid;
+border-radius: 5px;
+box-shadow:#706b64;
+height:300px;
+}
+
+.ico_categorie
+{
+    vertical-align : middle ;
+    margin-right : 8px;
+}
+
+article p
+{
+    font-size : 0.8em;
+}
+
+footer
+{
+    display: inline-block;
+    padding-top: 25px ;
+}
+footer p , footer ul
+{
+    font-size : 0.8em;
+    display: inline-block;
+}
+
+footer h1
+{
+    font-size : 1.1em;
+    display: inline-block;
+}
+
+
+
+#ending
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:2em;
+    font-weight:lighter;
+    font-style:calc();
+    text-decoration:solid;
+    font-variant:small-caps;
+    text-align:center;
+    vertical-align:middle;
+    text-shadow:#777777;
+    display:inline-block;
+    background-color:#efefef;
+
+opacity:50%;
+width:890px;
+height:80px;
+margin: 5px 5px 5px 5px;
+padding:5px 5px 5px 5px;
+border-radius: 5px;
+box-shadow:#706b64;
+background-color: whhite;
+color:white;
+
+}
+#curriculum_and_syllabus
+{
+        
+    font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size:1em;
+    font-weight:lighter;
+    text-decoration:solid;
+    text-shadow:#777777;
+    background-color:#eaeaea;
+color:#000;
+opacity:100%;
+width:890px;
+margin: 5px 5px 5px 5px;
+padding:5px 5px 5px 5px;
+border:2px  #6b6c6c solid;
+border-radius: 5px;
+box-shadow:#706b64;
+}
+
+#syllabus
+{
+    background-color: white;
+}
+
+#fac,#contact
+{
+    font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size:1em;
+    font-weight:lighter;
+    text-decoration:solid;
+    text-shadow:#777777;
+    background-color:#eaeaea;
+color:#000;
+opacity:100%;
+width:890px;
+margin: 5px 5px 5px 5px;
+padding:5px 5px 5px 5px;
+border:2px  #6b6c6c solid;
+border-radius: 5px;
+box-shadow:#050505;
+}
+

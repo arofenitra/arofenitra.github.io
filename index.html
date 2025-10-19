@@ -1,50 +1,543 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <title>Rarivonjy Arofenitra Portfolio</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Link to an external style sheet using SCSS -->
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Machine Learning Engineer Portfolio - Specializing in AI, ML, and Deep Learning">
+    <title>Username | ML Engineer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body >
-  <!-- Create a header with a navigation bar -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="project.html">Project</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="curriculum.html">About Me</a></li>
-      </ul>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Arofenitra Rarivonjy</div>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
-  </header>
-  <!-- Create a main section with a search input field -->
-  <main id="main_page">
-     <section id="name">
-     <h1 id="name_1"><b>Rarivonjy Arofenitra</b></h1>
-    <h2 id="name_2">Maths Student</h2> 
-     </section>
-    <aside>
-    <img src="PXL_20230901_162310170.MP.jpg" id="profile_image">
-    </aside>
-   
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="greeting">Hi, I'm</span>
+                    <span class="name">Arofenitra Rarivonjy</span>
+                </h1>
+                <p class="hero-subtitle">Research - ML Engineer</p>
+                <p class="hero-description">
+                    Fresh ML Engineer with 0 years of experience specializing in building and deploying scalable Computer Vision and deep learning systems. Passionate about transforming data into intelligent solutions that drive real-world impact.
+                </p>
+                <div class="hero-meta">
+                    <span class="location">📍 Location: Moscow, Russia</span>
+                    <span class="timezone">🕐 Timezone: UTC+3</span>
+                </div>
+                <div class="hero-links">
+                    <a href="mailto:arofenitra.rarivonjy@skoltech.ru" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        Email Me
+                    </a>
+                    <!-- <a href="https://linkedin.com/in/username" target="_blank" class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        LinkedIn
+                    </a> -->
+                    <a href="https://github.com/arofenitra" target="_blank" class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        My GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>
+                    As a Advanced Computational Science (~Data Science) student and soon to be graduated, transitioning into Machine Learning Engineering, I bring a unique blend of theoretical knowledge and practical implementation skills. My journey spans from experimental model development to production-ready deployments, with a strong focus on MLOps best practices.
+                </p>
+                <p>
+                    I specialize in building end-to-end ML pipelines, from data ingestion and preprocessing to model training, evaluation, and deployment. My expertise includes Computer Vision (CV), Machine Learning (ML), Image Processing, and Mathematical Modeling, with hands-on experience in cloud platforms and containerization technologies.
+                </p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="images/decomp_fgsm_cheng2020-anchor_q6_eps0.03137254901960784_mse_kodim01.png" alt="News Category Classifier">
+                        <div class="project-tags">
+                            <span class="tag">Research</span>
+                            <span class="tag">Adversarial Attacks</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Adversarial Attack on Image Compression</h3>
+                        <p class="project-tagline">An adversarial attack on AI image compression that can drop compressed quality from 35 dB to 13 dB</p>
+                        
+                        <div class="project-section">
+                            <h4>Problem & Business Value</h4>
+                            <p>Image Compression can be found in digital technology and social media apps such as facebook, telegram, etc ... In these platform, due to exponential growth of digital media, an efficient Image Compression is needed. In this project, we design a model to trick AI Compression models, to destroy its reconstruction quality (which can be used in privacy protection from unwanted camera). Alongside this project, a defense mechanism is implemented also to protect users from a perturbed image (that can contains malicious perturbation). </p>
+                        </div>
 
-  </main>
-  <!-- Add some JavaScript code to change the theme of the website -->
- 
+                        <div class="project-section">
+                            <h4>My Role & Contributions</h4>
+                            <p>End-to-end ownership: from data collection and model building to simulation and experimentation to automatization. Implemented automated adversarial pipeline from a given image.</p>
+                        </div>
 
+                        <div class="project-section">
+                            <h4>Technical Deep Dive</h4>
+                            <ul class="tech-list">
+                                <li><strong>Data:</strong> Scraped several adversarial research articles from major journals and conferences. Handled smooth gradient flow, vanishing gradient to ensure the backpropagation works very well. Implemented robust adversarial attack model pipeline.</li>
+                                <li><strong>Models:</strong> Compared FGSM (with drop from 35dB to 10.9dB) against PGD (35dB to 11.7dB) with an mse losstype, while still keeping an average perturbation the image up to 3% </li>
+                                <li><strong>Loss Function used:</strong> In both models (FGSM and PGD), 3 types of loss function are used, which are Mean Squared Error (MSE), Peak to Noise Signal Ratio (PSNR) and Structural Similarity Index Measure (SSIM). While most of deep learning researcher uses mostly MSE, we dare to go beyond these idea. </li>
+                                <li><strong>Evaluation:</strong> Achieved a drop from 35dB to 6dB in SSIM loss function implementation with PGD (which is the best result up to now), while the psnr loss function dropped up to 10.2 dB only. .</li>
+                                <li><strong>Code Quality:</strong> Customizable architecture where users can add more loss functions or other idea. Detailed documentation, mathematical background and type hints throughout.</li>
+                            </ul>
+                        </div>
 
+                        <div class="project-section">
+                            <h4>Implementation & Tools</h4>
+                            <ul class="tech-list">
+                                <li><strong>Framework:</strong> Implemented using PyTorch with CompressAI library for neural image compression models. Modular architecture supporting multiple attack strategies.</li>
+                                <li><strong>Automation:</strong> Command-line interface with configurable parameters for batch processing. Automated pipeline for generating adversarial examples across different loss functions.</li>
+                                <li><strong>Evaluation:</strong> Comprehensive metrics tracking including PSNR degradation, SSIM scores, and perturbation analysis. Automated visualization and result saving capabilities.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <div class="metric-value">10dB</div>
+                                <div class="metric-label">Drop PSNR</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">35dB</div>
+                                <div class="metric-label">Original PSNR</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">5ms</div>
+                                <div class="metric-label">Adversarial Generation</div>
+                            </div>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/arofenitra/Adversarial_Attack_Image_Compression" target="_blank" class="project-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                View Code
+                            </a>
+                            <a href="https://arxiv.org/pdf/1412.6572" target="_blank" class="project-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Original Articles
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400/f093fb/ffffff?text=Object+Detection" alt="Real-time Object Detection">
+                        <div class="project-tags">
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Deep Learning</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Real-time Object Detection System</h3>
+                        <p class="project-tagline">YOLOv8-based detection system for retail inventory management</p>
+                        
+                        <div class="project-section">
+                            <h4>Problem & Business Value</h4>
+                            <p>Automated inventory tracking in retail stores to reduce manual counting errors and optimize stock management. Achieved 40% reduction in inventory discrepancies and enabled real-time stock alerts.</p>
+                        </div>
+
+                        <div class="project-section">
+                            <h4>My Role & Contributions</h4>
+                            <p>Led the development of custom object detection pipeline. Collected and annotated 10,000+ images, fine-tuned YOLOv8 model, and deployed edge computing solution for real-time inference.</p>
+                        </div>
+
+                        <div class="project-section">
+                            <h4>Technical Deep Dive</h4>
+                            <ul class="tech-list">
+                                <li><strong>Data:</strong> Custom dataset of retail products with bounding box annotations using LabelImg. Applied data augmentation (rotation, brightness, occlusion) to improve robustness.</li>
+                                <li><strong>Models:</strong> Fine-tuned YOLOv8n for edge deployment. Compared with Faster R-CNN and SSD models. Optimized for inference speed vs. accuracy tradeoff.</li>
+                                <li><strong>Evaluation:</strong> Achieved mAP@0.5 of 0.88 with 30 FPS on edge devices. Reduced false positives by 60% through post-processing techniques.</li>
+                                <li><strong>Optimization:</strong> Model quantization using TensorRT reduced inference time by 45% while maintaining 95% of original accuracy.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-section">
+                            <h4>Deployment & MLOps</h4>
+                            <ul class="tech-list">
+                                <li><strong>Infrastructure:</strong> Deployed on NVIDIA Jetson devices for edge inference. Centralized data collection to AWS S3 for continuous learning.</li>
+                                <li><strong>Pipeline:</strong> Automated annotation pipeline using semi-supervised learning to reduce labeling costs by 70%.</li>
+                                <li><strong>Monitoring:</strong> Real-time performance dashboard tracking FPS, accuracy, and system health metrics.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <div class="metric-value">0.88</div>
+                                <div class="metric-label">mAP@0.5</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">30</div>
+                                <div class="metric-label">FPS</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">40%</div>
+                                <div class="metric-label">Error Reduction</div>
+                            </div>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/username/object-detection" target="_blank" class="project-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                View Code
+                            </a>
+                            <a href="#" target="_blank" class="project-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400/4facfe/ffffff?text=Recommendation+Engine" alt="Recommendation System">
+                        <div class="project-tags">
+                            <span class="tag">ML</span>
+                            <span class="tag">Big Data</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Scalable Recommendation Engine</h3>
+                        <p class="project-tagline">Hybrid recommender system processing 10M+ user interactions daily</p>
+                        
+                        <div class="project-section">
+                            <h4>Problem & Business Value</h4>
+                            <p>Built personalized product recommendations to increase user engagement and conversion rates. Achieved 25% increase in click-through rate and 18% boost in average order value.</p>
+                        </div>
+
+                        <div class="project-section">
+                            <h4>My Role & Contributions</h4>
+                            <p>Designed and implemented hybrid recommendation system combining collaborative filtering and content-based approaches. Built scalable data pipeline using Apache Spark for real-time processing.</p>
+                        </div>
+
+                        <div class="project-section">
+                            <h4>Technical Deep Dive</h4>
+                            <ul class="tech-list">
+                                <li><strong>Data:</strong> Processed user interaction logs, product metadata, and behavioral data from AWS S3. Implemented real-time feature engineering pipeline handling 10M+ events daily.</li>
+                                <li><strong>Models:</strong> Hybrid approach combining Matrix Factorization (ALS) and Neural Collaborative Filtering. A/B tested against baseline content-based filtering showing 35% improvement.</li>
+                                <li><strong>Evaluation:</strong> Optimized for NDCG@10 (0.76) and Hit Rate (0.82). Implemented online evaluation metrics tracking user engagement.</li>
+                                <li><strong>Optimization:</strong> Used negative sampling and batch processing to handle sparse user-item matrix efficiently.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-section">
+                            <h4>Deployment & MLOps</h4>
+                            <ul class="tech-list">
+                                <li><strong>Infrastructure:</strong> Deployed on AWS ECS with Redis caching layer for sub-100ms response times. Horizontally scalable architecture handling 1000+ RPS.</li>
+                                <li><strong>Data Pipeline:</strong> Apache Airflow orchestrating daily batch training and real-time feature updates via Kafka streams.</li>
+                                <li><strong>Monitoring:</strong> Comprehensive A/B testing framework with statistical significance testing. Model performance dashboards tracking business metrics.</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <div class="metric-value">25%</div>
+                                <div class="metric-label">CTR Increase</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">0.76</div>
+                                <div class="metric-label">NDCG@10</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value"><100ms</div>
+                                <div class="metric-label">Latency</div>
+                            </div>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/username/recommender-system" target="_blank" class="project-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        Programming Languages
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">Scala</span>
+                        <span class="skill-tag">Bash</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                        </svg>
+                        ML Libraries & Frameworks
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">LightGBM</span>
+                        <span class="skill-tag">Hugging Face</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">spaCy</span>
+                        <span class="skill-tag">NLTK</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        </svg>
+                        MLOps & Cloud
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">MLflow</span>
+                        <span class="skill-tag">Kubeflow</span>
+                        <span class="skill-tag">DVC</span>
+                        <span class="skill-tag">AWS (S3, SageMaker, ECR, ECS)</span>
+                        <span class="skill-tag">GCP (GCS, Vertex AI, Cloud Run)</span>
+                        <span class="skill-tag">Azure ML</span>
+                        <span class="skill-tag">TensorRT</span>
+                        <span class="skill-tag">ONNX</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Data Engineering
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Apache Spark</span>
+                        <span class="skill-tag">Apache Airflow</span>
+                        <span class="skill-tag">Prefect</span>
+                        <span class="skill-tag">DBT</span>
+                        <span class="skill-tag">Apache Kafka</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                        </svg>
+                        Development Tools
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">Streamlit</span>
+                        <span class="skill-tag">Gradio</span>
+                        <span class="skill-tag">Jupyter</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                        <span class="skill-tag">Jenkins</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section achievements-section">
+        <div class="container">
+            <h2 class="section-title">Achievements & Contributions</h2>
+            
+            <div class="achievements-grid">
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>Technical Writing</h3>
+                    <p>Published technical articles on Medium exploring ML challenges, including "Overcoming Data Drift in Production ML Systems" and "Optimizing Deep Learning Models for Edge Deployment"</p>
+                    <a href="#" class="achievement-link">Read Articles →</a>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Open Source Contributions</h3>
+                    <p>Active contributor to scikit-learn and Hugging Face Transformers. Implemented feature enhancements and fixed bugs in data preprocessing modules.</p>
+                    <a href="https://github.com/arofenitra" class="achievement-link">View Contributions →</a>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Certifications</h3>
+                    <ul class="cert-list">
+                        <li>AWS Certified Machine Learning - Specialty</li>
+                        <li>TensorFlow Developer Certificate</li>
+                        <li>Deep Learning Specialization (Coursera)</li>
+                        <li>MLOps Specialization (Coursera)</li>
+                    </ul>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3>Hackathons & Competitions</h3>
+                    <p>Top 5% finish in Kaggle competition for image classification. Winner of university AI hackathon for developing real-time sentiment analysis tool.</p>
+                    <a href="#" class="achievement-link">View Profile →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="contact-description">
+                I'm always interested in hearing about new opportunities, collaborations, or just chatting about ML and AI. Feel free to reach out!
+            </p>
+            <div class="contact-cards">
+                <a href="mailto:arofenitra.rarivonjy@skoltech.ru" class="contact-card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <h3>Email</h3>
+                    <p>arofenitra.rarivonjy@skoltech.ru</p>
+                </a>
+                <!-- <a href="https://linkedin.com/in/username" target="_blank" class="contact-card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    <h3>LinkedIn</h3>
+                    <p>Connect with me</p>
+                </a> -->
+                <a href="https://github.com/arofenitra" target="_blank" class="contact-card">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    <h3>GitHub</h3>
+                    <p>Check out my code</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Arofenitra. Built with passion for Research and Machine Learning.</p>
+            <p class="footer-note">Open to full-time opportunities and exciting ML projects</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
-
-
 </html>
