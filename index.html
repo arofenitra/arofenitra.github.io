@@ -8,19 +8,27 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">Arofenitra Rarivonjy</div>
+            <div class="nav-brand">
+                <i class="fas fa-code"></i>
+                Arofenitra Rarivonjy
+            </div>
             <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                <li><a href="#skills"><i class="fas fa-cogs"></i> Skills</a></li>
+                <li><a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -32,49 +40,91 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-background">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="greeting">Hi, I'm</span>
-                    <span class="name">Arofenitra Rarivonjy</span>
-                </h1>
-                <p class="hero-subtitle">Research - ML Engineer</p>
-                <p class="hero-description">
-                    Fresh ML Engineer with 1 year of research experience specializing in mathematical modelling, building and deploying scalable Computer Vision and deep learning systems. Passionate about transforming data into intelligent solutions that drive real-world impact.
-                </p>
-                <div class="hero-meta">
-                    <span class="location">📍 Location: Moscow, Russia</span>
-                    <span class="timezone">🕐 Timezone: UTC+3</span>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-brain"></i>
+                        <span>ML Engineer</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="greeting">Hi, I'm</span>
+                        <span class="name">Arofenitra Rarivonjy</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        <span class="typed-text"></span>
+                        <span class="cursor">|</span>
+                    </p>
+                    <p class="hero-description">
+                        Fresh ML Engineer with 1 year of research experience specializing in mathematical modelling, building and deploying scalable Computer Vision and deep learning systems.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <div>
+                                <strong>10+</strong>
+                                <span>Projects</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-file-alt"></i>
+                            <div>
+                                <strong>2+</strong>
+                                <span>Research Papers</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-code-branch"></i>
+                            <div>
+                                <strong>Open Source</strong>
+                                <span>Contributor</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-meta">
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> Moscow, Russia</span>
+                        <span class="timezone"><i class="far fa-clock"></i> UTC+3</span>
+                    </div>
+                    <div class="hero-links">
+                        <a href="mailto:arofenitra.rarivonjy@skoltech.ru" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            Email Me
+                        </a>
+                        <a href="https://github.com/arofenitra" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" class="btn btn-secondary">
+                            <i class="fas fa-graduation-cap"></i>
+                            ResearchGate
+                        </a>
+                    </div>
                 </div>
-                <div class="hero-links">
-                    <a href="mailto:arofenitra.rarivonjy@skoltech.ru" class="btn btn-primary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        Email Me
-                    </a>
-                    <!-- <a href="https://linkedin.com/in/username" target="_blank" class="btn btn-secondary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                        LinkedIn
-                    </a> -->
-                    <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" class="btn btn-secondary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M8 15s1.5-2 4-2 4 2 4 2"></path>
-                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                        </svg>
-                        ResearchGate
-                    </a>
-                    <a href="https://github.com/arofenitra" target="_blank" class="btn btn-secondary">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        My GitHub Profile
-                    </a>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <!-- *INSERT YOUR PROFILE PHOTO HERE: profile-photo.jpg (400x400px recommended) -->
+                        <img src="images/profile-photo.jpg" alt="Arofenitra Rarivonjy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23667eea%22 width=%22400%22 height=%22400%22/%3E%3Ctext fill=%22white%22 font-size=%2260%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22%3EAR%3C/text%3E%3C/svg%3E'">
+                        <div class="image-decoration"></div>
+                    </div>
+                    <div class="floating-card card-1">
+                        <i class="fas fa-robot"></i>
+                        <span>AI/ML</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-eye"></i>
+                        <span>Computer Vision</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-brain"></i>
+                        <span>Deep Learning</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -83,14 +133,32 @@
     <!-- About Section -->
     <section id="about" class="section about-section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>
-                    As a Advanced Computational Science (~Data Science) student and soon to be graduated, transitioning into Machine Learning Engineering, I bring a unique blend of theoretical knowledge and practical implementation skills. My journey spans from experimental model development to production-ready deployments, with a strong focus on MLOps best practices.
-                </p>
-                <p>
-                    I specialize in building end-to-end ML pipelines, from data ingestion and preprocessing to model training, evaluation, and deployment. My expertise includes Computer Vision (CV), Machine Learning (ML), Image Processing, and Mathematical Modeling, with hands-on experience in cloud platforms and containerization technologies.
-                </p>
+            <div class="section-header">
+                <span class="section-label">Get to know me</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <p>Advanced Computational Science (~Data Science) student, transitioning into Machine Learning Engineering with strong theoretical foundation.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Expertise</h3>
+                    <p>End-to-end ML pipelines, Computer Vision, Deep Learning, Mathematical Modeling, and MLOps best practices.</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Focus Areas</h3>
+                    <p>From experimental model development to production-ready deployments with cloud platforms and containerization.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -98,134 +166,120 @@
     <!-- Projects Section -->
     <section id="projects" class="section projects-section">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-header">
+                <span class="section-label">What I've built</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
             <div class="projects-grid">
                 
                 <!-- Project 1 -->
-                <article class="project-card">
+                <article class="project-card" data-project="1">
                     <div class="project-image">
-                        <img src="images/decomp_fgsm_cheng2020-anchor_q6_eps0.03137254901960784_mse_kodim01.png" alt="News Category Classifier">
+                        <img src="images/decomp_fgsm_cheng2020-anchor_q6_eps0.03137254901960784_mse_kodim01.png" alt="Adversarial Attack on Image Compression">
+                        <div class="project-overlay">
+                            <button class="view-details-btn" data-project="1">
+                                <i class="fas fa-expand"></i>
+                                View Details
+                            </button>
+                        </div>
                         <div class="project-tags">
-                            <span class="tag">Research</span>
-                            <span class="tag">Adversarial Attacks</span>
+                            <span class="tag"><i class="fas fa-flask"></i> Research</span>
+                            <span class="tag"><i class="fas fa-shield-alt"></i> Adversarial</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Adversarial Attack on Image Compression</h3>
-                        <p class="project-tagline">An adversarial attack on AI image compression that can drop compressed quality from 35 dB to 13 dB</p>
+                        <div class="project-header">
+                            <h3 class="project-title">Adversarial Attack on Image Compression</h3>
+                            <div class="project-tech-icons">
+                                <i class="fab fa-python" title="Python"></i>
+                                <i class="fas fa-brain" title="PyTorch"></i>
+                                <i class="fas fa-chart-line" title="ML"></i>
+                            </div>
+                        </div>
+                        <p class="project-tagline">Adversarial attack dropping compressed quality from 35 dB to 13 dB</p>
                         
-                        <div class="project-section">
-                            <h4>Problem & Business Value</h4>
-                            <p>Image Compression can be found in digital technology and social media apps such as facebook, telegram, etc ... In these platform, due to exponential growth of digital media, an efficient Image Compression is needed. In this project, we design a model to trick AI Compression models, to destroy its reconstruction quality (which can be used in privacy protection from unwanted camera). Alongside this project, a defense mechanism is implemented also to protect users from a perturbed image (that can contains malicious perturbation). </p>
-                        </div>
-
-                        <div class="project-section">
-                            <h4>My Role & Contributions</h4>
-                            <p>End-to-end ownership: from data collection and model building to simulation and experimentation to automatization. Implemented automated adversarial pipeline from a given image.</p>
-                        </div>
-
-                        <div class="project-section">
-                            <h4>Technical Deep Dive</h4>
-                            <ul class="tech-list">
-                                <li><strong>Data:</strong> Scraped several adversarial research articles from major journals and conferences. Handled smooth gradient flow, vanishing gradient to ensure the backpropagation works very well. Implemented robust adversarial attack model pipeline.</li>
-                                <li><strong>Models:</strong> Compared FGSM (with drop from 35dB to 10.9dB) against PGD (35dB to 11.7dB) with an mse losstype, while still keeping an average perturbation the image up to 3% </li>
-                                <li><strong>Loss Function used:</strong> In both models (FGSM and PGD), 3 types of loss function are used, which are Mean Squared Error (MSE), Peak to Noise Signal Ratio (PSNR) and Structural Similarity Index Measure (SSIM). While most of deep learning researcher uses mostly MSE, we dare to go beyond these idea. </li>
-                                <li><strong>Evaluation:</strong> Achieved a drop from 35dB to 6dB in SSIM loss function implementation with PGD (which is the best result up to now), while the psnr loss function dropped up to 10.2 dB only. .</li>
-                                <li><strong>Code Quality:</strong> Customizable architecture where users can add more loss functions or other idea. Detailed documentation, mathematical background and type hints throughout.</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-section">
-                            <h4>Implementation & Tools</h4>
-                            <ul class="tech-list">
-                                <li><strong>Framework:</strong> Implemented using PyTorch with CompressAI library for neural image compression models. Modular architecture supporting multiple attack strategies.</li>
-                                <li><strong>Automation:</strong> Command-line interface with configurable parameters for batch processing. Automated pipeline for generating adversarial examples across different loss functions.</li>
-                                <li><strong>Evaluation:</strong> Comprehensive metrics tracking including PSNR degradation, SSIM scores, and perturbation analysis. Automated visualization and result saving capabilities.</li>
-                            </ul>
-                            <h4>Similar Adversarial Attack Research </h4>
-                            <ul class="tech-list">
-                                <li><strong>Paper title: </strong> Robustness of AI Image Compression: Non-linear Perturbation.</li>
-                                <li><strong>Research output: </strong> Accepted for oral presentation at Neuroinformatics 2025 conference. The paper will appear in Volume 1241 of the Studies in Computational Intelligence series.</li>
-                                <li><strong>Authors:</strong> Arofenitra Rarivonjy, Anton Bibin, Razan Dibo, Aleksandr Kolomeitsev, Anh-Huy Phan, and Ivan Oseledets.</li>
-                            </ul>
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>FGSM & PGD Implementation</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Multiple Loss Functions</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Accepted at NeuroInformatics 2025</span>
+                            </div>
                         </div>
 
                         <div class="project-metrics">
                             <div class="metric">
                                 <div class="metric-value">10dB</div>
-                                <div class="metric-label">Drop PSNR</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">35dB</div>
-                                <div class="metric-label">Original PSNR</div>
+                                <div class="metric-label">PSNR Drop</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">5ms</div>
-                                <div class="metric-label">Adversarial Generation</div>
+                                <div class="metric-label">Generation Time</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">3%</div>
+                                <div class="metric-label">Avg Perturbation</div>
                             </div>
                         </div>
 
                         <div class="project-links">
                             <a href="https://github.com/arofenitra/Adversarial_Attack_Image_Compression" target="_blank" class="project-link">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                View Code
+                                <i class="fab fa-github"></i>
+                                Code
                             </a>
                             <a href="https://arxiv.org/pdf/1412.6572" target="_blank" class="project-link">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                                Original Article
+                                <i class="fas fa-file-pdf"></i>
+                                Paper
                             </a>
                         </div>
                     </div>
                 </article>
 
                 <!-- Project 2 -->
-                <article class="project-card">
+                <article class="project-card" data-project="2">
                     <div class="project-image">
                         <img src="images/navigation_analysis_1.png" alt="Clear Path Detection System">
+                        <div class="project-overlay">
+                            <button class="view-details-btn" data-project="2">
+                                <i class="fas fa-expand"></i>
+                                View Details
+                            </button>
+                        </div>
                         <div class="project-tags">
-                            <span class="tag">Computer Vision</span>
-                            <span class="tag">Deep Learning</span>
-                            <span class="tag">Real-time Processing</span>
+                            <span class="tag"><i class="fas fa-eye"></i> Computer Vision</span>
+                            <span class="tag"><i class="fas fa-video"></i> Real-time</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Real time Clear Path Detection System</h3>
-                        <p class="project-tagline">Multi-modal computer vision system for autonomous navigation assistance</p>
+                        <div class="project-header">
+                            <h3 class="project-title">Real-time Clear Path Detection</h3>
+                            <div class="project-tech-icons">
+                                <i class="fab fa-python" title="Python"></i>
+                                <i class="fas fa-camera" title="Computer Vision"></i>
+                                <i class="fas fa-network-wired" title="YOLO"></i>
+                            </div>
+                        </div>
+                        <p class="project-tagline">Multi-modal system for autonomous navigation assistance</p>
                         
-                        <div class="project-section">
-                            <h4>Problem & Business Value</h4>
-                            <p>Developed an intelligent navigation assistance system that combines object detection, depth estimation, and segmentation to identify clear paths for autonomous navigation. The system processes real-time video streams to provide safe navigation guidance for applications like assistive technology for visually impaired users and autonomous robots.</p>
-                        </div>
-
-                        <div class="project-section">
-                            <h4>My Role & Contributions</h4>
-                            <p>Architected and implemented the complete computer vision pipeline from scratch. Integrated YOLOv8n models with MiDaS depth estimation, developed intelligent path extraction algorithms, and built real-time processing capabilities with IP camera support. Created comprehensive Jupyter notebooks for model development and testing.</p>
-                        </div>
-
-                        <div class="project-section">
-                            <h4>Technical Deep Dive</h4>
-                            <ul class="tech-list">
-                                <li><strong>Multi-Modal Fusion:</strong> Combined YOLOv8n object detection, YOLOv8n-seg segmentation, and MiDaS depth estimation for comprehensive scene understanding.</li>
-                                <li><strong>Path Extraction Algorithm:</strong> Developed grid-based analysis system that evaluates 64-pixel groups across the lower 30% of images, using occupancy and depth thresholds to identify clear navigation paths.</li>
-                                <li><strong>Real-time Processing:</strong> Implemented time-based throttling system with 0.9-second intervals, maintaining smooth video display while processing computationally intensive models.</li>
-                                <li><strong>IP Camera Integration:</strong> Built robust network camera support with buffer management and error handling for real-time video stream processing.</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-section">
-                            <h4>System Architecture</h4>
-                            <ul class="tech-list">
-                                <li><strong>Models:</strong> YOLOv8n for object detection, YOLOv8n-seg for segmentation, MiDaS_small for depth estimation, all optimized for real-time inference.</li>
-                                <li><strong>Processing Pipeline:</strong> Frame capture → resize to 640x640 → object detection → segmentation → depth estimation → path analysis → visualization.</li>
-                                <li><strong>Decision Engine:</strong> Configurable thresholds for occupancy (≤2%), depth analysis (≤60% near objects), and focus band targeting (lower 30% of image).</li>
-                                <li><strong>Performance Optimization:</strong> GPU acceleration with automatic CUDA detection, minimal buffering, and efficient memory management.</li>
-                            </ul>
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>YOLOv8n + MiDaS Integration</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>IP Camera Support</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Grid-based Path Analysis</span>
+                            </div>
                         </div>
 
                         <div class="project-metrics">
@@ -234,119 +288,92 @@
                                 <div class="metric-label">Processing</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">Multi-modal</div>
-                                <div class="metric-label">Fusion</div>
+                                <div class="metric-value">3</div>
+                                <div class="metric-label">Models Fusion</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">IP Camera</div>
-                                <div class="metric-label">Support</div>
+                                <div class="metric-value">640×640</div>
+                                <div class="metric-label">Resolution</div>
                             </div>
                         </div>
 
                         <div class="project-links">
                             <a href="https://github.com/arofenitra/clear-path-detection" target="_blank" class="project-link">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                View Code
+                                <i class="fab fa-github"></i>
+                                Code
                             </a>
                             <a href="https://youtu.be/ereZdrV9BoE" target="_blank" class="project-link">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                                Live Demo
+                                <i class="fab fa-youtube"></i>
+                                Demo
                             </a>
                         </div>
                     </div>
                 </article>
 
                 <!-- Project 3 -->
-                <article class="project-card">
+                <article class="project-card" data-project="3">
                     <div class="project-image">
-                        <img src="images/edge_detection_with_HED.png" alt="AI Image and Video Compression Research">
+                        <img src="images/edge_detection_with_HED.png" alt="AI Image Compression Research">
+                        <div class="project-overlay">
+                            <button class="view-details-btn" data-project="3">
+                                <i class="fas fa-expand"></i>
+                                View Details
+                            </button>
+                        </div>
                         <div class="project-tags">
-                            <span class="tag">Computer Vision</span>
-                            <span class="tag">Image Processing</span>
-                            <span class="tag">Research</span>
+                            <span class="tag"><i class="fas fa-flask"></i> Research</span>
+                            <span class="tag"><i class="fas fa-compress"></i> Compression</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">AI Image and Video Compression Impact Study</h3>
-                        <p class="project-tagline">Comprehensive analysis of neural compression effects on deep learning tasks</p>
+                        <div class="project-header">
+                            <h3 class="project-title">AI Image Compression Impact Study</h3>
+                            <div class="project-tech-icons">
+                                <i class="fab fa-python" title="Python"></i>
+                                <i class="fas fa-image" title="Image Processing"></i>
+                                <i class="fas fa-chart-bar" title="Analysis"></i>
+                            </div>
+                        </div>
+                        <p class="project-tagline">Analysis of neural compression on CV tasks</p>
                         
-                        <div class="project-section">
-                            <h4>Problem & Research Value</h4>
-                            <p>Conducted extensive research on how AI-based image and video compression methods affect downstream computer vision tasks including object detection, classification, OCR, and edge detection. Compared state-of-the-art neural compression models (Cheng2020-anchor, Cheng2020-attn, SSF2020) with traditional methods to understand their impact on real-world applications.</p>
-                        </div>
-
-                        <div class="project-section">
-                            <h4>My Role & Contributions</h4>
-                            <p>Led comprehensive experimental design and implementation across multiple computer vision domains. Developed evaluation frameworks for compression impact analysis, implemented neural compression models using CompressAI, and conducted extensive experiments on medical imaging, OCR, object detection, and edge detection tasks. Collaborated with QuocViet Pham and Thanakrit Lerdmatayakul.</p>
-                        </div>
-
-                        <div class="project-section">
-                            <h4>Technical Deep Dive</h4>
-                            <ul class="tech-list">
-                                <li><strong>Compression Models:</strong> Evaluated Cheng2020-anchor, Cheng2020-attn (neural image compression) and SSF2020 (neural video compression) against JPEG/WebP traditional methods using PSNR, SSIM, VIF, and BPP metrics.</li>
-                                <li><strong>Medical Image Analysis:</strong> Analyzed skin lesion classification performance on ISIC2018 dataset, revealing up to 20% accuracy degradation on compressed medical images.</li>
-                                <li><strong>OCR Enhancement Discovery:</strong> Found counter-intuitive 12.3% improvement in license plate recognition accuracy using PaddleOCR on moderately compressed images (Q3 quality).</li>
-                                <li><strong>Edge Detection Study:</strong> Implemented HED (Holistically-Nested Edge Detection) and compared with Canny edge detection on compressed video content from MOT17 dataset.</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-section">
-                            <h4>Research Methodology</h4>
-                            <ul class="tech-list">
-                                <li><strong>Datasets:</strong> Kodak (compression baseline), ISIC2018 (medical), COCO2017 (object detection), MOT17 (video), BSDS500 (edge detection), UCF101 (video classification).</li>
-                                <li><strong>Evaluation Framework:</strong> Comprehensive metrics including accuracy, F1-score, Cohen's Kappa for classification; mAP for object detection; precision/recall for edge detection.</li>
-                                <li><strong>Compression Pipeline:</strong> Automated compression-decompression pipeline with quality parameter tuning (Q1, Q3, Q6) and performance impact measurement.</li>
-                                <li><strong>Statistical Analysis:</strong> Cross-validation, A/B testing, and significance testing to ensure robust conclusions across different compression levels.</li>
-                            </ul>
+                        <div class="project-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Multi-domain Analysis</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>CompressAI Integration</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Medical Imaging Study</span>
+                            </div>
                         </div>
 
                         <div class="project-metrics">
                             <div class="metric">
                                 <div class="metric-value">20%</div>
-                                <div class="metric-label">Medical Accuracy Drop</div>
+                                <div class="metric-label">Medical Accuracy</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">12.3%</div>
                                 <div class="metric-label">OCR Improvement</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">Multi-modal</div>
-                                <div class="metric-label">Analysis</div>
+                                <div class="metric-value">6</div>
+                                <div class="metric-label">Datasets Used</div>
                             </div>
                         </div>
 
                         <div class="project-links">
                             <a href="https://github.com/arofenitra/AI-Image-and-video-compression" target="_blank" class="project-link">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                                View Code
+                                <i class="fab fa-github"></i>
+                                Code
                             </a>
                             <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Cheng_Learned_Image_Compression_With_Discretized_Gaussian_Mixture_Likelihoods_and_Attention_CVPR_2020_paper.pdf" target="_blank" class="project-link">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                Image Compression Paper
-                            </a>
-                            <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf" target="_blank" class="project-link">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                Video Compression Paper
+                                <i class="fas fa-file-pdf"></i>
+                                Paper
                             </a>
                         </div>
                     </div>
@@ -359,112 +386,97 @@
     <!-- Skills Section -->
     <section id="skills" class="section skills-section">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <div class="section-header">
+                <span class="section-label">My toolkit</span>
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
             <div class="skills-grid">
                 
                 <div class="skill-category">
-                    <h3 class="skill-category-title">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="16 18 22 12 16 6"></polyline>
-                            <polyline points="8 6 2 12 8 18"></polyline>
-                        </svg>
-                        Programming Languages
-                    </h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <!-- <span class="skill-tag">SQL</span> -->
-                        <!-- <span class="skill-tag">R</span> -->
-                        <span class="skill-tag">C/C++</span>
-                        <span class="skill-tag">Bash</span>
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Programming Languages</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fas fa-copyright"></i>
+                                <span>C/C++</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <i class="fas fa-terminal"></i>
+                                <span>Bash</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3 class="skill-category-title">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M12 16v-4"></path>
-                            <path d="M12 8h.01"></path>
-                        </svg>
-                        ML Libraries & Frameworks
-                    </h3>
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>ML Frameworks</h3>
+                    </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">XGBoost</span>
-                        <span class="skill-tag">LightGBM</span>
-                        <span class="skill-tag">Hugging Face</span>
-                        <span class="skill-tag">Numpy</span>
-                        <span class="skill-tag">OpenCV</span>
-                        <span class="skill-tag">Scikit-Image</span>
-                        <span class="skill-tag">transformers</span>
+                        <span class="skill-tag"><i class="fas fa-chart-line"></i> Scikit-learn</span>
+                        <span class="skill-tag"><i class="fas fa-fire"></i> PyTorch</span>
+                        <span class="skill-tag"><i class="fas fa-cube"></i> TensorFlow</span>
+                        <span class="skill-tag"><i class="fas fa-tree"></i> XGBoost</span>
+                        <span class="skill-tag"><i class="fas fa-lightbulb"></i> LightGBM</span>
+                        <span class="skill-tag"><i class="fas fa-robot"></i> Hugging Face</span>
+                        <span class="skill-tag"><i class="fas fa-layer-group"></i> NumPy</span>
+                        <span class="skill-tag"><i class="fas fa-eye"></i> OpenCV</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3 class="skill-category-title">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                        </svg>
-                        MLOps & Cloud
-                    </h3>
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>MLOps & Tools</h3>
+                    </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Docker</span>
-                        <!-- <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">MLflow</span>
-                        <span class="skill-tag">Kubeflow</span>
-                        <span class="skill-tag">DVC</span>
-                        <span class="skill-tag">AWS (S3, SageMaker, ECR, ECS)</span>
-                        <span class="skill-tag">GCP (GCS, Vertex AI, Cloud Run)</span>
-                        <span class="skill-tag">Azure ML</span>
-                        <span class="skill-tag">TensorRT</span> -->
-                        <span class="skill-tag">Colab - Kaggle</span>
+                        <span class="skill-tag"><i class="fab fa-docker"></i> Docker</span>
+                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
+                        <span class="skill-tag"><i class="fas fa-book"></i> Jupyter</span>
+                        <span class="skill-tag"><i class="fas fa-code"></i> VS Code</span>
+                        <span class="skill-tag"><i class="fas fa-flask"></i> Colab</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3 class="skill-category-title">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Data Engineering
-                    </h3>
-                    <!-- <div class="skill-tags">
-                        <span class="skill-tag">Apache Spark</span>
-                        <span class="skill-tag">Apache Airflow</span>
-                        <span class="skill-tag">Prefect</span>
-                        <span class="skill-tag">DBT</span>
-                        <span class="skill-tag">Apache Kafka</span> -->
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <!-- <span class="skill-tag">PostgreSQL</span> -->
-                        <span class="skill-tag">Optuna Database</span>
+                    <div class="skill-category-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Data Engineering</h3>
                     </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-category-title">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="9" y1="9" x2="15" y2="15"></line>
-                            <line x1="15" y1="9" x2="9" y2="15"></line>
-                        </svg>
-                        Development Tools
-                    </h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Linux</span>
-                        <!-- <span class="skill-tag">FastAPI</span> -->
-                        <!-- <span class="skill-tag">Flask</span> -->
-                        <!-- <span class="skill-tag">Streamlit</span> -->
-                        <!-- <span class="skill-tag">Gradio</span> -->
-                        <span class="skill-tag">Jupyter</span>
-                        <span class="skill-tag">VS Code</span>
-                        <!-- <span class="skill-tag">GitHub Actions</span> -->
-                        <!-- <span class="skill-tag">Jenkins</span> -->
+                        <span class="skill-tag"><i class="fas fa-table"></i> Pandas</span>
+                        <span class="skill-tag"><i class="fas fa-square-root-alt"></i> NumPy</span>
+                        <span class="skill-tag"><i class="fas fa-database"></i> Optuna DB</span>
                     </div>
                 </div>
 
@@ -475,75 +487,86 @@
     <!-- Achievements Section -->
     <section id="achievements" class="section achievements-section">
         <div class="container">
-            <h2 class="section-title">Achievements & Contributions</h2>
+            <div class="section-header">
+                <span class="section-label">My journey</span>
+                <h2 class="section-title">Achievements & Contributions</h2>
+            </div>
             
-            <div class="achievements-grid">
-                
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-file-alt"></i>
                     </div>
-                    <h3>Technical Writing</h3>
-                    <p>Research article paper : Robustness of AI Image compression : Non-Linear Perturbation (First Author, Accepted at NeuroInformatics 2025 )</p>
-                    <p>Research article paper : Data-Driven and Delayed Sparse-Regularized Models for Two-phase Flow Property Prediction: A Comparative Spatial-Temporal Data Analysis (Accepted at IEEE ADACIS 2025 )</p>
-                    <!-- <a href="#" class="achievement-link">Read Articles →</a> -->
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025</div>
+                        <h3>Research Publications</h3>
+                        <p><strong>First Author:</strong> "Robustness of AI Image Compression: Non-Linear Perturbation" - Accepted at NeuroInformatics 2025</p>
+                        <p><strong>First Author: </strong> "Data-Driven and Delayed Sparse-Regularized Models for Two-phase Flow Property Prediction" - Accepted at IEEE ADACIS 2025</p>
+                        <div class="achievement-badges">
+                            <span class="badge"><i class="fas fa-star"></i> First Author</span>
+                            <span class="badge"><i class="fas fa-users"></i> Collaborative Research</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                        </svg>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-briefcase"></i>
                     </div>
-                    <h3>Industry Experience</h3>
-                    <p>Internship at Embox - Real-time Operating System for Embedded Devices. Worked on resource-constrained embedded systems development, optimized for microcontrollers and IoT devices.</p>
-                    <a href="https://github.com/arofenitra/embox_arofenitra" class="achievement-link">View Embox Project →</a>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h3>Industry Experience</h3>
+                        <p>Internship at <strong>Embox</strong> - Real-time Operating System for Embedded Devices</p>
+                        <p>Worked on resource-constrained embedded systems, optimized for microcontrollers and IoT devices</p>
+                        <a href="https://github.com/arofenitra/embox_arofenitra" class="achievement-link">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
                 </div>
 
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-code-branch"></i>
                     </div>
-                    <h3>Open Source Contributions</h3>
-                    <p>Contributor to Embox RTOS project, developing embedded systems solutions for resource-constrained devices.</p>
-                    <a href="https://github.com/arofenitra/embox_arofenitra" class="achievement-link">View Embox Project →</a>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Ongoing</div>
+                        <h3>Open Source Contributions</h3>
+                        <p>Active contributor to Embox RTOS project, developing embedded systems solutions</p>
+                        <div class="achievement-badges">
+                            <span class="badge"><i class="fas fa-code"></i> Embedded Systems</span>
+                            <span class="badge"><i class="fas fa-microchip"></i> IoT</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-certificate"></i>
                     </div>
-                    <h3>Certifications</h3>
-                    <ul class="cert-list">
-                        <li>Introduction to Data Science - IIT Madras</li>
-                        <li>Econometric modelling - IIT Roorkee</li>
-                        <!-- <li>Deep Learning Specialization (Coursera)</li>
-                        <li>MLOps Specialization (Coursera)</li> -->
-                    </ul>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Certifications</div>
+                        <h3>Professional Development</h3>
+                        <ul class="cert-list">
+                            <li><i class="fas fa-check-circle"></i> Introduction to Data Science - IIT Madras</li>
+                            <li><i class="fas fa-check-circle"></i> Econometric Modelling - IIT Roorkee</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                        </svg>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-trophy"></i>
                     </div>
-                    <h3>Hackathons & Competitions</h3>
-                    <p>Participated in GIMPS projects on Finding the next perfect Number (Number Theory)</p>
-                    <a href="https://www.mersenne.org/" class="achievement-link">More Information about the project →</a>
-                    <p>Participated in Kattis IMC Challenge 2023 </p>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Competitions</div>
+                        <h3>Hackathons & Challenges</h3>
+                        <p>Participated in <strong>GIMPS</strong> project for finding perfect numbers (Number Theory)</p>
+                        <p>Competed in <strong>Kattis IMC Challenge 2023</strong></p>
+                        <a href="https://www.mersenne.org/" class="achievement-link">
+                            <i class="fas fa-link"></i> Learn More
+                        </a>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -551,42 +574,37 @@
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
+            <div class="section-header">
+                <span class="section-label">Get in touch</span>
+                <h2 class="section-title">Let's Connect</h2>
+            </div>
             <p class="contact-description">
                 I'm always interested in hearing about new opportunities, collaborations, or just chatting about AI, Maths and Physics. Feel free to reach out!
             </p>
-            <div class="contact-cards">
+            <div class="contact-grid">
                 <a href="mailto:arofenitra.rarivonjy@skoltech.ru" class="contact-card">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
                     <h3>Email</h3>
                     <p>arofenitra.rarivonjy@skoltech.ru</p>
+                    <span class="contact-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
-                <!-- <a href="https://linkedin.com/in/username" target="_blank" class="contact-card">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                    <h3>LinkedIn</h3>
-                    <p>Connect with me</p>
-                </a> -->
                 <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" class="contact-card">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M8 15s1.5-2 4-2 4 2 4 2"></path>
-                        <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                        <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                    </svg>
+                    <div class="contact-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
                     <h3>ResearchGate</h3>
                     <p>View my research profile</p>
+                    <span class="contact-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
                 <a href="https://github.com/arofenitra" target="_blank" class="contact-card">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
                     <h3>GitHub</h3>
                     <p>Check out my code</p>
+                    <span class="contact-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
             </div>
         </div>
@@ -595,10 +613,38 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Arofenitra. Built with passion for Research and Machine Learning.</p>
-            <p class="footer-note">Open to full-time opportunities and exciting ML projects</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-code"></i>
+                    <span>Arofenitra Rarivonjy</span>
+                </div>
+                <p>&copy; 2025 Arofenitra. Built with passion for Research and Machine Learning.</p>
+                <p class="footer-note">Open to full-time opportunities and exciting ML projects</p>
+                <div class="footer-social">
+                    <a href="https://github.com/arofenitra" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="mailto:arofenitra.rarivonjy@skoltech.ru"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Project Detail Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Project details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
