@@ -60,6 +60,15 @@
                         </svg>
                         LinkedIn
                     </a> -->
+                    <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" class="btn btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 15s1.5-2 4-2 4 2 4 2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
+                        ResearchGate
+                    </a>
                     <a href="https://github.com/arofenitra" target="_blank" class="btn btn-secondary">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -256,66 +265,88 @@
                 <!-- Project 3 -->
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400/4facfe/ffffff?text=Recommendation+Engine" alt="Recommendation System">
+                        <img src="images/edge_detection_with_HED.png" alt="AI Image and Video Compression Research">
                         <div class="project-tags">
-                            <span class="tag">ML</span>
-                            <span class="tag">Big Data</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Image Processing</span>
+                            <span class="tag">Research</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Scalable Recommendation Engine</h3>
-                        <p class="project-tagline">Hybrid recommender system processing 10M+ user interactions daily</p>
+                        <h3 class="project-title">AI Image and Video Compression Impact Study</h3>
+                        <p class="project-tagline">Comprehensive analysis of neural compression effects on deep learning tasks</p>
                         
                         <div class="project-section">
-                            <h4>Problem & Business Value</h4>
-                            <p>Built personalized product recommendations to increase user engagement and conversion rates. Achieved 25% increase in click-through rate and 18% boost in average order value.</p>
+                            <h4>Problem & Research Value</h4>
+                            <p>Conducted extensive research on how AI-based image and video compression methods affect downstream computer vision tasks including object detection, classification, OCR, and edge detection. Compared state-of-the-art neural compression models (Cheng2020-anchor, Cheng2020-attn, SSF2020) with traditional methods to understand their impact on real-world applications.</p>
                         </div>
 
                         <div class="project-section">
                             <h4>My Role & Contributions</h4>
-                            <p>Designed and implemented hybrid recommendation system combining collaborative filtering and content-based approaches. Built scalable data pipeline using Apache Spark for real-time processing.</p>
+                            <p>Led comprehensive experimental design and implementation across multiple computer vision domains. Developed evaluation frameworks for compression impact analysis, implemented neural compression models using CompressAI, and conducted extensive experiments on medical imaging, OCR, object detection, and edge detection tasks. Collaborated with QuocViet Pham and Thanakrit Lerdmatayakul.</p>
                         </div>
 
                         <div class="project-section">
                             <h4>Technical Deep Dive</h4>
                             <ul class="tech-list">
-                                <li><strong>Data:</strong> Processed user interaction logs, product metadata, and behavioral data from AWS S3. Implemented real-time feature engineering pipeline handling 10M+ events daily.</li>
-                                <li><strong>Models:</strong> Hybrid approach combining Matrix Factorization (ALS) and Neural Collaborative Filtering. A/B tested against baseline content-based filtering showing 35% improvement.</li>
-                                <li><strong>Evaluation:</strong> Optimized for NDCG@10 (0.76) and Hit Rate (0.82). Implemented online evaluation metrics tracking user engagement.</li>
-                                <li><strong>Optimization:</strong> Used negative sampling and batch processing to handle sparse user-item matrix efficiently.</li>
+                                <li><strong>Compression Models:</strong> Evaluated Cheng2020-anchor, Cheng2020-attn (neural image compression) and SSF2020 (neural video compression) against JPEG/WebP traditional methods using PSNR, SSIM, VIF, and BPP metrics.</li>
+                                <li><strong>Medical Image Analysis:</strong> Analyzed skin lesion classification performance on ISIC2018 dataset, revealing up to 20% accuracy degradation on compressed medical images.</li>
+                                <li><strong>OCR Enhancement Discovery:</strong> Found counter-intuitive 12.3% improvement in license plate recognition accuracy using PaddleOCR on moderately compressed images (Q3 quality).</li>
+                                <li><strong>Edge Detection Study:</strong> Implemented HED (Holistically-Nested Edge Detection) and compared with Canny edge detection on compressed video content from MOT17 dataset.</li>
                             </ul>
                         </div>
 
                         <div class="project-section">
-                            <h4>Deployment & MLOps</h4>
+                            <h4>Research Methodology</h4>
                             <ul class="tech-list">
-                                <li><strong>Infrastructure:</strong> Deployed on AWS ECS with Redis caching layer for sub-100ms response times. Horizontally scalable architecture handling 1000+ RPS.</li>
-                                <li><strong>Data Pipeline:</strong> Apache Airflow orchestrating daily batch training and real-time feature updates via Kafka streams.</li>
-                                <li><strong>Monitoring:</strong> Comprehensive A/B testing framework with statistical significance testing. Model performance dashboards tracking business metrics.</li>
+                                <li><strong>Datasets:</strong> Kodak (compression baseline), ISIC2018 (medical), COCO2017 (object detection), MOT17 (video), BSDS500 (edge detection), UCF101 (video classification).</li>
+                                <li><strong>Evaluation Framework:</strong> Comprehensive metrics including accuracy, F1-score, Cohen's Kappa for classification; mAP for object detection; precision/recall for edge detection.</li>
+                                <li><strong>Compression Pipeline:</strong> Automated compression-decompression pipeline with quality parameter tuning (Q1, Q3, Q6) and performance impact measurement.</li>
+                                <li><strong>Statistical Analysis:</strong> Cross-validation, A/B testing, and significance testing to ensure robust conclusions across different compression levels.</li>
                             </ul>
                         </div>
 
                         <div class="project-metrics">
                             <div class="metric">
-                                <div class="metric-value">25%</div>
-                                <div class="metric-label">CTR Increase</div>
+                                <div class="metric-value">20%</div>
+                                <div class="metric-label">Medical Accuracy Drop</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">0.76</div>
-                                <div class="metric-label">NDCG@10</div>
+                                <div class="metric-value">12.3%</div>
+                                <div class="metric-label">OCR Improvement</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value"><100ms</div>
-                                <div class="metric-label">Latency</div>
+                                <div class="metric-value">Multi-modal</div>
+                                <div class="metric-label">Analysis</div>
                             </div>
                         </div>
 
                         <div class="project-links">
-                            <a href="https://github.com/username/recommender-system" target="_blank" class="project-link">
+                            <a href="https://github.com/arofenitra/AI-Image-and-video-compression" target="_blank" class="project-link">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
                                 View Code
+                            </a>
+                            <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Cheng_Learned_Image_Compression_With_Discretized_Gaussian_Mixture_Likelihoods_and_Attention_CVPR_2020_paper.pdf" target="_blank" class="project-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                Image Compression Paper
+                            </a>
+                            <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Agustsson_Scale-Space_Flow_for_End-to-End_Optimized_Video_Compression_CVPR_2020_paper.pdf" target="_blank" class="project-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                Video Compression Paper
                             </a>
                         </div>
                     </div>
@@ -341,9 +372,9 @@
                     </h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">R</span>
-                        <span class="skill-tag">Scala</span>
+                        <!-- <span class="skill-tag">SQL</span> -->
+                        <!-- <span class="skill-tag">R</span> -->
+                        <span class="skill-tag">C/C++</span>
                         <span class="skill-tag">Bash</span>
                     </div>
                 </div>
@@ -364,10 +395,10 @@
                         <span class="skill-tag">XGBoost</span>
                         <span class="skill-tag">LightGBM</span>
                         <span class="skill-tag">Hugging Face</span>
-                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">Numpy</span>
                         <span class="skill-tag">OpenCV</span>
-                        <span class="skill-tag">spaCy</span>
-                        <span class="skill-tag">NLTK</span>
+                        <span class="skill-tag">Scikit-Image</span>
+                        <span class="skill-tag">transformers</span>
                     </div>
                 </div>
 
@@ -380,15 +411,15 @@
                     </h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
+                        <!-- <span class="skill-tag">Kubernetes</span>
                         <span class="skill-tag">MLflow</span>
                         <span class="skill-tag">Kubeflow</span>
                         <span class="skill-tag">DVC</span>
                         <span class="skill-tag">AWS (S3, SageMaker, ECR, ECS)</span>
                         <span class="skill-tag">GCP (GCS, Vertex AI, Cloud Run)</span>
                         <span class="skill-tag">Azure ML</span>
-                        <span class="skill-tag">TensorRT</span>
-                        <span class="skill-tag">ONNX</span>
+                        <span class="skill-tag">TensorRT</span> -->
+                        <span class="skill-tag">Colab - Kaggle</span>
                     </div>
                 </div>
 
@@ -401,16 +432,16 @@
                         </svg>
                         Data Engineering
                     </h3>
-                    <div class="skill-tags">
+                    <!-- <div class="skill-tags">
                         <span class="skill-tag">Apache Spark</span>
                         <span class="skill-tag">Apache Airflow</span>
                         <span class="skill-tag">Prefect</span>
                         <span class="skill-tag">DBT</span>
-                        <span class="skill-tag">Apache Kafka</span>
+                        <span class="skill-tag">Apache Kafka</span> -->
                         <span class="skill-tag">Pandas</span>
                         <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MongoDB</span>
+                        <!-- <span class="skill-tag">PostgreSQL</span> -->
+                        <span class="skill-tag">Optuna Database</span>
                     </div>
                 </div>
 
@@ -426,14 +457,14 @@
                     <div class="skill-tags">
                         <span class="skill-tag">Git</span>
                         <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">Streamlit</span>
-                        <span class="skill-tag">Gradio</span>
+                        <!-- <span class="skill-tag">FastAPI</span> -->
+                        <!-- <span class="skill-tag">Flask</span> -->
+                        <!-- <span class="skill-tag">Streamlit</span> -->
+                        <!-- <span class="skill-tag">Gradio</span> -->
                         <span class="skill-tag">Jupyter</span>
                         <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">GitHub Actions</span>
-                        <span class="skill-tag">Jenkins</span>
+                        <!-- <span class="skill-tag">GitHub Actions</span> -->
+                        <!-- <span class="skill-tag">Jenkins</span> -->
                     </div>
                 </div>
 
@@ -457,8 +488,9 @@
                         </svg>
                     </div>
                     <h3>Technical Writing</h3>
-                    <p>Published technical articles on Medium exploring ML challenges, including "Overcoming Data Drift in Production ML Systems" and "Optimizing Deep Learning Models for Edge Deployment"</p>
-                    <a href="#" class="achievement-link">Read Articles →</a>
+                    <p>Research article paper : Robustness of AI Image compression : Non-Linear Perturbation (First Author, Accepted at NeuroInformatics 2025 )</p>
+                    <p>Research article paper : Data-Driven and Delayed Sparse-Regularized Models for Two-phase Flow Property Prediction: A Comparative Spatial-Temporal Data Analysis (Accepted at IEEE ADACIS 2025 )</p>
+                    <!-- <a href="#" class="achievement-link">Read Articles →</a> -->
                 </div>
 
                 <div class="achievement-card">
@@ -469,8 +501,8 @@
                         </svg>
                     </div>
                     <h3>Open Source Contributions</h3>
-                    <p>Active contributor to scikit-learn and Hugging Face Transformers. Implemented feature enhancements and fixed bugs in data preprocessing modules.</p>
-                    <a href="https://github.com/arofenitra" class="achievement-link">View Contributions →</a>
+                    <p>Contribute to Embox project.</p>
+                    <a href="https://github.com/arofenitra/embox_arofenitra" class="achievement-link">View Embox project →</a>
                 </div>
 
                 <div class="achievement-card">
@@ -482,10 +514,10 @@
                     </div>
                     <h3>Certifications</h3>
                     <ul class="cert-list">
-                        <li>AWS Certified Machine Learning - Specialty</li>
-                        <li>TensorFlow Developer Certificate</li>
-                        <li>Deep Learning Specialization (Coursera)</li>
-                        <li>MLOps Specialization (Coursera)</li>
+                        <li>Introduction to Data Science - IIT Madras</li>
+                        <li>Econometric modelling - IIT Roorkee</li>
+                        <!-- <li>Deep Learning Specialization (Coursera)</li>
+                        <li>MLOps Specialization (Coursera)</li> -->
                     </ul>
                 </div>
 
@@ -496,8 +528,9 @@
                         </svg>
                     </div>
                     <h3>Hackathons & Competitions</h3>
-                    <p>Top 5% finish in Kaggle competition for image classification. Winner of university AI hackathon for developing real-time sentiment analysis tool.</p>
-                    <a href="#" class="achievement-link">View Profile →</a>
+                    <p>Participated in GIMPS projects on Finding the next perfect Number (Number Theory)</p>
+                    <a href="https://www.mersenne.org/" class="achievement-link">More Information about the project →</a>
+                    <p>Participated in Kattis IMC Challenge 2023 </p>
                 </div>
 
             </div>
@@ -509,7 +542,7 @@
         <div class="container">
             <h2 class="section-title">Let's Connect</h2>
             <p class="contact-description">
-                I'm always interested in hearing about new opportunities, collaborations, or just chatting about ML and AI. Feel free to reach out!
+                I'm always interested in hearing about new opportunities, collaborations, or just chatting about AI, Maths and Physics. Feel free to reach out!
             </p>
             <div class="contact-cards">
                 <a href="mailto:arofenitra.rarivonjy@skoltech.ru" class="contact-card">
