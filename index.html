@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Machine Learning Engineer Portfolio - Specializing in AI, ML, and Deep Learning">
-    <title>Username | ML Engineer Portfolio</title>
+    <title>Arofenitra | Research and ML Engineer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@
                 </h1>
                 <p class="hero-subtitle">Research - ML Engineer</p>
                 <p class="hero-description">
-                    Fresh ML Engineer with 0 years of experience specializing in building and deploying scalable Computer Vision and deep learning systems. Passionate about transforming data into intelligent solutions that drive real-world impact.
+                    Fresh ML Engineer with 1 year of research experience specializing in mathematical modelling, building and deploying scalable Computer Vision and deep learning systems. Passionate about transforming data into intelligent solutions that drive real-world impact.
                 </p>
                 <div class="hero-meta">
                     <span class="location">📍 Location: Moscow, Russia</span>
@@ -133,6 +133,12 @@
                                 <li><strong>Automation:</strong> Command-line interface with configurable parameters for batch processing. Automated pipeline for generating adversarial examples across different loss functions.</li>
                                 <li><strong>Evaluation:</strong> Comprehensive metrics tracking including PSNR degradation, SSIM scores, and perturbation analysis. Automated visualization and result saving capabilities.</li>
                             </ul>
+                            <h4>Similar Adversarial Attack Research </h4>
+                            <ul class="tech-list">
+                                <li><strong>Paper title: </strong> Robustness of AI Image Compression: Non-linear Perturbation.</li>
+                                <li><strong>Research output: </strong> Accepted for oral presentation at Neuroinformatics 2025 conference. The paper will appear in Volume 1241 of the Studies in Computational Intelligence series.</li>
+                                <li><strong>Authors:</strong> Arofenitra Rarivonjy, Anton Bibin, Razan Dibo, Aleksandr Kolomeitsev, Anh-Huy Phan, and Ivan Oseledets.</li>
+                            </ul>
                         </div>
 
                         <div class="project-metrics">
@@ -163,7 +169,7 @@
                                     <polyline points="15 3 21 3 21 9"></polyline>
                                     <line x1="10" y1="14" x2="21" y2="3"></line>
                                 </svg>
-                                Original Articles
+                                Original Article
                             </a>
                         </div>
                     </div>
@@ -172,68 +178,70 @@
                 <!-- Project 2 -->
                 <article class="project-card">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/600x400/f093fb/ffffff?text=Object+Detection" alt="Real-time Object Detection">
+                        <img src="images/navigation_analysis_1.png" alt="Clear Path Detection System">
                         <div class="project-tags">
                             <span class="tag">Computer Vision</span>
                             <span class="tag">Deep Learning</span>
+                            <span class="tag">Real-time Processing</span>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Real-time Object Detection System</h3>
-                        <p class="project-tagline">YOLOv8-based detection system for retail inventory management</p>
+                        <h3 class="project-title">Real time Clear Path Detection System</h3>
+                        <p class="project-tagline">Multi-modal computer vision system for autonomous navigation assistance</p>
                         
                         <div class="project-section">
                             <h4>Problem & Business Value</h4>
-                            <p>Automated inventory tracking in retail stores to reduce manual counting errors and optimize stock management. Achieved 40% reduction in inventory discrepancies and enabled real-time stock alerts.</p>
+                            <p>Developed an intelligent navigation assistance system that combines object detection, depth estimation, and segmentation to identify clear paths for autonomous navigation. The system processes real-time video streams to provide safe navigation guidance for applications like assistive technology for visually impaired users and autonomous robots.</p>
                         </div>
 
                         <div class="project-section">
                             <h4>My Role & Contributions</h4>
-                            <p>Led the development of custom object detection pipeline. Collected and annotated 10,000+ images, fine-tuned YOLOv8 model, and deployed edge computing solution for real-time inference.</p>
+                            <p>Architected and implemented the complete computer vision pipeline from scratch. Integrated YOLOv8n models with MiDaS depth estimation, developed intelligent path extraction algorithms, and built real-time processing capabilities with IP camera support. Created comprehensive Jupyter notebooks for model development and testing.</p>
                         </div>
 
                         <div class="project-section">
                             <h4>Technical Deep Dive</h4>
                             <ul class="tech-list">
-                                <li><strong>Data:</strong> Custom dataset of retail products with bounding box annotations using LabelImg. Applied data augmentation (rotation, brightness, occlusion) to improve robustness.</li>
-                                <li><strong>Models:</strong> Fine-tuned YOLOv8n for edge deployment. Compared with Faster R-CNN and SSD models. Optimized for inference speed vs. accuracy tradeoff.</li>
-                                <li><strong>Evaluation:</strong> Achieved mAP@0.5 of 0.88 with 30 FPS on edge devices. Reduced false positives by 60% through post-processing techniques.</li>
-                                <li><strong>Optimization:</strong> Model quantization using TensorRT reduced inference time by 45% while maintaining 95% of original accuracy.</li>
+                                <li><strong>Multi-Modal Fusion:</strong> Combined YOLOv8n object detection, YOLOv8n-seg segmentation, and MiDaS depth estimation for comprehensive scene understanding.</li>
+                                <li><strong>Path Extraction Algorithm:</strong> Developed grid-based analysis system that evaluates 64-pixel groups across the lower 30% of images, using occupancy and depth thresholds to identify clear navigation paths.</li>
+                                <li><strong>Real-time Processing:</strong> Implemented time-based throttling system with 0.9-second intervals, maintaining smooth video display while processing computationally intensive models.</li>
+                                <li><strong>IP Camera Integration:</strong> Built robust network camera support with buffer management and error handling for real-time video stream processing.</li>
                             </ul>
                         </div>
 
                         <div class="project-section">
-                            <h4>Deployment & MLOps</h4>
+                            <h4>System Architecture</h4>
                             <ul class="tech-list">
-                                <li><strong>Infrastructure:</strong> Deployed on NVIDIA Jetson devices for edge inference. Centralized data collection to AWS S3 for continuous learning.</li>
-                                <li><strong>Pipeline:</strong> Automated annotation pipeline using semi-supervised learning to reduce labeling costs by 70%.</li>
-                                <li><strong>Monitoring:</strong> Real-time performance dashboard tracking FPS, accuracy, and system health metrics.</li>
+                                <li><strong>Models:</strong> YOLOv8n for object detection, YOLOv8n-seg for segmentation, MiDaS_small for depth estimation, all optimized for real-time inference.</li>
+                                <li><strong>Processing Pipeline:</strong> Frame capture → resize to 640x640 → object detection → segmentation → depth estimation → path analysis → visualization.</li>
+                                <li><strong>Decision Engine:</strong> Configurable thresholds for occupancy (≤2%), depth analysis (≤60% near objects), and focus band targeting (lower 30% of image).</li>
+                                <li><strong>Performance Optimization:</strong> GPU acceleration with automatic CUDA detection, minimal buffering, and efficient memory management.</li>
                             </ul>
                         </div>
 
                         <div class="project-metrics">
                             <div class="metric">
-                                <div class="metric-value">0.88</div>
-                                <div class="metric-label">mAP@0.5</div>
+                                <div class="metric-value">Real-time</div>
+                                <div class="metric-label">Processing</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">30</div>
-                                <div class="metric-label">FPS</div>
+                                <div class="metric-value">Multi-modal</div>
+                                <div class="metric-label">Fusion</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">40%</div>
-                                <div class="metric-label">Error Reduction</div>
+                                <div class="metric-value">IP Camera</div>
+                                <div class="metric-label">Support</div>
                             </div>
                         </div>
 
                         <div class="project-links">
-                            <a href="https://github.com/username/object-detection" target="_blank" class="project-link">
+                            <a href="https://github.com/arofenitra/clear-path-detection" target="_blank" class="project-link">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
                                 View Code
                             </a>
-                            <a href="#" target="_blank" class="project-link">
+                            <a href="https://youtu.be/ereZdrV9BoE" target="_blank" class="project-link">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                                     <polyline points="15 3 21 3 21 9"></polyline>
