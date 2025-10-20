@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
     <!-- Scroll Progress Bar -->
@@ -21,14 +23,14 @@
         <div class="container">
             <div class="nav-brand">
                 <i class="fas fa-code"></i>
-                Arofenitra Rarivonjy
+                <span class="brand-text">Arofenitra Rarivonjy</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
-                <li><a href="#skills"><i class="fas fa-cogs"></i> Skills</a></li>
-                <li><a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> <span>About</span></a></li>
+                <li><a href="#projects"><i class="fas fa-project-diagram"></i> <span>Projects</span></a></li>
+                <li><a href="#skills"><i class="fas fa-cogs"></i> <span>Skills</span></a></li>
+                <li><a href="#achievements"><i class="fas fa-trophy"></i> <span>Achievements</span></a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -46,10 +48,11 @@
                 <div class="shape shape-2"></div>
                 <div class="shape shape-3"></div>
             </div>
+            <canvas id="particles-canvas"></canvas>
         </div>
         <div class="container">
             <div class="hero-grid">
-                <div class="hero-content">
+                <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
                     <div class="hero-badge">
                         <i class="fas fa-brain"></i>
                         <span>ML Engineer</span>
@@ -66,21 +69,21 @@
                         Fresh ML Engineer with 1 year of research experience specializing in mathematical modelling, building and deploying scalable Computer Vision and deep learning systems.
                     </p>
                     <div class="hero-stats">
-                        <div class="stat-item">
+                        <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
                             <i class="fas fa-project-diagram"></i>
                             <div>
-                                <strong>10+</strong>
+                                <strong class="counter" data-target="10">0</strong><strong>+</strong>
                                 <span>Projects</span>
                             </div>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
                             <i class="fas fa-file-alt"></i>
                             <div>
-                                <strong>2+</strong>
+                                <strong class="counter" data-target="2">0</strong><strong>+</strong>
                                 <span>Research Papers</span>
                             </div>
                         </div>
-                        <div class="stat-item">
+                        <div class="stat-item" data-aos="zoom-in" data-aos-delay="600">
                             <i class="fas fa-code-branch"></i>
                             <div>
                                 <strong>Open Source</strong>
@@ -95,33 +98,33 @@
                     <div class="hero-links">
                         <a href="mailto:arofenitra.rarivonjy@skoltech.ru" class="btn btn-primary">
                             <i class="fas fa-envelope"></i>
-                            Email Me
+                            <span>Email Me</span>
                         </a>
                         <a href="https://github.com/arofenitra" target="_blank" class="btn btn-secondary">
                             <i class="fab fa-github"></i>
-                            GitHub
+                            <span>GitHub</span>
                         </a>
                         <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" class="btn btn-secondary">
                             <i class="fas fa-graduation-cap"></i>
-                            ResearchGate
+                            <span>ResearchGate</span>
                         </a>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
                     <div class="image-container">
-                        <!-- *INSERT YOUR PROFILE PHOTO HERE: profile-photo.jpg (400x400px recommended) -->
-                        <img src="images/profile-photo.jpg" alt="Arofenitra Rarivonjy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23667eea%22 width=%22400%22 height=%22400%22/%3E%3Ctext fill=%22white%22 font-size=%2260%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22%3EAR%3C/text%3E%3C/svg%3E'">
+                        <img src="images/profile-photo.jpg" alt="Arofenitra Rarivonjy" class="profile-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23667eea%22 width=%22400%22 height=%22400%22/%3E%3Ctext fill=%22white%22 font-size=%2260%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22%3EAR%3C/text%3E%3C/svg%3E'">
                         <div class="image-decoration"></div>
+                        <div class="image-glow"></div>
                     </div>
-                    <div class="floating-card card-1">
+                    <div class="floating-card card-1" data-aos="fade-up" data-aos-delay="800">
                         <i class="fas fa-robot"></i>
                         <span>AI/ML</span>
                     </div>
-                    <div class="floating-card card-2">
+                    <div class="floating-card card-2" data-aos="fade-up" data-aos-delay="1000">
                         <i class="fas fa-eye"></i>
                         <span>Computer Vision</span>
                     </div>
-                    <div class="floating-card card-3">
+                    <div class="floating-card card-3" data-aos="fade-up" data-aos-delay="1200">
                         <i class="fas fa-brain"></i>
                         <span>Deep Learning</span>
                     </div>
@@ -133,26 +136,26 @@
     <!-- About Section -->
     <section id="about" class="section about-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <span class="section-label">Get to know me</span>
                 <h2 class="section-title">About Me</h2>
             </div>
             <div class="about-grid">
-                <div class="about-card">
+                <div class="about-card" data-aos="flip-left" data-aos-delay="100">
                     <div class="about-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Education</h3>
                     <p>Advanced Computational Science (~Data Science) student, transitioning into Machine Learning Engineering with strong theoretical foundation.</p>
                 </div>
-                <div class="about-card">
+                <div class="about-card" data-aos="flip-left" data-aos-delay="200">
                     <div class="about-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3>Expertise</h3>
                     <p>End-to-end ML pipelines, Computer Vision, Deep Learning, Mathematical Modeling, and MLOps best practices.</p>
                 </div>
-                <div class="about-card">
+                <div class="about-card" data-aos="flip-left" data-aos-delay="300">
                     <div class="about-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
@@ -166,16 +169,16 @@
     <!-- Projects Section -->
     <section id="projects" class="section projects-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <span class="section-label">What I've built</span>
                 <h2 class="section-title">Featured Projects</h2>
             </div>
             <div class="projects-grid">
                 
                 <!-- Project 1 -->
-                <article class="project-card" data-project="1">
+                <article class="project-card" data-project="1" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-image">
-                        <img src="images/decomp_fgsm_cheng2020-anchor_q6_eps0.03137254901960784_mse_kodim01.png" alt="Adversarial Attack on Image Compression">
+                        <img src="images/decomp_fgsm_cheng2020-anchor_q6_eps0.03137254901960784_mse_kodim01.png" alt="Adversarial Attack on Image Compression" loading="lazy">
                         <div class="project-overlay">
                             <button class="view-details-btn" data-project="1">
                                 <i class="fas fa-expand"></i>
@@ -215,16 +218,16 @@
 
                         <div class="project-metrics">
                             <div class="metric">
-                                <div class="metric-value">10dB</div>
-                                <div class="metric-label">PSNR Drop</div>
+                                <div class="metric-value counter-metric" data-target="10">0</div>
+                                <div class="metric-label">dB PSNR Drop</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">5ms</div>
-                                <div class="metric-label">Generation Time</div>
+                                <div class="metric-value counter-metric" data-target="5">0</div>
+                                <div class="metric-label">ms Generation</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">3%</div>
-                                <div class="metric-label">Avg Perturbation</div>
+                                <div class="metric-value counter-metric" data-target="3">0</div>
+                                <div class="metric-label">% Perturbation</div>
                             </div>
                         </div>
 
@@ -242,9 +245,9 @@
                 </article>
 
                 <!-- Project 2 -->
-                <article class="project-card" data-project="2">
+                <article class="project-card" data-project="2" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
-                        <img src="images/navigation_analysis_1.png" alt="Clear Path Detection System">
+                        <img src="images/navigation_analysis_1.png" alt="Clear Path Detection System" loading="lazy">
                         <div class="project-overlay">
                             <button class="view-details-btn" data-project="2">
                                 <i class="fas fa-expand"></i>
@@ -288,7 +291,7 @@
                                 <div class="metric-label">Processing</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">3</div>
+                                <div class="metric-value counter-metric" data-target="3">0</div>
                                 <div class="metric-label">Models Fusion</div>
                             </div>
                             <div class="metric">
@@ -311,9 +314,9 @@
                 </article>
 
                 <!-- Project 3 -->
-                <article class="project-card" data-project="3">
+                <article class="project-card" data-project="3" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-image">
-                        <img src="images/edge_detection_with_HED.png" alt="AI Image Compression Research">
+                        <img src="images/edge_detection_with_HED.png" alt="AI Image Compression Research" loading="lazy">
                         <div class="project-overlay">
                             <button class="view-details-btn" data-project="3">
                                 <i class="fas fa-expand"></i>
@@ -353,15 +356,15 @@
 
                         <div class="project-metrics">
                             <div class="metric">
-                                <div class="metric-value">20%</div>
-                                <div class="metric-label">Medical Accuracy</div>
+                                <div class="metric-value counter-metric" data-target="20">0</div>
+                                <div class="metric-label">% Medical Accuracy</div>
                             </div>
                             <div class="metric">
                                 <div class="metric-value">12.3%</div>
                                 <div class="metric-label">OCR Improvement</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-value">6</div>
+                                <div class="metric-value counter-metric" data-target="6">0</div>
                                 <div class="metric-label">Datasets Used</div>
                             </div>
                         </div>
@@ -386,13 +389,13 @@
     <!-- Skills Section -->
     <section id="skills" class="section skills-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <span class="section-label">My toolkit</span>
                 <h2 class="section-title">Technical Skills</h2>
             </div>
             <div class="skills-grid">
                 
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
                     <div class="skill-category-header">
                         <div class="skill-icon">
                             <i class="fas fa-code"></i>
@@ -430,7 +433,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
                     <div class="skill-category-header">
                         <div class="skill-icon">
                             <i class="fas fa-brain"></i>
@@ -449,7 +452,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
                     <div class="skill-category-header">
                         <div class="skill-icon">
                             <i class="fas fa-cloud"></i>
@@ -466,7 +469,7 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
                     <div class="skill-category-header">
                         <div class="skill-icon">
                             <i class="fas fa-database"></i>
@@ -487,13 +490,13 @@
     <!-- Achievements Section -->
     <section id="achievements" class="section achievements-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <span class="section-label">My journey</span>
                 <h2 class="section-title">Achievements & Contributions</h2>
             </div>
             
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
                     <div class="timeline-icon">
                         <i class="fas fa-file-alt"></i>
                     </div>
@@ -501,7 +504,7 @@
                         <div class="timeline-date">2025</div>
                         <h3>Research Publications</h3>
                         <p><strong>First Author:</strong> "Robustness of AI Image Compression: Non-Linear Perturbation" - Accepted at NeuroInformatics 2025</p>
-                        <p><strong>First Author: </strong> "Data-Driven and Delayed Sparse-Regularized Models for Two-phase Flow Property Prediction" - Accepted at IEEE ADACIS 2025</p>
+                        <p><strong>First Author:</strong> "Data-Driven and Delayed Sparse-Regularized Models for Two-phase Flow Property Prediction" - Accepted at IEEE ADACIS 2025</p>
                         <div class="achievement-badges">
                             <span class="badge"><i class="fas fa-star"></i> First Author</span>
                             <span class="badge"><i class="fas fa-users"></i> Collaborative Research</span>
@@ -509,7 +512,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
                     <div class="timeline-icon">
                         <i class="fas fa-briefcase"></i>
                     </div>
@@ -524,7 +527,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
                     <div class="timeline-icon">
                         <i class="fas fa-code-branch"></i>
                     </div>
@@ -539,7 +542,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">
                     <div class="timeline-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
@@ -553,7 +556,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="500">
                     <div class="timeline-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
@@ -574,15 +577,15 @@
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-aos="fade-up">
                 <span class="section-label">Get in touch</span>
                 <h2 class="section-title">Let's Connect</h2>
             </div>
-            <p class="contact-description">
+            <p class="contact-description" data-aos="fade-up" data-aos-delay="100">
                 I'm always interested in hearing about new opportunities, collaborations, or just chatting about AI, Maths and Physics. Feel free to reach out!
             </p>
             <div class="contact-grid">
-                <a href="mailto:arofenitra.rarivonjy@skoltech.ru" class="contact-card">
+                <a href="mailto:arofenitra.rarivonjy@skoltech.ru" class="contact-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
@@ -590,7 +593,7 @@
                     <p>arofenitra.rarivonjy@skoltech.ru</p>
                     <span class="contact-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
-                <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" class="contact-card">
+                <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" class="contact-card" data-aos="zoom-in" data-aos-delay="300">
                     <div class="contact-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
@@ -598,7 +601,7 @@
                     <p>View my research profile</p>
                     <span class="contact-arrow"><i class="fas fa-arrow-right"></i></span>
                 </a>
-                <a href="https://github.com/arofenitra" target="_blank" class="contact-card">
+                <a href="https://github.com/arofenitra" target="_blank" class="contact-card" data-aos="zoom-in" data-aos-delay="400">
                     <div class="contact-icon">
                         <i class="fab fa-github"></i>
                     </div>
@@ -621,9 +624,9 @@
                 <p>&copy; 2025 Arofenitra. Built with passion for Research and Machine Learning.</p>
                 <p class="footer-note">Open to full-time opportunities and exciting ML projects</p>
                 <div class="footer-social">
-                    <a href="https://github.com/arofenitra" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="mailto:arofenitra.rarivonjy@skoltech.ru"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/arofenitra" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" aria-label="ResearchGate"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="mailto:arofenitra.rarivonjy@skoltech.ru" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
@@ -631,8 +634,9 @@
 
     <!-- Project Detail Modal -->
     <div class="modal" id="projectModal">
+        <div class="modal-backdrop"></div>
         <div class="modal-content">
-            <button class="modal-close">
+            <button class="modal-close" aria-label="Close modal">
                 <i class="fas fa-times"></i>
             </button>
             <div class="modal-body" id="modalBody">
@@ -642,10 +646,12 @@
     </div>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
