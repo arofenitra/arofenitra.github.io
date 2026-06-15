@@ -3,808 +3,914 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Machine Learning Engineer Portfolio - Specializing in AI, ML, and Deep Learning">
-    <title>Arofenitra | Research and ML Engineer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Arofenitra Rarivonjy — AI Researcher & ML Engineer. Hallucination detection in LLMs, adversarial robustness, computer vision. Open to PhD programs and industry roles.">
+    <meta name="keywords" content="AI researcher, machine learning engineer, LLM hallucination, computer vision, deep learning, PhD candidate, generative AI">
+    <title>Arofenitra Rarivonjy | AI Researcher & ML Engineer</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation Library -->
+    <!-- AOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <i class="fas fa-code"></i>
-                <span class="brand-text">Arofenitra Rarivonjy</span>
+<!-- ═══════════════════════ SCROLL PROGRESS ═══════════════════════ -->
+<div class="scroll-bar" id="scrollBar"></div>
+
+<!-- ═══════════════════════ CURSOR ═══════════════════════ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+        <a class="nav-logo" href="#hero">
+            <span class="logo-bracket">[</span>AR<span class="logo-bracket">]</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements">Journey</a></li>
+            <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section id="hero" class="hero">
+    <canvas id="neural-canvas"></canvas>
+    <div class="hero-noise"></div>
+    <div class="container hero-inner">
+        <div class="hero-text" data-aos="fade-up" data-aos-duration="900">
+            <div class="hero-eyebrow">
+                <span class="eyebrow-dot"></span>
+                <span>Available for PhD &amp; Industry Roles</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#about"><i class="fas fa-user"></i> <span>About</span></a></li>
-                <li><a href="#projects"><i class="fas fa-project-diagram"></i> <span>Projects</span></a></li>
-                <li><a href="#skills"><i class="fas fa-cogs"></i> <span>Skills</span></a></li>
-                <li><a href="#achievements"><i class="fas fa-trophy"></i> <span>Achievements</span></a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
-            </ul>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-background">
-            <div class="hero-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-            </div>
-            <canvas id="particles-canvas"></canvas>
-        </div>
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
-                    <div class="hero-badge">
-                        <i class="fas fa-brain"></i>
-                        <span>ML Engineer</span>
-                    </div>
-                    <h1 class="hero-title">
-                        <span class="greeting">Hi, I'm</span>
-                        <span class="name">Arofenitra Rarivonjy</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        <span class="typed-text"></span>
-                        <span class="cursor">|</span>
-                    </p>
-                    <p class="hero-description">
-                        Fresh ML Engineer with 1 year of research experience specializing in mathematical modelling, building and deploying scalable Computer Vision, Large Language Models and deep learning systems.
-                    </p>
-                    <div class="hero-stats">
-                        <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
-                            <i class="fas fa-project-diagram"></i>
-                            <div>
-                                <strong class="counter" data-target="10">0</strong><strong>+</strong>
-                                <span>Projects</span>
-                            </div>
-                        </div>
-                        <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
-                            <i class="fas fa-file-alt"></i>
-                            <div>
-                                <strong class="counter" data-target="2">0</strong><strong>+</strong>
-                                <span>Research Papers</span>
-                            </div>
-                        </div>
-                        <div class="stat-item" data-aos="zoom-in" data-aos-delay="600">
-                            <i class="fas fa-code-branch"></i>
-                            <div>
-                                <strong>Open Source</strong>
-                                <span>Contributor</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-meta">
-                        <span class="location"><i class="fas fa-map-marker-alt"></i> Antananarivo, Madagascar</span>
-                        <span class="timezone"><i class="far fa-clock"></i> UTC+3</span>
-                    </div>
-                    <div class="hero-links">
-                        <a href="mailto:arofenitra.rarivonjy@skoltech.ru" class="btn btn-primary">
-                            <i class="fas fa-envelope"></i>
-                            <span>Email Me</span>
-                        </a>
-                        <a href="https://github.com/arofenitra" target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" class="btn btn-secondary">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>ResearchGate</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
-                    <div class="image-container">
-                        <img src="images/profile-photo.jpg" alt="Arofenitra Rarivonjy" class="profile-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23667eea%22 width=%22400%22 height=%22400%22/%3E%3Ctext fill=%22white%22 font-size=%2260%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22%3EAR%3C/text%3E%3C/svg%3E'">
-                        <div class="image-decoration"></div>
-                        <div class="image-glow"></div>
-                    </div>
-                    <div class="floating-card card-1" data-aos="fade-up" data-aos-delay="800">
-                        <i class="fas fa-robot"></i>
-                        <span>AI/ML</span>
-                    </div>
-                    <div class="floating-card card-2" data-aos="fade-up" data-aos-delay="1000">
-                        <i class="fas fa-eye"></i>
-                        <span>Computer Vision</span>
-                    </div>
-                    <div class="floating-card card-3" data-aos="fade-up" data-aos-delay="1200">
-                        <i class="fas fa-book"></i>
-                        <span>Large Language Models</span>
-                    </div>
-
-                    <div class="floating-card card-4" data-aos="fade-up" data-aos-delay="1200">
-                        <i class="fas fa-brain"></i>
-                        <span>Deep Learning</span>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-label">Get to know me</span>
-                <h2 class="section-title">About Me</h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-card" data-aos="flip-left" data-aos-delay="100">
-                    <div class="about-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Education</h3>
-                    <p>Advanced Computational Science (~Data Science) student, transitioning into Machine Learning Engineering with strong theoretical foundation.</p>
-                </div>
-                <div class="about-card" data-aos="flip-left" data-aos-delay="200">
-                    <div class="about-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Expertise</h3>
-                    <p>End-to-end ML pipelines, Computer Vision, Large Language Models, Deep Learning, Mathematical Modeling, and MLOps best practices.</p>
-                </div>
-                <div class="about-card" data-aos="flip-left" data-aos-delay="300">
-                    <div class="about-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Focus Areas</h3>
-                    <p>From experimental model development to production-ready deployments with cloud platforms and containerization.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section projects-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-label">What I've built</span>
-                <h2 class="section-title">Featured Projects</h2>
-            </div>
-            <div class="projects-grid">
-                
-                <!-- Project 1 -->
-                <article class="project-card" data-project="1" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-image">
-                        <img src="images/decomp_fgsm_cheng2020-anchor_q6_eps0.03137254901960784_mse_kodim01.png" alt="Adversarial Attack on Image Compression" loading="lazy">
-                        <div class="project-overlay">
-                            <button class="view-details-btn" data-project="1">
-                                <i class="fas fa-expand"></i>
-                                View Details
-                            </button>
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag"><i class="fas fa-flask"></i> Research</span>
-                            <span class="tag"><i class="fas fa-shield-alt"></i> Adversarial</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Adversarial Attack on Image Compression</h3>
-                            <div class="project-tech-icons">
-                                <i class="fab fa-python" title="Python"></i>
-                                <i class="fas fa-brain" title="PyTorch"></i>
-                                <i class="fas fa-chart-line" title="ML"></i>
-                            </div>
-                        </div>
-                        <p class="project-tagline">Adversarial attack dropping compressed quality from 35 dB to 13 dB</p>
-                        
-                        <div class="project-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>FGSM & PGD Implementation</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Multiple Loss Functions</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Accepted at NeuroInformatics 2025</span>
-                            </div>
-                        </div>
-
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <div class="metric-value counter-metric" data-target="10">0</div>
-                                <div class="metric-label">dB PSNR Drop</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value counter-metric" data-target="5">0</div>
-                                <div class="metric-label">ms Generation</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value counter-metric" data-target="3">0</div>
-                                <div class="metric-label">% Perturbation</div>
-                            </div>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://github.com/arofenitra/Adversarial_Attack_Image_Compression" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                Code
-                            </a>
-                            <a href="https://arxiv.org/pdf/1412.6572" target="_blank" class="project-link">
-                                <i class="fas fa-file-pdf"></i>
-                                Paper
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="project-card" data-project="2" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-image">
-                        <img src="images/navigation_analysis_1.png" alt="Clear Path Detection System" loading="lazy">
-                        <div class="project-overlay">
-                            <button class="view-details-btn" data-project="2">
-                                <i class="fas fa-expand"></i>
-                                View Details
-                            </button>
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag"><i class="fas fa-eye"></i> Computer Vision</span>
-                            <span class="tag"><i class="fas fa-video"></i> Real-time</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Real-time Clear Path Detection</h3>
-                            <div class="project-tech-icons">
-                                <i class="fab fa-python" title="Python"></i>
-                                <i class="fas fa-camera" title="Computer Vision"></i>
-                                <i class="fas fa-network-wired" title="YOLO"></i>
-                            </div>
-                        </div>
-                        <p class="project-tagline">Multi-modal system for autonomous navigation assistance</p>
-                        
-                        <div class="project-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>YOLOv8n + MiDaS Integration</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>IP Camera Support</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Grid-based Path Analysis</span>
-                            </div>
-                        </div>
-
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <div class="metric-value">Real-time</div>
-                                <div class="metric-label">Processing</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value counter-metric" data-target="3">0</div>
-                                <div class="metric-label">Models Fusion</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">640×640</div>
-                                <div class="metric-label">Resolution</div>
-                            </div>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://github.com/arofenitra/clear-path-detection" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                Code
-                            </a>
-                            <a href="https://youtu.be/ereZdrV9BoE" target="_blank" class="project-link">
-                                <i class="fab fa-youtube"></i>
-                                Demo
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="project-card" data-project="3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-image">
-                        <img src="images/edge_detection_with_HED.png" alt="AI Image Compression Research" loading="lazy">
-                        <div class="project-overlay">
-                            <button class="view-details-btn" data-project="3">
-                                <i class="fas fa-expand"></i>
-                                View Details
-                            </button>
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag"><i class="fas fa-flask"></i> Research</span>
-                            <span class="tag"><i class="fas fa-compress"></i> Compression</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">AI Image Compression Impact Study</h3>
-                            <div class="project-tech-icons">
-                                <i class="fab fa-python" title="Python"></i>
-                                <i class="fas fa-image" title="Image Processing"></i>
-                                <i class="fas fa-chart-bar" title="Analysis"></i>
-                            </div>
-                        </div>
-                        <p class="project-tagline">Analysis of neural compression on CV tasks</p>
-                        
-                        <div class="project-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Multi-domain Analysis</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>CompressAI Integration</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Medical Imaging Study</span>
-                            </div>
-                        </div>
-
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <div class="metric-value counter-metric" data-target="20">0</div>
-                                <div class="metric-label">% Medical Accuracy</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">12.3%</div>
-                                <div class="metric-label">OCR Improvement</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value counter-metric" data-target="6">0</div>
-                                <div class="metric-label">Datasets Used</div>
-                            </div>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://github.com/arofenitra/AI-Image-and-video-compression" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                Code
-                            </a>
-                            <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Cheng_Learned_Image_Compression_With_Discretized_Gaussian_Mixture_Likelihoods_and_Attention_CVPR_2020_paper.pdf" target="_blank" class="project-link">
-                                <i class="fas fa-file-pdf"></i>
-                                Paper
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                                <!-- Project 4 -->
-                <article class="project-card" data-project="4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="project-image">
-                        
-                        <img src="images/heatmap_0000_broken_teeth.png" alt="DefectZero Anomaly Detection" loading="lazy">
-                        <div class="project-overlay">
-                            <button class="view-details-btn" data-project="4">
-                                <i class="fas fa-expand"></i>
-                                View Details
-                            </button>
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag"><i class="fas fa-industry"></i> Industrial AI</span>
-                            <span class="tag"><i class="fas fa-shield-alt"></i> Unsupervised</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">DefectZero: Unsupervised Anomaly Detection</h3>
-                            <div class="project-tech-icons">
-                                <i class="fab fa-python" title="Python"></i>
-                                <i class="fas fa-brain" title="PyTorch"></i>
-                                <i class="fas fa-cube" title="EfficientNet"></i>
-                            </div>
-                        </div>
-                        <p class="project-tagline">Real-time surface defect detection using PaDiM & EfficientNet-B0</p>
-                        
-                        <div class="project-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Zero-Shot Learning (Normal Data Only)</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Mahalanobis Distance Modeling</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>CPU-Optimized Inference (~45 FPS)</span>
-                            </div>
-                        </div>
-
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <div class="metric-value counter-metric" data-target="96">0</div>
-                                <div class="metric-label">% Image AUROC</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">&lt;15MB</div>
-                                <div class="metric-label">Model Size</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value counter-metric" data-target="22">0</div>
-                                <div class="metric-label">ms Latency</div>
-                            </div>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://github.com/arofenitra/patch-anomaly-detection" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                Code
-                            </a>
-                            <a href="https://github.com/arofenitra/patch-anomaly-detection/" class="project-link">
-                                <i class="fas fa-file-code"></i>
-                                README
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                                <!-- Project 5 -->
-                <article class="project-card" data-project="5" data-aos="fade-up" data-aos-delay="500">
-                    <div class="project-image">
-                        <img src="images/hallucination-detection-using-multi-view-attention-features-1.png" alt="SMILES Hallucination Detection" loading="lazy">
-                        <div class="project-overlay">
-                            <button class="view-details-btn" data-project="5">
-                                <i class="fas fa-expand"></i>
-                                View Details
-                            </button>
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag"><i class="fas fa-brain"></i> NLP / LLMs</span>
-                            <span class="tag"><i class="fas fa-search"></i> Interpretability</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">SMILES: LLM Hallucination Probe</h3>
-                            <div class="project-tech-icons">
-                                <i class="fab fa-python" title="Python"></i>
-                                <i class="fas fa-robot" title="Qwen2.5"></i>
-                                <i class="fas fa-layer-group" title="Hidden States"></i>
-                            </div>
-                        </div>
-                        <p class="project-tagline">Detecting factual fabrications via internal hidden state analysis</p>
-                        
-                        <div class="project-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Probe-based Binary Classification</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Geometric Feature Engineering</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Qwen2.5-0.5B Internal Analysis</span>
-                            </div>
-                        </div>
-
-                        <div class="project-metrics">
-                            <div class="metric">
-                                <div class="metric-value counter-metric" data-target="60">0</div>
-                                <div class="metric-label">% Test Accuracy</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">24</div>
-                                <div class="metric-label">Layers Analyzed</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-value">Low</div>
-                                <div class="metric-label">Compute Cost</div>
-                            </div>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://github.com/arofenitra/SMILES-HALLUCINATION-DETECTION" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                                Code
-                            </a>
-                            <a href="https://github.com/arofenitra/SMILES-HALLUCINATION-DETECTION/blob/main/SOLUTION.md" target="_blank" class="project-link">
-                                <i class="fas fa-file-alt"></i>
-                                Report
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section skills-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-label">My toolkit</span>
-                <h2 class="section-title">Technical Skills</h2>
-            </div>
-            <div class="skills-grid">
-                
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                    <div class="skill-category-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Programming Languages</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <i class="fab fa-python"></i>
-                                <span>Python</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="95"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <i class="fas fa-copyright"></i>
-                                <span>C/C++</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <i class="fas fa-terminal"></i>
-                                <span>Bash</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="75"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                    <div class="skill-category-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>ML Frameworks</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag"><i class="fas fa-chart-line"></i> Scikit-learn</span>
-                        <span class="skill-tag"><i class="fas fa-fire"></i> PyTorch</span>
-                        <span class="skill-tag"><i class="fas fa-cube"></i> TensorFlow</span>
-                        <span class="skill-tag"><i class="fas fa-tree"></i> XGBoost</span>
-                        <span class="skill-tag"><i class="fas fa-lightbulb"></i> LightGBM</span>
-                        <span class="skill-tag"><i class="fas fa-robot"></i> Hugging Face</span>
-                        <span class="skill-tag"><i class="fas fa-layer-group"></i> NumPy</span>
-                        <span class="skill-tag"><i class="fas fa-eye"></i> OpenCV</span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-                    <div class="skill-category-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3>MLOps & Tools</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag"><i class="fab fa-docker"></i> Docker</span>
-                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
-                        <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
-                        <span class="skill-tag"><i class="fas fa-book"></i> Jupyter</span>
-                        <span class="skill-tag"><i class="fas fa-code"></i> VS Code</span>
-                        <span class="skill-tag"><i class="fas fa-flask"></i> Colab</span>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
-                    <div class="skill-category-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Data Engineering</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag"><i class="fas fa-table"></i> Pandas</span>
-                        <span class="skill-tag"><i class="fas fa-square-root-alt"></i> NumPy</span>
-                        <span class="skill-tag"><i class="fas fa-database"></i> Optuna DB</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements" class="section achievements-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-label">My journey</span>
-                <h2 class="section-title">Achievements & Contributions</h2>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
-                    <div class="timeline-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2025</div>
-                        <h3>Research Publications</h3>
-                        <p><strong>First Author:</strong> "Robustness of AI Image Compression: Non-Linear Perturbation" - Accepted at NeuroInformatics 2025</p>
-                        <p><strong>First Author:</strong> "Data-Driven and Delayed Sparse-Regularized Models for Two-phase Flow Property Prediction" - Accepted at IEEE ADACIS 2025</p>
-                        <div class="achievement-badges">
-                            <span class="badge"><i class="fas fa-star"></i> First Author</span>
-                            <span class="badge"><i class="fas fa-users"></i> Collaborative Research</span>
-                        </div>
-
-                        <div class="timeline-date">2026</div>
-                        <h3>Research Publications</h3>
-                        <p><strong>First Author:</strong> "Regularized and Basis Function Representations for Time-Varying Coefficient Recovery in dynamical system ODEs" - Under Review at DAMDID 2026</p>
-                        
-                        <div class="achievement-badges">
-                            <span class="badge"><i class="fas fa-star"></i> First Author</span>
-                            <span class="badge"><i class="fas fa-users"></i> Collaborative Research</span>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
-                    <div class="timeline-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2025</div>
-                        <h3>Industry Experience</h3>
-                        <p>Internship at <strong>Embox</strong> - Real-time Operating System for Embedded Devices</p>
-                        <p>Worked on resource-constrained embedded systems, optimized for microcontrollers and IoT devices</p>
-                        <a href="https://github.com/arofenitra/embox_arofenitra" class="achievement-link">
-                            <i class="fab fa-github"></i> View Project
-                        </a>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
-                    <div class="timeline-icon">
-                        <i class="fas fa-code-branch"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Ongoing</div>
-                        <h3>Open Source Contributions</h3>
-                        <p>Active contributor to Embox RTOS project, developing embedded systems solutions</p>
-                        <div class="achievement-badges">
-                            <span class="badge"><i class="fas fa-code"></i> Embedded Systems</span>
-                            <span class="badge"><i class="fas fa-microchip"></i> IoT</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-left" data-aos-delay="400">
-                    <div class="timeline-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Certifications</div>
-                        <h3>Professional Development</h3>
-                        <ul class="cert-list">
-                            <li><i class="fas fa-check-circle"></i> Introduction to Data Science - IIT Madras</li>
-                            <li><i class="fas fa-check-circle"></i> Econometric Modelling - IIT Roorkee</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-right" data-aos-delay="500">
-                    <div class="timeline-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Competitions</div>
-                        <h3>Hackathons & Challenges</h3>
-                        <p>Participated in <strong>GIMPS</strong> project for finding perfect numbers (Number Theory)</p>
-                        <p>Competed in <strong>Kattis IMC Challenge 2023</strong></p>
-                        <a href="https://www.mersenne.org/" class="achievement-link">
-                            <i class="fas fa-link"></i> Learn More
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-label">Get in touch</span>
-                <h2 class="section-title">Let's Connect</h2>
-            </div>
-            <p class="contact-description" data-aos="fade-up" data-aos-delay="100">
-                I'm always interested in hearing about new opportunities, collaborations, or just chatting about AI, Maths and Physics. Feel free to reach out!
+            <h1 class="hero-name">Arofenitra<br><em>Rarivonjy</em></h1>
+            <p class="hero-role">
+                <span class="typed-text"></span><span class="type-cursor">▋</span>
             </p>
-            <div class="contact-grid">
-                <a href="mailto:arofenitra.rarivonjy@skoltech.ru" class="contact-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email</h3>
-                    <p>arofenitra.rarivonjy@skoltech.ru</p>
-                    <span class="contact-arrow"><i class="fas fa-arrow-right"></i></span>
+            <p class="hero-bio">
+                AI researcher with work on <strong>adversarial robustness</strong> in neural image compression 
+                and a Master's thesis on <strong>hallucination detection &amp; localization in LLMs</strong>. 
+                I build systems at the intersection of rigorous mathematics, deep learning, and real-world impact.
+            </p>
+            <div class="hero-chips">
+                <span class="chip"><i class="fas fa-map-marker-alt"></i> Antananarivo, Madagascar · UTC+3</span>
+                <span class="chip chip-green"><i class="fas fa-circle"></i> Open to opportunities worldwide</span>
+            </div>
+            <div class="hero-ctas">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Get in Touch
                 </a>
-                <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" class="contact-card" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="contact-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>ResearchGate</h3>
-                    <p>View my research profile</p>
-                    <span class="contact-arrow"><i class="fas fa-arrow-right"></i></span>
+                <a href="https://github.com/arofenitra" target="_blank" class="btn btn-ghost">
+                    <i class="fab fa-github"></i> GitHub
                 </a>
-                <a href="https://github.com/arofenitra" target="_blank" class="contact-card" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="contact-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <h3>GitHub</h3>
-                    <p>Check out my code</p>
-                    <span class="contact-arrow"><i class="fas fa-arrow-right"></i></span>
+                <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" class="btn btn-ghost">
+                    <i class="fas fa-graduation-cap"></i> ResearchGate
                 </a>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <i class="fas fa-code"></i>
-                    <span>Arofenitra Rarivonjy</span>
-                </div>
-                <p>&copy; 2025 Arofenitra. Built with passion for Research and Machine Learning.</p>
-                <p class="footer-note">Open to full-time opportunities and exciting ML projects</p>
-                <div class="footer-social">
-                    <a href="https://github.com/arofenitra" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" aria-label="ResearchGate"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="mailto:arofenitra.rarivonjy@skoltech.ru" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                </div>
+        <div class="hero-stats-column" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+            <div class="stat-card">
+                <div class="stat-num" data-count="3">0</div>
+                <div class="stat-label">Research Papers</div>
+                <div class="stat-sub">Published / Under Review</div>
             </div>
-        </div>
-    </footer>
-
-    <!-- Project Detail Modal -->
-    <div class="modal" id="projectModal">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Close modal">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="modal-body" id="modalBody">
-                <!-- Project details will be inserted here -->
+            <div class="stat-card">
+                <div class="stat-num" data-count="12">0</div>
+                <div class="stat-label">Projects</div>
+                <div class="stat-sub">Research &amp; Engineering</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">∞</div>
+                <div class="stat-label">Curiosity</div>
+                <div class="stat-sub">For Math, Physics &amp; AI</div>
+            </div>
+            <div class="stat-card stat-card-accent">
+                <i class="fas fa-brain stat-icon-big"></i>
+                <div class="stat-label-big">LLM · CV · GenAI</div>
             </div>
         </div>
     </div>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
 
-    <!-- AOS Animation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="script.js"></script>
+<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<section id="about" class="section about-section">
+    <div class="container">
+        <div class="section-label" data-aos="fade-up">// about_me</div>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Who I Am</h2>
+
+        <div class="about-grid">
+            <div class="about-bio" data-aos="fade-right">
+                <p>
+                    I'm a Mathematician and computational scientist turned AI researcher, trained in advanced mathematics and applied to the frontier of machine learning.
+                    My research asks: <em>when AI models fail, how do we know — and how do we fix it?</em>
+                </p>
+                <p>
+                    My Master's in Mathematics at Andhra University focused on Cryptography, Diophantine Equation and Number Theory. It is empasized by building a cryptosystem based on diophantine equation and group theory for secure system in cryptography.
+                </p>
+                <p>
+                    My Master's thesis at Skoltech (2025-2026) focused on <strong>detecting and localizing hallucinations in Large Language Models</strong> 
+                    using probing classifiers over hidden states. Alongside this, I published on <strong>adversarial attacks against learned image compression</strong>
+                    (NeuroInformatics 2025) and on <strong>data-driven sparse modeling for two-phase fluid flows</strong> (accepted at IEEE ADACIS 2025).
+                </p>
+                <p>
+                    I'm actively seeking <strong>PhD positions</strong> in AI, Mathematics, Physics, and Computer Science, 
+                    as well as <strong>Engineering roles</strong> as an AI Engineer, Data Scientist, Research Engineer.
+                </p>
+                <div class="about-links">
+                    <a href="mailto:arofenitraramarari(at)gmail.com" class="text-link">
+                        <i class="fas fa-envelope"></i> arofenitraramarari(at)gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="about-cards" data-aos="fade-left">
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h4>Education</h4>
+                    <p><strong>M.Sc. Computational Science</strong><br>Thesis on Generative AI, Computer Vision<br>Skoltech, Moscow (2024–2026)</p>
+
+                    <p><strong>M.Sc. Mathematics</strong><br>Focus on Cryptography, Diophantine Equation and Number Theory<br>Andhra University, India (2022–2024)</p>
+                    <p><strong>B.Sc. Mathematics</strong><br>University of Antananarivo</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-crosshairs"></i></div>
+                    <h4>PhD Targets</h4>
+                    <p>AI Alignment · LLM Interpretability · Computer Vision · Mathematical Physics · Dynamical Systems</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-briefcase"></i></div>
+                    <h4>Industry Targets</h4>
+                    <p>ML / LLM / GenAI Engineer · Computer Vision Engineer · AI Research Scientist · MLOps Engineer</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-language"></i></div>
+                    <h4>Languages</h4>
+                    <p>Malagasy (Native) · French (Fluent) · English (Fluent)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════ RESEARCH / PUBLICATIONS ═══════════════════════ -->
+<section id="research" class="section research-section">
+    <div class="container">
+        <div class="section-label" data-aos="fade-up">// research_output</div>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Research &amp; Publications</h2>
+
+        <div class="pub-list">
+
+            <div class="pub-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="pub-venue">
+                    <span class="venue-badge venue-conf">Published at NeuroInformatics 2025</span>
+                    <span class="pub-year">2025</span>
+                </div>
+                <h3 class="pub-title">Robustness of AI Image Compression: Non-Linear Perturbation</h3>
+                <p class="pub-authors"><strong>A. Rarivonjy</strong> et al.</p>
+                <p class="pub-abstract">
+                    We study the vulnerability of learned image compression codecs (Cheng2020, HiFiC) to adversarial perturbations via FGSM and PGD attacks. 
+                    Surprisingly small L∞-bounded perturbations collapse PSNR from ~35 dB to ~13 dB, 
+                    revealing a critical gap between perceptual quality and compression robustness. 
+                    We propose multi-loss attack objectives and show transferability across codecs.
+                </p>
+                <div class="pub-tags">
+                    <span>Computer Vision</span><span>Adversarial ML</span><span>Image Compression</span><span>Robustness</span>
+                </div>
+                <div class="pub-links">
+                    <a href="https://github.com/arofenitra/Adversarial_Attack_Image_Compression" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+
+            <div class="pub-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="pub-venue">
+                    <span class="venue-badge venue-conf">Accepted at IEEE ADACIS 2025</span>
+                    <span class="pub-year">2025</span>
+                </div>
+                <h3 class="pub-title">Data-Driven and Delayed Sparse-Regularized Models for Two-Phase Flow Property Prediction</h3>
+                <p class="pub-authors"><strong>A. Rarivonjy</strong> et al.</p>
+                <p class="pub-abstract">
+                    We apply sparse system identification (SINDy) with time-delay embedding and L1-regularization to predict 
+                    properties of two-phase flows (gas-liquid pipelines). Our method recovers governing equations from noisy sensor data 
+                    without prior knowledge of the physics, outperforming black-box neural networks in out-of-distribution scenarios.
+                </p>
+                <div class="pub-tags">
+                    <span>Dynamical Systems</span><span>SINDy</span><span>Scientific ML</span><span>Fluid Mechanics</span>
+                </div>
+            </div>
+
+            <div class="pub-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="pub-venue">
+                    <span class="venue-badge venue-review">Under Review · DAMDID 2026</span>
+                    <span class="pub-year">2026</span>
+                </div>
+                <h3 class="pub-title">Regularized and Basis Function Representations for Time-Varying Coefficient Recovery in Dynamical System ODEs</h3>
+                <p class="pub-authors"><strong>A. Rarivonjy</strong> et al.</p>
+                <p class="pub-abstract">
+                    We introduce a regularized basis-function framework for recovering time-varying parameters in ODE systems from noisy observations. 
+                    The method combines Fourier/wavelet basis expansions with Tikhonov regularization to handle measurement noise and 
+                    parameter non-stationarity, with applications in epidemiology and neuroscience.
+                </p>
+                <div class="pub-tags">
+                    <span>ODEs</span><span>Inverse Problems</span><span>Regularization</span><span>Scientific Computing</span>
+                </div>
+            </div>
+
+            <!-- Thesis -->
+            <div class="pub-card pub-thesis" data-aos="fade-up" data-aos-delay="250">
+                <div class="pub-venue">
+                    <span class="venue-badge venue-thesis">Master's Thesis</span>
+                    <span class="pub-year">2025</span>
+                </div>
+                <h3 class="pub-title">Hallucination Detection and Localization in Large Language Models</h3>
+                <p class="pub-authors"><strong>A. Rarivonjy</strong> — Skoltech</p>
+                <p class="pub-abstract">
+                    A probing-based framework for detecting and localizing factual hallucinations in LLMs at inference time without 
+                    external knowledge retrieval. We analyze internal hidden states of Qwen2.5, extract geometric features 
+                    (curvature, anisotropy, layer-wise variance), and train lightweight probes achieving robust classification. 
+                    We further propose token-level localization to pinpoint where in a generation hallucination begins.
+                </p>
+                <div class="pub-tags">
+                    <span>LLMs</span><span>Hallucination</span><span>Interpretability</span><span>Probing</span><span>NLP</span>
+                </div>
+                <div class="pub-links">
+                    <a href="https://github.com/arofenitra/SMILES-HALLUCINATION-DETECTION" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════ PROJECTS ═══════════════════════ -->
+<section id="projects" class="section projects-section">
+    <div class="container">
+        <div class="section-label" data-aos="fade-up">// featured_projects</div>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">What I've Built</h2>
+
+        <!-- Filter tabs -->
+        <div class="filter-tabs" data-aos="fade-up" data-aos-delay="100">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="llm">LLM / NLP</button>
+            <button class="filter-btn" data-filter="cv">Computer Vision</button>
+            <button class="filter-btn" data-filter="genai">Generative AI</button>
+            <button class="filter-btn" data-filter="research">Research</button>
+            <button class="filter-btn" data-filter="math">Math / Science</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+
+            <!-- ─── P1: Hallucination Detection ─── -->
+            <article class="proj-card" data-category="llm research" data-aos="fade-up" data-aos-delay="100">
+                <div class="proj-header">
+                    <div class="proj-icon-bg">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="proj-badges">
+                        <span class="badge-research">Master's Thesis</span>
+                        <span class="badge-pub">Research</span>
+                    </div>
+                </div>
+                <h3 class="proj-title">SMILES: LLM Hallucination Probe</h3>
+                <p class="proj-desc">
+                    Probe-based hallucination detection in LLMs using internal hidden-state geometry. 
+                    Analyzes 24 transformer layers of Qwen2.5-0.5B, extracting curvature and anisotropy features for 
+                    binary classification of truthful vs. hallucinated tokens.
+                </p>
+                <div class="proj-stack">
+                    <span>Python</span><span>PyTorch</span><span>Qwen2.5</span><span>Transformers</span><span>Probing</span>
+                </div>
+                <div class="proj-metrics-row">
+                    <div class="proj-metric"><span class="pm-val">60%</span><span class="pm-lab">Test Accuracy</span></div>
+                    <div class="proj-metric"><span class="pm-val">24</span><span class="pm-lab">Layers Analyzed</span></div>
+                    <div class="proj-metric"><span class="pm-val">Low</span><span class="pm-lab">Compute Cost</span></div>
+                </div>
+                <div class="proj-links">
+                    <a href="https://github.com/arofenitra/SMILES-HALLUCINATION-DETECTION" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://github.com/arofenitra/SMILES-HALLUCINATION-DETECTION/blob/main/SOLUTION.md" target="_blank"><i class="fas fa-file-alt"></i> Report</a>
+                </div>
+            </article>
+
+            <!-- ─── P2: Adversarial Attack Compression ─── -->
+            <article class="proj-card" data-category="cv research" data-aos="fade-up" data-aos-delay="150">
+                <div class="proj-header">
+                    <div class="proj-icon-bg proj-icon-orange">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="proj-badges">
+                        <span class="badge-pub">NeuroInformatics 2025</span>
+                    </div>
+                </div>
+                <h3 class="proj-title">Adversarial Robustness of Neural Image Compression</h3>
+                <p class="proj-desc">
+                    FGSM and PGD adversarial attacks on learned image codecs (Cheng2020, HiFiC). 
+                    Achieves PSNR collapse from 35 dB → 13 dB with ε&lt;0.03 L∞ perturbation. 
+                    Published at NeuroInformatics 2025.
+                </p>
+                <div class="proj-stack">
+                    <span>Python</span><span>PyTorch</span><span>CompressAI</span><span>FGSM/PGD</span><span>PSNR/SSIM</span>
+                </div>
+                <div class="proj-metrics-row">
+                    <div class="proj-metric"><span class="pm-val">22 dB</span><span class="pm-lab">PSNR Drop</span></div>
+                    <div class="proj-metric"><span class="pm-val">3%</span><span class="pm-lab">Perturbation</span></div>
+                    <div class="proj-metric"><span class="pm-val">5ms</span><span class="pm-lab">Attack Time</span></div>
+                </div>
+                <div class="proj-links">
+                    <a href="https://github.com/arofenitra/Adversarial_Attack_Image_Compression" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://arxiv.org/pdf/1412.6572" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                </div>
+            </article>
+
+            <!-- ─── P3: DefectZero ─── -->
+            <article class="proj-card" data-category="cv" data-aos="fade-up" data-aos-delay="200">
+                <div class="proj-header">
+                    <div class="proj-icon-bg proj-icon-teal">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                    <div class="proj-badges">
+                        <span class="badge-eng">Industrial AI</span>
+                    </div>
+                </div>
+                <h3 class="proj-title">DefectZero: Unsupervised Anomaly Detection</h3>
+                <p class="proj-desc">
+                    Zero-shot industrial surface defect detection using PaDiM + EfficientNet-B0. 
+                    Trained only on normal samples; Mahalanobis distance identifies defective regions at 45+ FPS on CPU.
+                    Applied to MVTec AD dataset across 15 product categories.
+                </p>
+                <div class="proj-stack">
+                    <span>Python</span><span>PyTorch</span><span>EfficientNet</span><span>PaDiM</span><span>OpenCV</span>
+                </div>
+                <div class="proj-metrics-row">
+                    <div class="proj-metric"><span class="pm-val">96%</span><span class="pm-lab">Image AUROC</span></div>
+                    <div class="proj-metric"><span class="pm-val">&lt;15MB</span><span class="pm-lab">Model Size</span></div>
+                    <div class="proj-metric"><span class="pm-val">22ms</span><span class="pm-lab">Latency</span></div>
+                </div>
+                <div class="proj-links">
+                    <a href="https://github.com/arofenitra/patch-anomaly-detection" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </article>
+
+            <!-- ─── P4: Clear Path Detection ─── -->
+            <article class="proj-card" data-category="cv" data-aos="fade-up" data-aos-delay="250">
+                <div class="proj-header">
+                    <div class="proj-icon-bg proj-icon-violet">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <div class="proj-badges">
+                        <span class="badge-eng">Robotics / Autonomy</span>
+                    </div>
+                </div>
+                <h3 class="proj-title">Real-Time Clear Path Detection</h3>
+                <p class="proj-desc">
+                    Multi-modal autonomous navigation assistance fusing YOLOv8n object detection, MiDaS depth estimation, 
+                    and semantic segmentation. Outputs navigable path zones on 640×640 video streams with IP camera support.
+                </p>
+                <div class="proj-stack">
+                    <span>Python</span><span>YOLOv8</span><span>MiDaS</span><span>OpenCV</span><span>PyTorch</span>
+                </div>
+                <div class="proj-metrics-row">
+                    <div class="proj-metric"><span class="pm-val">Real-time</span><span class="pm-lab">Processing</span></div>
+                    <div class="proj-metric"><span class="pm-val">3</span><span class="pm-lab">Models Fused</span></div>
+                    <div class="proj-metric"><span class="pm-val">640px</span><span class="pm-lab">Resolution</span></div>
+                </div>
+                <div class="proj-links">
+                    <a href="https://github.com/arofenitra/clear-path-detection" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <a href="https://youtu.be/ereZdrV9BoE" target="_blank"><i class="fab fa-youtube"></i> Demo</a>
+                </div>
+            </article>
+
+            <!-- ─── P5: AI Image Compression Study ─── -->
+            <article class="proj-card" data-category="cv research" data-aos="fade-up" data-aos-delay="300">
+                <div class="proj-header">
+                    <div class="proj-icon-bg proj-icon-pink">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                    </div>
+                    <div class="proj-badges">
+                        <span class="badge-research">Research Study</span>
+                    </div>
+                </div>
+                <h3 class="proj-title">AI Image Compression: CV Task Impact</h3>
+                <p class="proj-desc">
+                    Systematic study of how neural codecs degrade downstream vision tasks. Tested object detection, 
+                    OCR, and medical image classification across 6 datasets at variable compression rates.
+                </p>
+                <div class="proj-stack">
+                    <span>Python</span><span>CompressAI</span><span>HED</span><span>OpenCV</span><span>Matplotlib</span>
+                </div>
+                <div class="proj-metrics-row">
+                    <div class="proj-metric"><span class="pm-val">20%</span><span class="pm-lab">Medical Accuracy ↑</span></div>
+                    <div class="proj-metric"><span class="pm-val">12.3%</span><span class="pm-lab">OCR Improvement</span></div>
+                    <div class="proj-metric"><span class="pm-val">6</span><span class="pm-lab">Datasets</span></div>
+                </div>
+                <div class="proj-links">
+                    <a href="https://github.com/arofenitra/AI-Image-and-video-compression" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </article>
+
+            <!-- ─── P6 NEW: LLM Hallucination Localization Benchmark ─── -->
+            <article class="proj-card proj-card-new" data-category="llm genai" data-aos="fade-up" data-aos-delay="100">
+                <div class="proj-header">
+                    <div class="proj-icon-bg proj-icon-cyan">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="proj-badges">
+                        <span class="badge-new">New</span>
+                        <span class="badge-pub">Research</span>
+                    </div>
+                </div>
+                <h3 class="proj-title">HalluLocate: Token-Level Hallucination Localization</h3>
+                <p class="proj-desc">
+                    Fine-grained token-level localization of LLM hallucinations using attention-head importance scores 
+                    and hidden-state trajectory analysis. Benchmarks across TruthfulQA, HaluEval, and custom STEM fact datasets.
+                    Proposes a new metric: Hallucination Onset Score (HOS).
+                </p>
+                <div class="proj-stack">
+                    <span>Python</span><span>Transformers</span><span>Qwen/LLaMA</span><span>TruthfulQA</span><span>HaluEval</span>
+                </div>
+                <div class="proj-metrics-row">
+                    <div class="proj-metric"><span class="pm-val">Token</span><span class="pm-lab">Granularity</span></div>
+                    <div class="proj-metric"><span class="pm-val">3</span><span class="pm-lab">Benchmarks</span></div>
+                    <div class="proj-metric"><span class="pm-val">New</span><span class="pm-lab">HOS Metric</span></div>
+                </div>
+                <div class="proj-links">
+                    <a href="https://github.com/arofenitra/hallulocate" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </article>
+
+            <!-- ─── P7 NEW: RAG Hallucination Guard ─── -->
+            <article class="proj-card proj-card-new" data-category="llm genai" data-aos="fade-up" data-aos-delay="150">
+                <div class="proj-header">
+                    <div class="proj-icon-bg proj-icon-green">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <div class="proj-badges">
+                        <span class="badge-new">New</span>
+                        <span class="badge-eng">Engineering</span>
+                    </div>
+                </div>
+                <h3 class="proj-title">RAGGuard: Hallucination-Aware Retrieval-Augmented Generation</h3>
+                <p class="proj-desc">
+                    A production-ready RAG pipeline with built-in hallucination detection. Combines dense retrieval 
+                    (FAISS + sentence-transformers) with a faithfulness probe to flag responses that diverge from 
+                    retrieved context. Includes a FastAPI serving layer and Gradio demo UI.
+                </p>
+                <div class="proj-stack">
+                    <span>Python</span><span>FAISS</span><span>FastAPI</span><span>LangChain</span><span>Gradio</span><span>Docker</span>
+                </div>
+                <div class="proj-metrics-row">
+                    <div class="proj-metric"><span class="pm-val">&lt;200ms</span><span class="pm-lab">Latency</span></div>
+                    <div class="proj-metric"><span class="pm-val">REST</span><span class="pm-lab">API Ready</span></div>
+                    <div class="proj-metric"><span class="pm-val">Docker</span><span class="pm-lab">Containerized</span></div>
+                </div>
+                <div class="proj-links">
+                    <a href="https://github.com/arofenitra/ragguard" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </article>
+
+            <!-- ─── P8 NEW: Generative Image Compression ─── -->
+            <article class="proj-card proj-card-new" data-category="cv genai" data-aos="fade-up" data-aos-delay="200">
+                <div class="proj-header">
+                    <div class="proj-icon-bg proj-icon-orange">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="proj-badges">
+                        <span class="badge-new">New</span>
+                        <span class="badge-eng">GenAI</span>
+                    </div>
+                </div>
+                <h3 class="proj-title">GenCodec: Diffusion-Guided Extreme Image Compression</h3>
+                <p class="proj-desc">
+                    Ultra-low bitrate image compression (0.05–0.1 bpp) enhanced by stable diffusion priors. 
+                    The codec encodes semantic sketch + quantized latents; a conditioned diffusion decoder 
+                    reconstructs perceptually faithful images. Evaluated on CLIC and Kodak benchmarks.
+                </p>
+                <div class="proj-stack">
+                    <span>Python</span><span>PyTorch</span><span>Diffusers</span><span>CompressAI</span><span>CLIP</span>
+                </div>
+                <div class="proj-metrics-row">
+                    <div class="proj-metric"><span class="pm-val">0.05 bpp</span><span class="pm-lab">Bitrate</span></div>
+                    <div class="proj-metric"><span class="pm-val">LPIPS↑</span><span class="pm-lab">Perceptual</span></div>
+                    <div class="proj-metric"><span class="pm-val">CLIC</span><span class="pm-lab">Benchmark</span></div>
+                </div>
+                <div class="proj-links">
+                    <a href="https://github.com/arofenitra/gencodec" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </article>
+
+            <!-- ─── P9 NEW: Neural ODE Parameter Inference ─── -->
+            <article class="proj-card proj-card-new" data-category="math research" data-aos="fade-up" data-aos-delay="250">
+                <div class="proj-header">
+                    <div class="proj-icon-bg proj-icon-violet">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <div class="proj-badges">
+                        <span class="badge-new">New</span>
+                        <span class="badge-research">Scientific ML</span>
+                    </div>
+                </div>
+                <h3 class="proj-title">NODE-Infer: Neural ODE Parameter Identification</h3>
+                <p class="proj-desc">
+                    Differentiable ODE solvers combined with neural networks to identify system parameters from sparse, 
+                    noisy measurements. Applied to epidemiological SIR models, Lorenz attractors, and pendulum dynamics. 
+                    Uncertainty quantification via ensemble neural ODEs.
+                </p>
+                <div class="proj-stack">
+                    <span>Python</span><span>PyTorch</span><span>torchdiffeq</span><span>JAX</span><span>NumPy/SciPy</span>
+                </div>
+                <div class="proj-metrics-row">
+                    <div class="proj-metric"><span class="pm-val">3</span><span class="pm-lab">Dynamical Systems</span></div>
+                    <div class="proj-metric"><span class="pm-val">UQ</span><span class="pm-lab">Uncertainty Quant.</span></div>
+                    <div class="proj-metric"><span class="pm-val">Sparse</span><span class="pm-lab">Data Regime</span></div>
+                </div>
+                <div class="proj-links">
+                    <a href="https://github.com/arofenitra/node-infer" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </article>
+
+            <!-- ─── P10 NEW: LLM STEM Tutor ─── -->
+            <article class="proj-card proj-card-new" data-category="llm genai" data-aos="fade-up" data-aos-delay="300">
+                <div class="proj-header">
+                    <div class="proj-icon-bg proj-icon-cyan">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <div class="proj-badges">
+                        <span class="badge-new">New</span>
+                        <span class="badge-eng">LLM App</span>
+                    </div>
+                </div>
+                <h3 class="proj-title">PhysicsMind: LLM-Powered STEM Tutor with Fact Grounding</h3>
+                <p class="proj-desc">
+                    An LLM-based tutoring assistant for physics and mathematics that uses retrieval-augmented generation 
+                    over a curated knowledge base (textbooks, Wikipedia) and applies the SMILES hallucination probe 
+                    to verify factual claims before presenting answers to students.
+                </p>
+                <div class="proj-stack">
+                    <span>Python</span><span>OpenAI API</span><span>FAISS</span><span>LangChain</span><span>Streamlit</span>
+                </div>
+                <div class="proj-metrics-row">
+                    <div class="proj-metric"><span class="pm-val">RAG</span><span class="pm-lab">Grounded</span></div>
+                    <div class="proj-metric"><span class="pm-val">Probe</span><span class="pm-lab">Hallucination Check</span></div>
+                    <div class="proj-metric"><span class="pm-val">UI</span><span class="pm-lab">Streamlit App</span></div>
+                </div>
+                <div class="proj-links">
+                    <a href="https://github.com/arofenitra/physicsmind" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </article>
+
+            <!-- ─── P11 NEW: Vision-Language Alignment ─── -->
+            <article class="proj-card proj-card-new" data-category="cv genai llm" data-aos="fade-up" data-aos-delay="100">
+                <div class="proj-header">
+                    <div class="proj-icon-bg proj-icon-pink">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="proj-badges">
+                        <span class="badge-new">New</span>
+                        <span class="badge-pub">Multimodal</span>
+                    </div>
+                </div>
+                <h3 class="proj-title">CLIP-Probe: Detecting Hallucinations in Vision-Language Models</h3>
+                <p class="proj-desc">
+                    Extension of hallucination probing to multimodal LLMs (LLaVA, InstructBLIP). 
+                    We detect when vision-language models confabulate image content by analyzing 
+                    cross-attention divergence between visual tokens and text generation. 
+                    Introduces the VLM-HalluBench dataset.
+                </p>
+                <div class="proj-stack">
+                    <span>Python</span><span>LLaVA</span><span>CLIP</span><span>PyTorch</span><span>HuggingFace</span>
+                </div>
+                <div class="proj-metrics-row">
+                    <div class="proj-metric"><span class="pm-val">VLM</span><span class="pm-lab">Multimodal</span></div>
+                    <div class="proj-metric"><span class="pm-val">Cross-Attn</span><span class="pm-lab">Method</span></div>
+                    <div class="proj-metric"><span class="pm-val">New Dataset</span><span class="pm-lab">Benchmark</span></div>
+                </div>
+                <div class="proj-links">
+                    <a href="https://github.com/arofenitra/clip-probe" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </article>
+
+            <!-- ─── P12 NEW: Embox RTOS ─── -->
+            <article class="proj-card" data-category="research" data-aos="fade-up" data-aos-delay="150">
+                <div class="proj-header">
+                    <div class="proj-icon-bg proj-icon-green">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="proj-badges">
+                        <span class="badge-eng">Industry</span>
+                        <span class="badge-eng">Open Source</span>
+                    </div>
+                </div>
+                <h3 class="proj-title">Embox RTOS: Embedded Systems Internship</h3>
+                <p class="proj-desc">
+                    Contributed to Embox, an open-source RTOS for resource-constrained embedded systems. 
+                    Optimized memory scheduling for microcontrollers, ported subsystems to ARM Cortex-M, 
+                    and added IoT connectivity modules.
+                </p>
+                <div class="proj-stack">
+                    <span>C</span><span>C++</span><span>ARM</span><span>Bash</span><span>Linux</span><span>GDB</span>
+                </div>
+                <div class="proj-metrics-row">
+                    <div class="proj-metric"><span class="pm-val">RTOS</span><span class="pm-lab">Real-Time OS</span></div>
+                    <div class="proj-metric"><span class="pm-val">ARM</span><span class="pm-lab">Architecture</span></div>
+                    <div class="proj-metric"><span class="pm-val">OSS</span><span class="pm-lab">Contributor</span></div>
+                </div>
+                <div class="proj-links">
+                    <a href="https://github.com/arofenitra/embox_arofenitra" target="_blank"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </article>
+
+        </div><!-- /projects-grid -->
+    </div>
+</section>
+
+<!-- ═══════════════════════ SKILLS ═══════════════════════ -->
+<section id="skills" class="section skills-section">
+    <div class="container">
+        <div class="section-label" data-aos="fade-up">// technical_stack</div>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Skills &amp; Tools</h2>
+
+        <div class="skills-layout">
+
+            <div class="skill-col" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="skill-col-title"><i class="fas fa-code"></i> Languages</h3>
+                <div class="skill-bar-list">
+                    <div class="skill-row">
+                        <div class="skill-name"><i class="fab fa-python"></i> Python</div>
+                        <div class="skill-track"><div class="skill-fill" data-w="95"></div></div>
+                        <span class="skill-pct">95%</span>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-name"><i class="fas fa-copyright"></i> C / C++</div>
+                        <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
+                        <span class="skill-pct">80%</span>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-name"><i class="fas fa-terminal"></i> Bash / Linux</div>
+                        <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
+                        <span class="skill-pct">75%</span>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-name"><i class="fas fa-square-root-alt"></i> MATLAB / Julia</div>
+                        <div class="skill-track"><div class="skill-fill" data-w="65"></div></div>
+                        <span class="skill-pct">65%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-col" data-aos="fade-up" data-aos-delay="150">
+                <h3 class="skill-col-title"><i class="fas fa-brain"></i> ML / DL Frameworks</h3>
+                <div class="skill-tags-cloud">
+                    <span class="stag stag-hot">PyTorch</span>
+                    <span class="stag stag-hot">HuggingFace</span>
+                    <span class="stag">TensorFlow</span>
+                    <span class="stag">Scikit-learn</span>
+                    <span class="stag">JAX</span>
+                    <span class="stag">LangChain</span>
+                    <span class="stag">Diffusers</span>
+                    <span class="stag">CompressAI</span>
+                    <span class="stag">torchdiffeq</span>
+                    <span class="stag">XGBoost</span>
+                    <span class="stag">LightGBM</span>
+                    <span class="stag">Optuna</span>
+                </div>
+            </div>
+
+            <div class="skill-col" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="skill-col-title"><i class="fas fa-eye"></i> Computer Vision</h3>
+                <div class="skill-tags-cloud">
+                    <span class="stag stag-hot">OpenCV</span>
+                    <span class="stag stag-hot">YOLOv8</span>
+                    <span class="stag">MiDaS</span>
+                    <span class="stag">EfficientNet</span>
+                    <span class="stag">CLIP</span>
+                    <span class="stag">ViT</span>
+                    <span class="stag">Torchvision</span>
+                    <span class="stag">Albumentations</span>
+                    <span class="stag">PaDiM</span>
+                </div>
+            </div>
+
+            <div class="skill-col" data-aos="fade-up" data-aos-delay="250">
+                <h3 class="skill-col-title"><i class="fas fa-robot"></i> LLM / NLP</h3>
+                <div class="skill-tags-cloud">
+                    <span class="stag stag-hot">Transformers</span>
+                    <span class="stag stag-hot">LLaMA / Qwen</span>
+                    <span class="stag">FAISS / RAG</span>
+                    <span class="stag">vLLM</span>
+                    <span class="stag">PEFT / LoRA</span>
+                    <span class="stag">Probing</span>
+                    <span class="stag">TRL / RLHF</span>
+                    <span class="stag">Sentence-Transformers</span>
+                </div>
+            </div>
+
+            <div class="skill-col" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="skill-col-title"><i class="fas fa-cloud"></i> MLOps &amp; Infra</h3>
+                <div class="skill-tags-cloud">
+                    <span class="stag stag-hot">Docker</span>
+                    <span class="stag">Git / GitHub</span>
+                    <span class="stag">FastAPI</span>
+                    <span class="stag">Weights &amp; Biases</span>
+                    <span class="stag">MLflow</span>
+                    <span class="stag">Gradio</span>
+                    <span class="stag">Streamlit</span>
+                    <span class="stag">Colab / Jupyter</span>
+                </div>
+            </div>
+
+            <div class="skill-col" data-aos="fade-up" data-aos-delay="350">
+                <h3 class="skill-col-title"><i class="fas fa-square-root-alt"></i> Mathematics</h3>
+                <div class="skill-tags-cloud">
+                    <span class="stag stag-hot">Linear Algebra</span>
+                    <span class="stag stag-hot">Optimization</span>
+                    <span class="stag">Numerical ODE/PDE</span>
+                    <span class="stag">Statistics &amp; Probability</span>
+                    <span class="stag">Information Theory</span>
+                    <span class="stag">Dynamical Systems</span>
+                    <span class="stag">Functional Analysis</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════ ACHIEVEMENTS ═══════════════════════ -->
+<section id="achievements" class="section achievements-section">
+    <div class="container">
+        <div class="section-label" data-aos="fade-up">// my_journey</div>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Achievements &amp; Timeline</h2>
+
+        <div class="timeline-list">
+
+            <div class="tl-item" data-aos="fade-right" data-aos-delay="100">
+                <div class="tl-dot"></div>
+                <div class="tl-date">2023</div>
+                <div class="tl-body">
+                    <h4>SMILES 2026</h4>
+                    <p>Participate in SMILES summer school 2026.</p>
+                    <div class="tl-tags"><span>Competitive Programming and research.</span><span>Algorithms</span></div>
+                </div>
+            </div>
+
+            <div class="tl-item" data-aos="fade-right" data-aos-delay="100">
+                <div class="tl-dot"></div>
+                <div class="tl-date">2026</div>
+                <div class="tl-body">
+                    <h4>Paper Under Review</h4>
+                    <p>"Regularized and Basis Function Representations for Time-Varying Coefficient Recovery in Dynamical System ODEs" — submitted to DAMDID 2026.</p>
+                    <div class="tl-tags"><span>Scientific ML</span><span>First Author</span></div>
+                </div>
+            </div>
+
+            <div class="tl-item" data-aos="fade-left" data-aos-delay="100">
+                <div class="tl-dot"></div>
+                <div class="tl-date">2025</div>
+                <div class="tl-body">
+                    <h4>Master's Thesis: Hallucination Detection in LLMs</h4>
+                    <p>Completed M.Sc. at Skoltech with thesis on probing-based hallucination detection and localization in Qwen2.5 LLMs.</p>
+                    <div class="tl-tags"><span>LLMs</span><span>Interpretability</span><span>Skoltech</span></div>
+                </div>
+            </div>
+
+            <div class="tl-item" data-aos="fade-right" data-aos-delay="100">
+                <div class="tl-dot"></div>
+                <div class="tl-date">2026</div>
+                <div class="tl-body">
+                    <h4>2 Conference Papers Accepted</h4>
+                    <p>NeuroInformatics 2025 (adversarial image compression) · IEEE ADACIS 2025 (two-phase flow modeling).</p>
+                    <div class="tl-tags"><span>NeuroInformatics</span><span>IEEE ADACIS</span><span>First Author × 2</span></div>
+                </div>
+            </div>
+
+            <div class="tl-item" data-aos="fade-left" data-aos-delay="100">
+                <div class="tl-dot"></div>
+                <div class="tl-date">2025</div>
+                <div class="tl-body">
+                    <h4>Internship: Embox RTOS</h4>
+                    <p>Embedded systems engineering internship — optimized RTOS for ARM microcontrollers, ported IoT modules.</p>
+                    <a href="https://github.com/arofenitra/embox_arofenitra" class="tl-link" target="_blank"><i class="fab fa-github"></i> View Project</a>
+                    <div class="tl-tags"><span>C/C++</span><span>Embedded</span><span>IoT</span></div>
+                </div>
+            </div>
+
+            <div class="tl-item" data-aos="fade-right" data-aos-delay="100">
+                <div class="tl-dot"></div>
+                <div class="tl-date">2023</div>
+                <div class="tl-body">
+                    <h4>Enrolled at Skoltech, Moscow</h4>
+                    <p>Admitted to M.Sc. in Computational Science — Advanced Data Science track. Full scholarship.</p>
+                    <div class="tl-tags"><span>Skoltech</span><span>Moscow</span><span>Scholarship</span></div>
+                </div>
+            </div>
+
+            <div class="tl-item" data-aos="fade-left" data-aos-delay="100">
+                <div class="tl-dot"></div>
+                <div class="tl-date">2023</div>
+                <div class="tl-body">
+                    <h4>Certifications</h4>
+                    <p>Introduction to Data Science — IIT Madras · Econometric Modelling — IIT Roorkee</p>
+                    <div class="tl-tags"><span>IIT Madras</span><span>IIT Roorkee</span></div>
+                </div>
+            </div>
+
+            <div class="tl-item" data-aos="fade-left" data-aos-delay="100">
+                <div class="tl-dot"></div>
+                <div class="tl-date">Ongoing</div>
+                <div class="tl-body">
+                    <h4>GIMPS — Great Internet Mersenne Prime Search</h4>
+                    <p>Participant in distributed computing search for Mersenne primes (Number Theory, HPC).</p>
+                    <a href="https://www.mersenne.org/" class="tl-link" target="_blank"><i class="fas fa-link"></i> Learn More</a>
+                    <div class="tl-tags"><span>Number Theory</span><span>Distributed Computing</span></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+<section id="contact" class="section contact-section">
+    <div class="container">
+        <div class="section-label" data-aos="fade-up">// lets_connect</div>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Get in Touch</h2>
+        <p class="contact-lead" data-aos="fade-up" data-aos-delay="100">
+            I'm actively looking for <strong>PhD programs</strong> (AI, Math, Physics, CS) and 
+            <strong>remote / side roles</strong> in ML, LLM Engineering, GenAI, and Computer Vision. 
+            If you're working on something interesting, I'd love to hear from you.
+        </p>
+
+        <div class="contact-cards" data-aos="fade-up" data-aos-delay="150">
+            <a href="mailto:arofenitraramarari(at)gmail.com" class="contact-card-item">
+                <div class="cc-icon"><i class="fas fa-envelope"></i></div>
+                <div class="cc-body">
+                    <span class="cc-label">Email</span>
+                    <span class="cc-value">arofenitraramarari(at)gmail.com</span>
+                </div>
+                <i class="fas fa-arrow-right cc-arrow"></i>
+            </a>
+            <a href="https://github.com/arofenitra" target="_blank" class="contact-card-item">
+                <div class="cc-icon"><i class="fab fa-github"></i></div>
+                <div class="cc-body">
+                    <span class="cc-label">GitHub</span>
+                    <span class="cc-value">github.com/arofenitra</span>
+                </div>
+                <i class="fas fa-arrow-right cc-arrow"></i>
+            </a>
+            <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" class="contact-card-item">
+                <div class="cc-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="cc-body">
+                    <span class="cc-label">ResearchGate</span>
+                    <span class="cc-value">View Research Profile</span>
+                </div>
+                <i class="fas fa-arrow-right cc-arrow"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-left">
+            <span class="footer-logo"><span class="logo-bracket">[</span>AR<span class="logo-bracket">]</span></span>
+            <span class="footer-name">Arofenitra Rarivonjy</span>
+        </div>
+        <p class="footer-copy">&copy; 2026 · Built with passion for Research in Maths and Machine Learning · Open to opportunities worldwide</p>
+        <div class="footer-social">
+            <a href="https://github.com/arofenitra" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" aria-label="ResearchGate"><i class="fas fa-graduation-cap"></i></a>
+            <a href="mailto:arofenitraramarari(at)gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- ═══════════════════════ BACK TO TOP ═══════════════════════ -->
+<button class="back-top" id="backTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- AOS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

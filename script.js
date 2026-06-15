@@ -1,567 +1,343 @@
-// Initialize AOS Animation Library
+/* ═══════════════════════════════════════════════════════════
+   AROFENITRA RARIVONJY — PORTFOLIO JS
+═══════════════════════════════════════════════════════════ */
+
+'use strict';
+
+// ─── AOS INIT ───
 AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
+    duration: 700,
+    easing: 'ease-out-quad',
     once: true,
-    offset: 100
+    offset: 80,
 });
 
-// Scroll Progress Bar
-function updateScrollProgress() {
-    const scrollProgress = document.querySelector('.scroll-progress');
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    scrollProgress.style.width = scrollPercent + '%';
-}
-
-window.addEventListener('scroll', updateScrollProgress);
-
-// Mobile Navigation Toggle - Improved
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-menu a');
-const body = document.body;
-
-navToggle.addEventListener('click', () => {
-    const isActive = navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active');
-    
-    // Prevent body scroll when menu is open on mobile
-    if (isActive) {
-        body.style.overflow = 'hidden';
-    } else {
-        body.style.overflow = '';
-    }
-    
-    // Animate hamburger
-    const spans = navToggle.querySelectorAll('span');
-    if (isActive) {
-        spans[0].style.transform = 'rotate(45deg) translateY(8px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
-    } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    }
-});
-
-// Close mobile menu when link is clicked
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-        body.style.overflow = '';
-        
-        const spans = navToggle.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    });
-});
-
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (navMenu.classList.contains('active') && 
-        !navMenu.contains(e.target) && 
-        !navToggle.contains(e.target)) {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-        body.style.overflow = '';
-        
-        const spans = navToggle.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    }
-});
-
-// Navbar scroll effect
-const navbar = document.querySelector('.navbar');
-
+// ─── SCROLL PROGRESS BAR ───
+const scrollBar = document.getElementById('scrollBar');
 window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 100) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+    const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+    scrollBar.style.width = pct + '%';
 });
 
-// Typing Effect for Hero Subtitle
-const typedTextSpan = document.querySelector('.typed-text');
-const cursorSpan = document.querySelector('.cursor');
+// ─── CUSTOM CURSOR ───
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
 
-const textArray = ['Research Engineer', 'ML Engineer', 'Computer Vision Expert', 'Deep Learning Specialist'];
-const typingDelay = 100;
-const erasingDelay = 50;
-const newTextDelay = 2000;
-let textArrayIndex = 0;
-let charIndex = 0;
+if (window.matchMedia('(hover: hover)').matches) {
+    let mx = 0, my = 0, rx = 0, ry = 0;
 
-function type() {
-    if (charIndex < textArray[textArrayIndex].length) {
-        if (!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
-        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, typingDelay);
-    } else {
-        cursorSpan.classList.remove('typing');
-        setTimeout(erase, newTextDelay);
+    document.addEventListener('mousemove', e => {
+        mx = e.clientX; my = e.clientY;
+        dot.style.left = mx + 'px';
+        dot.style.top = my + 'px';
+    });
+
+    function animRing() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.left = rx + 'px';
+        ring.style.top = ry + 'px';
+        requestAnimationFrame(animRing);
     }
+    animRing();
+
+    document.querySelectorAll('a, button, .proj-card, .pub-card, .info-card').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            ring.style.width = '44px';
+            ring.style.height = '44px';
+            ring.style.borderColor = 'rgba(0,212,255,0.7)';
+        });
+        el.addEventListener('mouseleave', () => {
+            ring.style.width = '28px';
+            ring.style.height = '28px';
+            ring.style.borderColor = 'rgba(0,212,255,0.5)';
+        });
+    });
 }
 
-function erase() {
-    if (charIndex > 0) {
-        if (!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
-        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, erasingDelay);
-    } else {
-        cursorSpan.classList.remove('typing');
-        textArrayIndex++;
-        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-        setTimeout(type, typingDelay + 1100);
+// ─── NEURAL NETWORK CANVAS ───
+(function initNeuralCanvas() {
+    const canvas = document.getElementById('neural-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    let W, H, nodes = [], animId;
+
+    const NODE_COUNT = 55;
+    const CONNECT_DIST = 160;
+    const SPEED = 0.35;
+
+    function resize() {
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
     }
-}
 
-if (typedTextSpan) {
-    setTimeout(type, newTextDelay + 250);
-}
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        
-        if (href === '#') return;
-        
-        e.preventDefault();
-        const target = document.querySelector(href);
-        
-        if (target) {
-            const navbarHeight = navbar.offsetHeight;
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
+    function createNodes() {
+        nodes = [];
+        for (let i = 0; i < NODE_COUNT; i++) {
+            nodes.push({
+                x: Math.random() * W,
+                y: Math.random() * H,
+                vx: (Math.random() - 0.5) * SPEED,
+                vy: (Math.random() - 0.5) * SPEED,
+                r: Math.random() * 2 + 1,
+                pulse: Math.random() * Math.PI * 2,
             });
         }
-    });
-});
-
-// Active navigation highlighting
-const sections = document.querySelectorAll('section[id]');
-
-function highlightNavigation() {
-    const scrollY = window.pageYOffset;
-    
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 150;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-menu a[href="#${sectionId}"]`);
-        
-        if (navLink && scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            navLink.classList.add('active');
-        }
-    });
-}
-
-window.addEventListener('scroll', highlightNavigation);
-
-// Counter Animation for Stats and Metrics
-function animateCounter(element) {
-    const target = parseInt(element.getAttribute('data-target'));
-    const duration = 2000;
-    const increment = target / (duration / 16);
-    let current = 0;
-    
-    const updateCounter = () => {
-        current += increment;
-        if (current < target) {
-            element.textContent = Math.floor(current);
-            requestAnimationFrame(updateCounter);
-        } else {
-            element.textContent = target;
-        }
-    };
-    
-    updateCounter();
-}
-
-// Intersection Observer for counters
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-            entry.target.classList.add('counted');
-            animateCounter(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.counter, .counter-metric').forEach(counter => {
-    counterObserver.observe(counter);
-});
-
-// Skill Progress Bar Animation
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const progress = entry.target.getAttribute('data-progress');
-            setTimeout(() => {
-                entry.target.style.width = progress + '%';
-            }, 200);
-            skillObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.skill-progress').forEach(bar => {
-    skillObserver.observe(bar);
-});
-
-// Project Modal - Improved
-const modal = document.getElementById('projectModal');
-const modalBody = document.getElementById('modalBody');
-const modalClose = document.querySelector('.modal-close');
-const modalBackdrop = document.querySelector('.modal-backdrop');
-const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
-
-const projectDetails = {
-    1: {
-        title: 'Adversarial Attack on Image Compression',
-        fullDescription: `
-            <div class="modal-project">
-                <h2>Adversarial Attack on Image Compression</h2>
-                <img src="images/decomp_fgsm_cheng2020-anchor_q6_eps0.03137254901960784_mse_kodim01.png" alt="Project" class="modal-img">
-                
-                <div class="modal-section">
-                    <h3><i class="fas fa-lightbulb"></i> Problem & Business Value</h3>
-                    <p>Image Compression is found in digital technology and social media apps such as Facebook, Telegram, etc. Due to exponential growth of digital media, efficient Image Compression is needed. In this project, we design a model to trick AI Compression models, destroying reconstruction quality (useful for privacy protection from unwanted cameras). A defense mechanism is also implemented to protect users from perturbed images containing malicious perturbations.</p>
-                </div>
-                
-                <div class="modal-section">
-                    <h3><i class="fas fa-code"></i> Technical Deep Dive</h3>
-                    <ul class="modal-list">
-                        <li><strong>Data:</strong> Scraped adversarial research articles from major journals and conferences. Handled smooth gradient flow and vanishing gradients to ensure backpropagation works effectively.</li>
-                        <li><strong>Models:</strong> Compared FGSM (drop from 35dB to 10.9dB) against PGD (35dB to 11.7dB) with MSE loss, maintaining average image perturbation up to 3%.</li>
-                        <li><strong>Loss Functions:</strong> MSE, PSNR, and SSIM. Achieved best result: drop from 35dB to 6dB in SSIM with PGD.</li>
-                        <li><strong>Code Quality:</strong> Customizable architecture with detailed documentation and type hints.</li>
-                    </ul>
-                </div>
-                
-                <div class="modal-section">
-                    <h3><i class="fas fa-file-alt"></i> Research Output</h3>
-                    <p><strong>Paper:</strong> "Robustness of AI Image Compression: Non-linear Perturbation"</p>
-                    <p><strong>Status:</strong> Accepted for oral presentation at Neuroinformatics 2025 conference</p>
-                    <p><strong>Authors:</strong> Arofenitra Rarivonjy, Anton Bibin, Razan Dibo, Aleksandr Kolomeitsev, Anh-Huy Phan, and Ivan Oseledets</p>
-                </div>
-            </div>
-        `
-    },
-    2: {
-        title: 'Real-time Clear Path Detection System',
-        fullDescription: `
-            <div class="modal-project">
-                <h2>Real-time Clear Path Detection System</h2>
-                <img src="images/navigation_analysis_1.png" alt="Project" class="modal-img">
-                
-                <div class="modal-section">
-                    <h3><i class="fas fa-lightbulb"></i> Problem & Business Value</h3>
-                    <p>Developed an intelligent navigation assistance system combining object detection, depth estimation, and segmentation to identify clear paths for autonomous navigation. Applications include assistive technology for visually impaired users and autonomous robots.</p>
-                </div>
-                
-                <div class="modal-section">
-                    <h3><i class="fas fa-code"></i> Technical Implementation</h3>
-                    <ul class="modal-list">
-                        <li><strong>Multi-Modal Fusion:</strong> Combined YOLOv8n object detection, YOLOv8n-seg segmentation, and MiDaS depth estimation.</li>
-                        <li><strong>Path Extraction:</strong> Grid-based analysis evaluating 64-pixel groups across lower 30% of images using occupancy and depth thresholds.</li>
-                        <li><strong>Real-time Processing:</strong> Time-based throttling system with 0.9-second intervals for smooth video display.</li>
-                        <li><strong>IP Camera Integration:</strong> Robust network camera support with buffer management and error handling.</li>
-                    </ul>
-                </div>
-                
-                <div class="modal-section">
-                    <h3><i class="fas fa-cogs"></i> System Architecture</h3>
-                    <p><strong>Pipeline:</strong> Frame capture → resize to 640x640 → object detection → segmentation → depth estimation → path analysis → visualization</p>
-                    <p><strong>Performance:</strong> GPU acceleration with automatic CUDA detection, minimal buffering, efficient memory management.</p>
-                </div>
-            </div>
-        `
-    },
-    3: {
-        title: 'AI Image and Video Compression Impact Study',
-        fullDescription: `
-            <div class="modal-project">
-                <h2>AI Image and Video Compression Impact Study</h2>
-                <img src="images/edge_detection_with_HED.png" alt="Project" class="modal-img">
-                
-                <div class="modal-section">
-                    <h3><i class="fas fa-lightbulb"></i> Research Overview</h3>
-                    <p>Comprehensive research on how AI-based image and video compression affects downstream computer vision tasks including object detection, classification, OCR, and edge detection. Compared state-of-the-art neural compression models with traditional methods.</p>
-                </div>
-                
-                <div class="modal-section">
-                    <h3><i class="fas fa-chart-line"></i> Key Findings</h3>
-                    <ul class="modal-list">
-                        <li><strong>Medical Imaging:</strong> Up to 20% accuracy degradation on compressed medical images (ISIC2018 dataset).</li>
-                        <li><strong>OCR Enhancement:</strong> Counter-intuitive 12.3% improvement in license plate recognition using PaddleOCR on moderately compressed images (Q3 quality).</li>
-                        <li><strong>Edge Detection:</strong> Implemented HED and compared with Canny edge detection on compressed video from MOT17 dataset.</li>
-                    </ul>
-                </div>
-                
-                <div class="modal-section">
-                    <h3><i class="fas fa-flask"></i> Research Methodology</h3>
-                    <p><strong>Datasets:</strong> Kodak, ISIC2018, COCO2017, MOT17, BSDS500, UCF101</p>
-                    <p><strong>Models:</strong> Cheng2020-anchor, Cheng2020-attn (image), SSF2020 (video) vs JPEG/WebP</p>
-                    <p><strong>Metrics:</strong> PSNR, SSIM, VIF, BPP, accuracy, F1-score, mAP</p>
-                    <p><strong>Collaborators:</strong> QuocViet Pham and Thanakrit Lerdmatayakul</p>
-                </div>
-            </div>
-        `
     }
-};
 
-// Open modal
-viewDetailsBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const projectId = btn.getAttribute('data-project');
-        const project = projectDetails[projectId];
-        
-        if (project) {
-            modalBody.innerHTML = project.fullDescription;
-            modal.classList.add('active');
-            body.style.overflow = 'hidden';
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        // Update
+        for (const n of nodes) {
+            n.x += n.vx;
+            n.y += n.vy;
+            n.pulse += 0.02;
+            if (n.x < 0 || n.x > W) n.vx *= -1;
+            if (n.y < 0 || n.y > H) n.vy *= -1;
         }
-    });
-});
 
-// Close modal function
-function closeModal() {
-    modal.classList.remove('active');
-    body.style.overflow = '';
-}
-
-// Close modal events
-modalClose.addEventListener('click', closeModal);
-modalBackdrop.addEventListener('click', closeModal);
-
-// Close modal with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
-    }
-});
-
-// Back to Top Button
-const backToTop = document.getElementById('backToTop');
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        backToTop.classList.add('visible');
-    } else {
-        backToTop.classList.remove('visible');
-    }
-});
-
-backToTop.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Parallax effect for hero shapes
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const shapes = document.querySelectorAll('.shape');
-    
-    shapes.forEach((shape, index) => {
-        const speed = (index + 1) * 0.05;
-        shape.style.transform = `translateY(${scrolled * speed}px)`;
-    });
-});
-
-// Particle Animation Canvas
-const canvas = document.getElementById('particles-canvas');
-if (canvas) {
-    const ctx = canvas.getContext('2d');
-    let particlesArray = [];
-    
-    // Set canvas size
-    function resizeCanvas() {
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-    }
-    
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    
-    // Particle class
-    class Particle {
-        constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 3 + 1;
-            this.speedX = Math.random() * 0.5 - 0.25;
-            this.speedY = Math.random() * 0.5 - 0.25;
-            this.opacity = Math.random() * 0.5 + 0.2;
-        }
-        
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-            
-            if (this.x > canvas.width) this.x = 0;
-            if (this.x < 0) this.x = canvas.width;
-            if (this.y > canvas.height) this.y = 0;
-            if (this.y < 0) this.y = canvas.height;
-        }
-        
-        draw() {
-            ctx.fillStyle = `rgba(102, 126, 234, ${this.opacity})`;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
-    
-    // Initialize particles
-    function initParticles() {
-        particlesArray = [];
-        const numberOfParticles = Math.min((canvas.width * canvas.height) / 15000, 100);
-        for (let i = 0; i < numberOfParticles; i++) {
-            particlesArray.push(new Particle());
-        }
-    }
-    
-    // Animate particles
-    function animateParticles() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        particlesArray.forEach(particle => {
-            particle.update();
-            particle.draw();
-        });
-        
-        // Connect particles
-        connectParticles();
-        
-        requestAnimationFrame(animateParticles);
-    }
-    
-    // Connect nearby particles
-    function connectParticles() {
-        for (let i = 0; i < particlesArray.length; i++) {
-            for (let j = i + 1; j < particlesArray.length; j++) {
-                const dx = particlesArray[i].x - particlesArray[j].x;
-                const dy = particlesArray[i].y - particlesArray[j].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < 120) {
-                    ctx.strokeStyle = `rgba(102, 126, 234, ${0.2 * (1 - distance / 120)})`;
-                    ctx.lineWidth = 1;
+        // Connections
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+                const dx = nodes[i].x - nodes[j].x;
+                const dy = nodes[i].y - nodes[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < CONNECT_DIST) {
+                    const alpha = (1 - dist / CONNECT_DIST) * 0.35;
                     ctx.beginPath();
-                    ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-                    ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                    const grad = ctx.createLinearGradient(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+                    grad.addColorStop(0, `rgba(124,58,237,${alpha})`);
+                    grad.addColorStop(1, `rgba(0,212,255,${alpha})`);
+                    ctx.strokeStyle = grad;
+                    ctx.lineWidth = 0.8;
+                    ctx.moveTo(nodes[i].x, nodes[i].y);
+                    ctx.lineTo(nodes[j].x, nodes[j].y);
                     ctx.stroke();
                 }
             }
         }
+
+        // Nodes
+        for (const n of nodes) {
+            const pulse = (Math.sin(n.pulse) * 0.5 + 0.5);
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, n.r + pulse * 0.8, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(0,212,255,${0.4 + pulse * 0.5})`;
+            ctx.fill();
+
+            // Glow
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, n.r + 4, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(0,212,255,${0.04 + pulse * 0.06})`;
+            ctx.fill();
+        }
+
+        animId = requestAnimationFrame(draw);
     }
-    
-    initParticles();
-    animateParticles();
-    
-    window.addEventListener('resize', () => {
-        resizeCanvas();
-        initParticles();
+
+    const ro = new ResizeObserver(() => {
+        resize();
+        createNodes();
     });
-}
+    ro.observe(canvas.parentElement);
 
-// Image lazy loading and optimization
-document.querySelectorAll('img').forEach(img => {
-    // Add fade-in effect when image loads
-    if (!img.complete) {
-        img.style.opacity = '0';
-        img.addEventListener('load', function() {
-            this.style.transition = 'opacity 0.5s ease';
-            this.style.opacity = '1';
-        });
+    resize();
+    createNodes();
+    draw();
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        cancelAnimationFrame(animId);
+        ctx.clearRect(0, 0, W, H);
     }
-    
-    // Error handling for profile image - resize if too large
-    if (img.classList.contains('profile-img')) {
-        img.addEventListener('error', function() {
-            this.src = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23667eea%22 width=%22400%22 height=%22400%22/%3E%3Ctext fill=%22white%22 font-size=%2260%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22%3EAR%3C/text%3E%3C/svg%3E';
-        });
+})();
+
+// ─── TYPING EFFECT ───
+(function initTyping() {
+    const el = document.querySelector('.typed-text');
+    if (!el) return;
+    const phrases = [
+        'AI Researcher',
+        'LLM Engineer',
+        'Computer Vision Engineer',
+        'ML Engineer',
+        'Deep Learning Specialist',
+        'GenAI Engineer',
+        'PhD Candidate',
+    ];
+    let pi = 0, ci = 0, deleting = false;
+
+    function type() {
+        const current = phrases[pi];
+        if (!deleting) {
+            el.textContent = current.slice(0, ++ci);
+            if (ci === current.length) {
+                deleting = true;
+                setTimeout(type, 1800);
+                return;
+            }
+            setTimeout(type, 80);
+        } else {
+            el.textContent = current.slice(0, --ci);
+            if (ci === 0) {
+                deleting = false;
+                pi = (pi + 1) % phrases.length;
+                setTimeout(type, 400);
+                return;
+            }
+            setTimeout(type, 40);
+        }
     }
-});
+    type();
+})();
 
-// Debounce function for performance
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
+// ─── NAVBAR ───
+(function initNavbar() {
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-// Apply debounce to scroll handlers
-const debouncedHighlightNav = debounce(highlightNavigation, 100);
-window.addEventListener('scroll', debouncedHighlightNav);
-
-// Page load animation
-window.addEventListener('load', () => {
-    body.classList.add('loaded');
-});
-
-// Add ripple effect to buttons
-function createRipple(event) {
-    const button = event.currentTarget;
-    const ripple = document.createElement('span');
-    const rect = button.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const x = event.clientX - rect.left - size / 2;
-    const y = event.clientY - rect.top - size / 2;
-    
-    ripple.style.width = ripple.style.height = size + 'px';
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
-    ripple.classList.add('ripple');
-    
-    const existingRipple = button.querySelector('.ripple');
-    if (existingRipple) {
-        existingRipple.remove();
-    }
-    
-    button.appendChild(ripple);
-    
-    setTimeout(() => ripple.remove(), 600);
-}
-
-document.querySelectorAll('.btn, .project-link, .contact-card').forEach(element => {
-    element.addEventListener('click', createRipple);
-});
-
-// Console message
-console.log('%c🚀 ML Engineer Portfolio', 'font-size: 24px; font-weight: bold; color: #667eea;');
-console.log('%cInterested in the code? Check out my GitHub!', 'font-size: 16px; color: #4a5568;');
-console.log('%chttps://github.com/arofenitra', 'font-size: 14px; color: #764ba2; font-weight: bold;');
-
-// Performance monitoring
-if ('performance' in window) {
-    window.addEventListener('load', () => {
-        const perfData = performance.timing;
-        const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-        console.log(`%cPage Load Time: ${pageLoadTime}ms`, 'color: #48bb78; font-weight: bold;');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
-}
+
+    hamburger.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        hamburger.classList.toggle('active', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+        // Animate bars
+        const bars = hamburger.querySelectorAll('span');
+        if (open) {
+            bars[0].style.transform = 'rotate(45deg) translateY(7px)';
+            bars[1].style.opacity = '0';
+            bars[2].style.transform = 'rotate(-45deg) translateY(-7px)';
+        } else {
+            bars[0].style.transform = '';
+            bars[1].style.opacity = '';
+            bars[2].style.transform = '';
+        }
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+            hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+        });
+    });
+})();
+
+// ─── COUNTER ANIMATION ───
+(function initCounters() {
+    const els = document.querySelectorAll('[data-count]');
+    if (!els.length) return;
+
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = +el.getAttribute('data-count');
+            const duration = 1400;
+            const start = performance.now();
+            function step(now) {
+                const pct = Math.min((now - start) / duration, 1);
+                el.textContent = Math.floor(easeOut(pct) * target);
+                if (pct < 1) requestAnimationFrame(step);
+                else el.textContent = target;
+            }
+            requestAnimationFrame(step);
+            obs.unobserve(el);
+        });
+    }, { threshold: 0.5 });
+
+    els.forEach(el => obs.observe(el));
+
+    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+})();
+
+// ─── SKILL BAR ANIMATION ───
+(function initSkillBars() {
+    const fills = document.querySelectorAll('.skill-fill');
+    if (!fills.length) return;
+
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            el.style.width = el.getAttribute('data-w') + '%';
+            obs.unobserve(el);
+        });
+    }, { threshold: 0.3 });
+
+    fills.forEach(el => obs.observe(el));
+})();
+
+// ─── PROJECT FILTER ───
+(function initProjectFilter() {
+    const btns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.proj-card');
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-filter');
+
+            cards.forEach(card => {
+                const cats = card.getAttribute('data-category') || '';
+                if (filter === 'all' || cats.includes(filter)) {
+                    card.classList.remove('hidden');
+                    card.style.animation = 'fadeInCard 0.35s ease forwards';
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+})();
+
+// ─── BACK TO TOP ───
+(function initBackTop() {
+    const btn = document.getElementById('backTop');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
+
+// ─── SMOOTH ACTIVE NAV HIGHLIGHT ───
+(function initNavHighlight() {
+    const sections = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                links.forEach(l => l.style.color = '');
+                const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+                if (active) active.style.color = 'var(--cyan)';
+            }
+        });
+    }, { threshold: 0.45 });
+
+    sections.forEach(s => obs.observe(s));
+})();
+
+// ─── CARD FADE IN KEYFRAME (injected) ───
+(function injectStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeInCard {
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    `;
+    document.head.appendChild(style);
+})();
