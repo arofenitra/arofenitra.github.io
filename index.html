@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Arofenitra Rarivonjy — AI Researcher & ML Engineer. Hallucination detection in LLMs, adversarial robustness, computer vision. Open to PhD programs and industry roles.">
-    <meta name="keywords" content="AI researcher, machine learning engineer, LLM hallucination, computer vision, deep learning, PhD candidate, generative AI">
-    <title>Arofenitra Rarivonjy | AI Researcher & ML Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Arofenitra Rarivonjy — AI Researcher & ML Engineer. Hallucination detection in LLMs, adversarial robustness, computer vision. Open to PhD programs and industry roles.">
+<meta name="keywords" content="AI researcher, machine learning engineer, LLM hallucination, computer vision, deep learning, PhD candidate, generative AI">
+<title>Arofenitra Rarivonjy — AI Researcher &amp; ML Engineer</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- AOS (kept for compatibility; GSAP drives the real reveals) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
-    <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ═══════════════════════ SCROLL PROGRESS ═══════════════════════ -->
+<!-- ═══════════════════ PAPER GRAIN OVERLAY ═══════════════════ -->
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- ═══════════════════ SCROLL PROGRESS ═══════════════════ -->
 <div class="scroll-bar" id="scrollBar"></div>
 
-<!-- ═══════════════════════ CURSOR ═══════════════════════ -->
+<!-- ═══════════════════ CURSOR (pen-nib) ═══════════════════ -->
 <div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<!-- ═══════════════════ MARGIN RULE (signature element) ═══════════════════ -->
+<div class="margin-rule" aria-hidden="true"></div>
+
+<!-- ═══════════════════ NAVBAR ═══════════════════ -->
 <nav class="navbar" id="navbar">
     <div class="container nav-inner">
         <a class="nav-logo" href="#hero">
-            <span class="logo-bracket">[</span>AR<span class="logo-bracket">]</span>
+            <span class="logo-mark">A.R.</span>
+            <span class="logo-sub">Curriculum Vitae</span>
         </a>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#achievements">Journey</a></li>
-            <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+            <li><span class="nav-num">§01</span><a href="#about">About</a></li>
+            <li><span class="nav-num">§02</span><a href="#research">Research</a></li>
+            <li><span class="nav-num">§03</span><a href="#projects">Projects</a></li>
+            <li><span class="nav-num">§04</span><a href="#skills">Skills</a></li>
+            <li><span class="nav-num">§05</span><a href="#achievements">Timeline</a></li>
+            <li><a href="#contact" class="nav-cta">Contact</a></li>
         </ul>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
             <span></span><span></span><span></span>
@@ -48,32 +55,39 @@
     </div>
 </nav>
 
-<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<!-- ═══════════════════ HERO ═══════════════════ -->
 <section id="hero" class="hero">
-    <canvas id="neural-canvas"></canvas>
-    <div class="hero-noise"></div>
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
     <div class="container hero-inner">
-        <div class="hero-text" data-aos="fade-up" data-aos-duration="900">
-            <div class="hero-eyebrow">
-                <span class="eyebrow-dot"></span>
-                <span>Available for PhD &amp; Industry Roles</span>
-            </div>
-            <h1 class="hero-name">Arofenitra<br><em>Rarivonjy</em></h1>
-            <p class="hero-role">
-                <span class="typed-text"></span><span class="type-cursor">▋</span>
+
+        <div class="hero-text">
+            <p class="hero-eyebrow gsap-reveal">
+                <span class="eyebrow-seal">Fig. 0</span>
+                Curriculum Vitae — Open for PhD &amp; Industry Review, 2026
             </p>
-            <p class="hero-bio">
-                AI researcher with work on <strong>adversarial robustness</strong> in neural image compression 
-                and a Master's thesis on <strong>hallucination detection &amp; localization in LLMs</strong>. 
+
+            <h1 class="hero-name gsap-reveal">
+                Arofenitra<br><span class="hero-name-em">Rarivonjy</span>
+            </h1>
+
+            <p class="hero-role gsap-reveal">
+                <span class="typed-text"></span><span class="type-cursor">|</span>
+            </p>
+
+            <p class="hero-bio gsap-reveal">
+                AI researcher with published work on <strong>adversarial robustness</strong> in neural image
+                compression and a Master's thesis on <strong>hallucination detection &amp; localization in LLMs</strong>.
                 I build systems at the intersection of rigorous mathematics, deep learning, and real-world impact.
             </p>
-            <div class="hero-chips">
-                <span class="chip"><i class="fas fa-map-marker-alt"></i> Antananarivo, Madagascar · UTC+3</span>
-                <span class="chip chip-green"><i class="fas fa-circle"></i> Open to opportunities worldwide</span>
+
+            <div class="hero-meta gsap-reveal">
+                <span class="meta-item"><i class="fas fa-location-dot"></i> Antananarivo, Madagascar · UTC+3</span>
+                <span class="meta-item meta-open"><i class="fas fa-circle"></i> Open to opportunities worldwide</span>
             </div>
-            <div class="hero-ctas">
+
+            <div class="hero-ctas gsap-reveal">
                 <a href="#contact" class="btn btn-primary">
-                    <i class="fas fa-paper-plane"></i> Get in Touch
+                    Get in Touch <i class="fas fa-arrow-right"></i>
                 </a>
                 <a href="https://github.com/arofenitra" target="_blank" class="btn btn-ghost">
                     <i class="fab fa-github"></i> GitHub
@@ -84,58 +98,70 @@
             </div>
         </div>
 
-        <div class="hero-stats-column" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
-            <div class="stat-card">
-                <div class="stat-num" data-count="3">0</div>
-                <div class="stat-label">Research Papers</div>
-                <div class="stat-sub">Published / Under Review</div>
+        <aside class="hero-margin gsap-reveal-side">
+            <div class="margin-block">
+                <div class="margin-num" data-count="3">0</div>
+                <div class="margin-label">Research Papers</div>
+                <div class="margin-sub">Published / Under Review</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-num" data-count="12">0</div>
-                <div class="stat-label">Projects</div>
-                <div class="stat-sub">Research &amp; Engineering</div>
+            <div class="margin-rule-thin"></div>
+            <div class="margin-block">
+                <div class="margin-num" data-count="12">0</div>
+                <div class="margin-label">Projects</div>
+                <div class="margin-sub">Research &amp; Engineering</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-num">∞</div>
-                <div class="stat-label">Curiosity</div>
-                <div class="stat-sub">For Math, Physics &amp; AI</div>
+            <div class="margin-rule-thin"></div>
+            <div class="margin-block">
+                <div class="margin-num margin-num-sym">∞</div>
+                <div class="margin-label">Curiosity</div>
+                <div class="margin-sub">For Math, Physics &amp; AI</div>
             </div>
-            <div class="stat-card stat-card-accent">
-                <i class="fas fa-brain stat-icon-big"></i>
-                <div class="stat-label-big">LLM · CV · GenAI</div>
+            <div class="margin-rule-thin"></div>
+            <div class="margin-block margin-block-tags">
+                <span class="margin-tag">LLM</span>
+                <span class="margin-tag">CV</span>
+                <span class="margin-tag">GenAI</span>
             </div>
-        </div>
+        </aside>
     </div>
 
     <div class="hero-scroll-hint">
-        <span>Scroll</span>
+        <span>Scroll to begin reading</span>
         <div class="scroll-line"></div>
     </div>
 </section>
 
-<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<!-- ═══════════════════ ABOUT ═══════════════════ -->
 <section id="about" class="section about-section">
     <div class="container">
-        <div class="section-label" data-aos="fade-up">// about_me</div>
-        <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Who I Am</h2>
+        <div class="section-head">
+            <span class="section-fig">Fig. 01</span>
+            <h2 class="section-title">Who I Am</h2>
+        </div>
 
         <div class="about-grid">
-            <div class="about-bio" data-aos="fade-right">
-                <p>
-                    I'm a Mathematician and computational scientist turned AI researcher, trained in advanced mathematics and applied to the frontier of machine learning.
-                    My research asks: <em>when AI models fail, how do we know — and how do we fix it?</em>
+            <div class="about-bio gsap-reveal">
+                <p class="lede">
+                    I'm a mathematician and computational scientist turned AI researcher, trained in advanced
+                    mathematics and applied to the frontier of machine learning. My research asks:
+                    <em>when AI models fail, how do we know — and how do we fix it?</em>
                 </p>
                 <p>
-                    My Master's in Mathematics at Andhra University focused on Cryptography, Diophantine Equation and Number Theory. It is empasized by building a cryptosystem based on diophantine equation and group theory for secure system in cryptography.
+                    My Master's in Mathematics at Andhra University focused on cryptography, Diophantine
+                    equations, and number theory — emphasized by building a cryptosystem based on Diophantine
+                    equations and group theory for secure cryptographic systems.
                 </p>
                 <p>
-                    My Master's thesis at Skoltech (2025-2026) focused on <strong>detecting and localizing hallucinations in Large Language Models</strong> 
-                    using probing classifiers over hidden states. Alongside this, I published on <strong>adversarial attacks against learned image compression</strong>
-                    (NeuroInformatics 2025) and on <strong>data-driven sparse modeling for two-phase fluid flows</strong> (accepted at IEEE ADACIS 2025).
+                    My Master's thesis at Skoltech (2025–2026) focused on <strong>detecting and localizing
+                    hallucinations in Large Language Models</strong> using probing classifiers over hidden
+                    states. Alongside this, I published on <strong>adversarial attacks against learned image
+                    compression</strong> (NeuroInformatics 2025) and on <strong>data-driven sparse modeling
+                    for two-phase fluid flows</strong> (accepted at IEEE ADACIS 2025).
                 </p>
                 <p>
-                    I'm actively seeking <strong>PhD positions</strong> in AI, Mathematics, Physics, and Computer Science, 
-                    as well as <strong>Engineering roles</strong> as an AI Engineer, Data Scientist, Research Engineer.
+                    I'm actively seeking <strong>PhD positions</strong> in AI, Mathematics, Physics, and
+                    Computer Science, as well as <strong>engineering roles</strong> as an AI Engineer, Data
+                    Scientist, or Research Engineer.
                 </p>
                 <div class="about-links">
                     <a href="mailto:arofenitraramarari(at)gmail.com" class="text-link">
@@ -144,27 +170,26 @@
                 </div>
             </div>
 
-            <div class="about-cards" data-aos="fade-left">
+            <div class="about-cards gsap-reveal">
                 <div class="info-card">
-                    <div class="info-card-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <span class="info-card-num">01</span>
                     <h4>Education</h4>
-                    <p><strong>M.Sc. Computational Science</strong><br>Thesis on Generative AI, Computer Vision<br>Skoltech, Moscow (2024–2026)</p>
-
-                    <p><strong>M.Sc. Mathematics</strong><br>Focus on Cryptography, Diophantine Equation and Number Theory<br>Andhra University, India (2022–2024)</p>
+                    <p><strong>M.Sc. Computational Science</strong><br>Generative AI, Computer Vision<br>Skoltech, Moscow (2024–2026)</p>
+                    <p><strong>M.Sc. Mathematics</strong><br>Cryptography, Diophantine Equations, Number Theory<br>Andhra University, India (2022–2024)</p>
                     <p><strong>B.Sc. Mathematics</strong><br>University of Antananarivo</p>
                 </div>
                 <div class="info-card">
-                    <div class="info-card-icon"><i class="fas fa-crosshairs"></i></div>
+                    <span class="info-card-num">02</span>
                     <h4>PhD Targets</h4>
                     <p>AI Alignment · LLM Interpretability · Computer Vision · Mathematical Physics · Dynamical Systems</p>
                 </div>
                 <div class="info-card">
-                    <div class="info-card-icon"><i class="fas fa-briefcase"></i></div>
+                    <span class="info-card-num">03</span>
                     <h4>Industry Targets</h4>
                     <p>ML / LLM / GenAI Engineer · Computer Vision Engineer · AI Research Scientist · MLOps Engineer</p>
                 </div>
                 <div class="info-card">
-                    <div class="info-card-icon"><i class="fas fa-language"></i></div>
+                    <span class="info-card-num">04</span>
                     <h4>Languages</h4>
                     <p>Malagasy (Native) · French (Fluent) · English (Fluent)</p>
                 </div>
@@ -173,26 +198,29 @@
     </div>
 </section>
 
-<!-- ═══════════════════════ RESEARCH / PUBLICATIONS ═══════════════════════ -->
+<!-- ═══════════════════ RESEARCH / PUBLICATIONS ═══════════════════ -->
 <section id="research" class="section research-section">
     <div class="container">
-        <div class="section-label" data-aos="fade-up">// research_output</div>
-        <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Research &amp; Publications</h2>
+        <div class="section-head">
+            <span class="section-fig">Fig. 02</span>
+            <h2 class="section-title">Research &amp; Publications</h2>
+        </div>
 
         <div class="pub-list">
 
-            <div class="pub-card" data-aos="fade-up" data-aos-delay="100">
+            <article class="pub-card gsap-reveal">
                 <div class="pub-venue">
-                    <span class="venue-badge venue-conf">Published at NeuroInformatics 2025</span>
+                    <span class="venue-badge venue-conf">Published — NeuroInformatics 2025</span>
                     <span class="pub-year">2025</span>
                 </div>
                 <h3 class="pub-title">Robustness of AI Image Compression: Non-Linear Perturbation</h3>
                 <p class="pub-authors"><strong>A. Rarivonjy</strong> et al.</p>
                 <p class="pub-abstract">
-                    We study the vulnerability of learned image compression codecs (Cheng2020, HiFiC) to adversarial perturbations via FGSM and PGD attacks. 
-                    Surprisingly small L∞-bounded perturbations collapse PSNR from ~35 dB to ~13 dB, 
-                    revealing a critical gap between perceptual quality and compression robustness. 
-                    We propose multi-loss attack objectives and show transferability across codecs.
+                    We study the vulnerability of learned image compression codecs (Cheng2020, HiFiC) to
+                    adversarial perturbations via FGSM and PGD attacks. Surprisingly small L∞-bounded
+                    perturbations collapse PSNR from ~35&nbsp;dB to ~13&nbsp;dB, revealing a critical gap
+                    between perceptual quality and compression robustness. We propose multi-loss attack
+                    objectives and show transferability across codecs.
                 </p>
                 <div class="pub-tags">
                     <span>Computer Vision</span><span>Adversarial ML</span><span>Image Compression</span><span>Robustness</span>
@@ -200,44 +228,45 @@
                 <div class="pub-links">
                     <a href="https://github.com/arofenitra/Adversarial_Attack_Image_Compression" target="_blank"><i class="fab fa-github"></i> Code</a>
                 </div>
-            </div>
+            </article>
 
-            <div class="pub-card" data-aos="fade-up" data-aos-delay="150">
+            <article class="pub-card gsap-reveal">
                 <div class="pub-venue">
-                    <span class="venue-badge venue-conf">Accepted at IEEE ADACIS 2025</span>
+                    <span class="venue-badge venue-conf">Accepted — IEEE ADACIS 2025</span>
                     <span class="pub-year">2025</span>
                 </div>
                 <h3 class="pub-title">Data-Driven and Delayed Sparse-Regularized Models for Two-Phase Flow Property Prediction</h3>
                 <p class="pub-authors"><strong>A. Rarivonjy</strong> et al.</p>
                 <p class="pub-abstract">
-                    We apply sparse system identification (SINDy) with time-delay embedding and L1-regularization to predict 
-                    properties of two-phase flows (gas-liquid pipelines). Our method recovers governing equations from noisy sensor data 
-                    without prior knowledge of the physics, outperforming black-box neural networks in out-of-distribution scenarios.
+                    We apply sparse system identification (SINDy) with time-delay embedding and
+                    L1-regularization to predict properties of two-phase flows in gas-liquid pipelines. Our
+                    method recovers governing equations from noisy sensor data without prior knowledge of the
+                    physics, outperforming black-box neural networks in out-of-distribution scenarios.
                 </p>
                 <div class="pub-tags">
                     <span>Dynamical Systems</span><span>SINDy</span><span>Scientific ML</span><span>Fluid Mechanics</span>
                 </div>
-            </div>
+            </article>
 
-            <div class="pub-card" data-aos="fade-up" data-aos-delay="200">
+            <article class="pub-card gsap-reveal">
                 <div class="pub-venue">
-                    <span class="venue-badge venue-review">Under Review · DAMDID 2026</span>
+                    <span class="venue-badge venue-review">Under Review — DAMDID 2026</span>
                     <span class="pub-year">2026</span>
                 </div>
                 <h3 class="pub-title">Regularized and Basis Function Representations for Time-Varying Coefficient Recovery in Dynamical System ODEs</h3>
                 <p class="pub-authors"><strong>A. Rarivonjy</strong> et al.</p>
                 <p class="pub-abstract">
-                    We introduce a regularized basis-function framework for recovering time-varying parameters in ODE systems from noisy observations. 
-                    The method combines Fourier/wavelet basis expansions with Tikhonov regularization to handle measurement noise and 
-                    parameter non-stationarity, with applications in epidemiology and neuroscience.
+                    We introduce a regularized basis-function framework for recovering time-varying parameters
+                    in ODE systems from noisy observations. The method combines Fourier/wavelet basis
+                    expansions with Tikhonov regularization to handle measurement noise and parameter
+                    non-stationarity, with applications in epidemiology and neuroscience.
                 </p>
                 <div class="pub-tags">
                     <span>ODEs</span><span>Inverse Problems</span><span>Regularization</span><span>Scientific Computing</span>
                 </div>
-            </div>
+            </article>
 
-            <!-- Thesis -->
-            <div class="pub-card pub-thesis" data-aos="fade-up" data-aos-delay="250">
+            <article class="pub-card pub-thesis gsap-reveal">
                 <div class="pub-venue">
                     <span class="venue-badge venue-thesis">Master's Thesis</span>
                     <span class="pub-year">2025</span>
@@ -245,10 +274,11 @@
                 <h3 class="pub-title">Hallucination Detection and Localization in Large Language Models</h3>
                 <p class="pub-authors"><strong>A. Rarivonjy</strong> — Skoltech</p>
                 <p class="pub-abstract">
-                    A probing-based framework for detecting and localizing factual hallucinations in LLMs at inference time without 
-                    external knowledge retrieval. We analyze internal hidden states of Qwen2.5, extract geometric features 
-                    (curvature, anisotropy, layer-wise variance), and train lightweight probes achieving robust classification. 
-                    We further propose token-level localization to pinpoint where in a generation hallucination begins.
+                    A probing-based framework for detecting and localizing factual hallucinations in LLMs at
+                    inference time without external knowledge retrieval. We analyze internal hidden states of
+                    Qwen2.5, extract geometric features (curvature, anisotropy, layer-wise variance), and train
+                    lightweight probes achieving robust classification. We further propose token-level
+                    localization to pinpoint where in a generation hallucination begins.
                 </p>
                 <div class="pub-tags">
                     <span>LLMs</span><span>Hallucination</span><span>Interpretability</span><span>Probing</span><span>NLP</span>
@@ -256,20 +286,22 @@
                 <div class="pub-links">
                     <a href="https://github.com/arofenitra/SMILES-HALLUCINATION-DETECTION" target="_blank"><i class="fab fa-github"></i> Code</a>
                 </div>
-            </div>
+            </article>
 
         </div>
     </div>
 </section>
 
-<!-- ═══════════════════════ PROJECTS ═══════════════════════ -->
+<!-- ═══════════════════ PROJECTS ═══════════════════ -->
 <section id="projects" class="section projects-section">
     <div class="container">
-        <div class="section-label" data-aos="fade-up">// featured_projects</div>
-        <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">What I've Built</h2>
+        <div class="section-head">
+            <span class="section-fig">Fig. 03</span>
+            <h2 class="section-title">What I've Built</h2>
+        </div>
 
         <!-- Filter tabs -->
-        <div class="filter-tabs" data-aos="fade-up" data-aos-delay="100">
+        <div class="filter-tabs">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="llm">LLM / NLP</button>
             <button class="filter-btn" data-filter="cv">Computer Vision</button>
@@ -280,361 +312,415 @@
 
         <div class="projects-grid" id="projectsGrid">
 
-            <!-- ─── P1: Hallucination Detection ─── -->
-            <article class="proj-card" data-category="llm research" data-aos="fade-up" data-aos-delay="100">
-                <div class="proj-header">
-                    <div class="proj-icon-bg">
-                        <i class="fas fa-brain"></i>
+            <!-- P1 -->
+            <article class="proj-card gsap-reveal" data-category="llm research">
+                <div class="proj-media">
+                    <img src="https://placehold.co/640x360/8C1F28/F4F0E6?text=SMILES" alt="SMILES hallucination probe visualization placeholder" loading="lazy">
+                </div>
+                <div class="proj-body">
+                    <div class="proj-header">
+                        <div class="proj-badges">
+                            <span class="badge-research">Master's Thesis</span>
+                            <span class="badge-pub">Research</span>
+                        </div>
                     </div>
-                    <div class="proj-badges">
-                        <span class="badge-research">Master's Thesis</span>
-                        <span class="badge-pub">Research</span>
+                    <h3 class="proj-title">SMILES: LLM Hallucination Probe</h3>
+                    <p class="proj-desc proj-desc-clamped">
+                        Probe-based hallucination detection in LLMs using internal hidden-state geometry.
+                        Analyzes 24 transformer layers of Qwen2.5-0.5B, extracting curvature and anisotropy
+                        features for binary classification of truthful vs. hallucinated tokens. The approach
+                        avoids external knowledge retrieval entirely, relying instead on geometric signatures
+                        already present in the model's internal representations — making it lightweight enough
+                        to run at inference time with negligible latency overhead.
+                    </p>
+                    <button class="read-more-btn" type="button">Read more <i class="fas fa-chevron-down"></i></button>
+                    <div class="proj-stack">
+                        <span>Python</span><span>PyTorch</span><span>Qwen2.5</span><span>Transformers</span><span>Probing</span>
                     </div>
-                </div>
-                <h3 class="proj-title">SMILES: LLM Hallucination Probe</h3>
-                <p class="proj-desc">
-                    Probe-based hallucination detection in LLMs using internal hidden-state geometry. 
-                    Analyzes 24 transformer layers of Qwen2.5-0.5B, extracting curvature and anisotropy features for 
-                    binary classification of truthful vs. hallucinated tokens.
-                </p>
-                <div class="proj-stack">
-                    <span>Python</span><span>PyTorch</span><span>Qwen2.5</span><span>Transformers</span><span>Probing</span>
-                </div>
-                <div class="proj-metrics-row">
-                    <div class="proj-metric"><span class="pm-val">60%</span><span class="pm-lab">Test Accuracy</span></div>
-                    <div class="proj-metric"><span class="pm-val">24</span><span class="pm-lab">Layers Analyzed</span></div>
-                    <div class="proj-metric"><span class="pm-val">Low</span><span class="pm-lab">Compute Cost</span></div>
-                </div>
-                <div class="proj-links">
-                    <a href="https://github.com/arofenitra/SMILES-HALLUCINATION-DETECTION" target="_blank"><i class="fab fa-github"></i> Code</a>
-                    <a href="https://github.com/arofenitra/SMILES-HALLUCINATION-DETECTION/blob/main/SOLUTION.md" target="_blank"><i class="fas fa-file-alt"></i> Report</a>
+                    <div class="proj-metrics-row">
+                        <div class="proj-metric"><span class="pm-val">60%</span><span class="pm-lab">Test Accuracy</span></div>
+                        <div class="proj-metric"><span class="pm-val">24</span><span class="pm-lab">Layers Analyzed</span></div>
+                        <div class="proj-metric"><span class="pm-val">Low</span><span class="pm-lab">Compute Cost</span></div>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/arofenitra/SMILES-HALLUCINATION-DETECTION" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://github.com/arofenitra/SMILES-HALLUCINATION-DETECTION/blob/main/SOLUTION.md" target="_blank"><i class="fas fa-file-alt"></i> Report</a>
+                    </div>
                 </div>
             </article>
 
-            <!-- ─── P2: Adversarial Attack Compression ─── -->
-            <article class="proj-card" data-category="cv research" data-aos="fade-up" data-aos-delay="150">
-                <div class="proj-header">
-                    <div class="proj-icon-bg proj-icon-orange">
-                        <i class="fas fa-shield-alt"></i>
+            <!-- P2 -->
+            <article class="proj-card gsap-reveal" data-category="cv research">
+                <div class="proj-media">
+                    <img src="https://placehold.co/640x360/5B6B4F/F4F0E6?text=Adversarial+CV" alt="Adversarial image compression visualization placeholder" loading="lazy">
+                </div>
+                <div class="proj-body">
+                    <div class="proj-header">
+                        <div class="proj-badges">
+                            <span class="badge-pub">NeuroInformatics 2025</span>
+                        </div>
                     </div>
-                    <div class="proj-badges">
-                        <span class="badge-pub">NeuroInformatics 2025</span>
+                    <h3 class="proj-title">Adversarial Robustness of Neural Image Compression</h3>
+                    <p class="proj-desc proj-desc-clamped">
+                        FGSM and PGD adversarial attacks on learned image codecs (Cheng2020, HiFiC). Achieves
+                        PSNR collapse from 35&nbsp;dB → 13&nbsp;dB with ε&lt;0.03 L∞ perturbation. We additionally
+                        evaluate transferability of attacks across codec architectures and propose a multi-loss
+                        objective that jointly targets rate and distortion terms, exposing a robustness gap that
+                        standard perceptual-quality benchmarks fail to capture. Published at NeuroInformatics 2025.
+                    </p>
+                    <button class="read-more-btn" type="button">Read more <i class="fas fa-chevron-down"></i></button>
+                    <div class="proj-stack">
+                        <span>Python</span><span>PyTorch</span><span>CompressAI</span><span>FGSM/PGD</span><span>PSNR/SSIM</span>
                     </div>
-                </div>
-                <h3 class="proj-title">Adversarial Robustness of Neural Image Compression</h3>
-                <p class="proj-desc">
-                    FGSM and PGD adversarial attacks on learned image codecs (Cheng2020, HiFiC). 
-                    Achieves PSNR collapse from 35 dB → 13 dB with ε&lt;0.03 L∞ perturbation. 
-                    Published at NeuroInformatics 2025.
-                </p>
-                <div class="proj-stack">
-                    <span>Python</span><span>PyTorch</span><span>CompressAI</span><span>FGSM/PGD</span><span>PSNR/SSIM</span>
-                </div>
-                <div class="proj-metrics-row">
-                    <div class="proj-metric"><span class="pm-val">22 dB</span><span class="pm-lab">PSNR Drop</span></div>
-                    <div class="proj-metric"><span class="pm-val">3%</span><span class="pm-lab">Perturbation</span></div>
-                    <div class="proj-metric"><span class="pm-val">5ms</span><span class="pm-lab">Attack Time</span></div>
-                </div>
-                <div class="proj-links">
-                    <a href="https://github.com/arofenitra/Adversarial_Attack_Image_Compression" target="_blank"><i class="fab fa-github"></i> Code</a>
-                    <a href="https://arxiv.org/pdf/1412.6572" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                    <div class="proj-metrics-row">
+                        <div class="proj-metric"><span class="pm-val">22 dB</span><span class="pm-lab">PSNR Drop</span></div>
+                        <div class="proj-metric"><span class="pm-val">3%</span><span class="pm-lab">Perturbation</span></div>
+                        <div class="proj-metric"><span class="pm-val">5ms</span><span class="pm-lab">Attack Time</span></div>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/arofenitra/Adversarial_Attack_Image_Compression" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://arxiv.org/pdf/1412.6572" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                    </div>
                 </div>
             </article>
 
-            <!-- ─── P3: DefectZero ─── -->
-            <article class="proj-card" data-category="cv" data-aos="fade-up" data-aos-delay="200">
-                <div class="proj-header">
-                    <div class="proj-icon-bg proj-icon-teal">
-                        <i class="fas fa-search-plus"></i>
+            <!-- P3 -->
+            <article class="proj-card gsap-reveal" data-category="cv">
+                <div class="proj-media">
+                    <img src="https://placehold.co/640x360/1C1B19/F4F0E6?text=DefectZero" alt="DefectZero anomaly detection visualization placeholder" loading="lazy">
+                </div>
+                <div class="proj-body">
+                    <div class="proj-header">
+                        <div class="proj-badges">
+                            <span class="badge-eng">Industrial AI</span>
+                        </div>
                     </div>
-                    <div class="proj-badges">
-                        <span class="badge-eng">Industrial AI</span>
+                    <h3 class="proj-title">DefectZero: Unsupervised Anomaly Detection</h3>
+                    <p class="proj-desc proj-desc-clamped">
+                        Zero-shot industrial surface defect detection using PaDiM + EfficientNet-B0. Trained
+                        only on normal samples; Mahalanobis distance identifies defective regions at 45+ FPS
+                        on CPU. Applied to the MVTec AD dataset across 15 product categories, demonstrating
+                        that a purely normal-sample training regime can match supervised baselines while
+                        remaining deployable on commodity industrial hardware without a GPU.
+                    </p>
+                    <button class="read-more-btn" type="button">Read more <i class="fas fa-chevron-down"></i></button>
+                    <div class="proj-stack">
+                        <span>Python</span><span>PyTorch</span><span>EfficientNet</span><span>PaDiM</span><span>OpenCV</span>
                     </div>
-                </div>
-                <h3 class="proj-title">DefectZero: Unsupervised Anomaly Detection</h3>
-                <p class="proj-desc">
-                    Zero-shot industrial surface defect detection using PaDiM + EfficientNet-B0. 
-                    Trained only on normal samples; Mahalanobis distance identifies defective regions at 45+ FPS on CPU.
-                    Applied to MVTec AD dataset across 15 product categories.
-                </p>
-                <div class="proj-stack">
-                    <span>Python</span><span>PyTorch</span><span>EfficientNet</span><span>PaDiM</span><span>OpenCV</span>
-                </div>
-                <div class="proj-metrics-row">
-                    <div class="proj-metric"><span class="pm-val">96%</span><span class="pm-lab">Image AUROC</span></div>
-                    <div class="proj-metric"><span class="pm-val">&lt;15MB</span><span class="pm-lab">Model Size</span></div>
-                    <div class="proj-metric"><span class="pm-val">22ms</span><span class="pm-lab">Latency</span></div>
-                </div>
-                <div class="proj-links">
-                    <a href="https://github.com/arofenitra/patch-anomaly-detection" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <div class="proj-metrics-row">
+                        <div class="proj-metric"><span class="pm-val">96%</span><span class="pm-lab">Image AUROC</span></div>
+                        <div class="proj-metric"><span class="pm-val">&lt;15MB</span><span class="pm-lab">Model Size</span></div>
+                        <div class="proj-metric"><span class="pm-val">22ms</span><span class="pm-lab">Latency</span></div>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/arofenitra/patch-anomaly-detection" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
                 </div>
             </article>
 
-            <!-- ─── P4: Clear Path Detection ─── -->
-            <article class="proj-card" data-category="cv" data-aos="fade-up" data-aos-delay="250">
-                <div class="proj-header">
-                    <div class="proj-icon-bg proj-icon-violet">
-                        <i class="fas fa-route"></i>
+            <!-- P4 -->
+            <article class="proj-card gsap-reveal" data-category="cv">
+                <div class="proj-media">
+                    <img src="https://placehold.co/640x360/8C1F28/F4F0E6?text=Clear+Path" alt="Real-time clear path detection visualization placeholder" loading="lazy">
+                </div>
+                <div class="proj-body">
+                    <div class="proj-header">
+                        <div class="proj-badges">
+                            <span class="badge-eng">Robotics / Autonomy</span>
+                        </div>
                     </div>
-                    <div class="proj-badges">
-                        <span class="badge-eng">Robotics / Autonomy</span>
+                    <h3 class="proj-title">Real-Time Clear Path Detection</h3>
+                    <p class="proj-desc proj-desc-clamped">
+                        Multi-modal autonomous navigation assistance fusing YOLOv8n object detection, MiDaS
+                        depth estimation, and semantic segmentation. Outputs navigable path zones on 640×640
+                        video streams with IP camera support, designed so the three model outputs can be fused
+                        on commodity hardware in real time without a dedicated inference accelerator.
+                    </p>
+                    <button class="read-more-btn" type="button">Read more <i class="fas fa-chevron-down"></i></button>
+                    <div class="proj-stack">
+                        <span>Python</span><span>YOLOv8</span><span>MiDaS</span><span>OpenCV</span><span>PyTorch</span>
                     </div>
-                </div>
-                <h3 class="proj-title">Real-Time Clear Path Detection</h3>
-                <p class="proj-desc">
-                    Multi-modal autonomous navigation assistance fusing YOLOv8n object detection, MiDaS depth estimation, 
-                    and semantic segmentation. Outputs navigable path zones on 640×640 video streams with IP camera support.
-                </p>
-                <div class="proj-stack">
-                    <span>Python</span><span>YOLOv8</span><span>MiDaS</span><span>OpenCV</span><span>PyTorch</span>
-                </div>
-                <div class="proj-metrics-row">
-                    <div class="proj-metric"><span class="pm-val">Real-time</span><span class="pm-lab">Processing</span></div>
-                    <div class="proj-metric"><span class="pm-val">3</span><span class="pm-lab">Models Fused</span></div>
-                    <div class="proj-metric"><span class="pm-val">640px</span><span class="pm-lab">Resolution</span></div>
-                </div>
-                <div class="proj-links">
-                    <a href="https://github.com/arofenitra/clear-path-detection" target="_blank"><i class="fab fa-github"></i> Code</a>
-                    <a href="https://youtu.be/ereZdrV9BoE" target="_blank"><i class="fab fa-youtube"></i> Demo</a>
+                    <div class="proj-metrics-row">
+                        <div class="proj-metric"><span class="pm-val">Real-time</span><span class="pm-lab">Processing</span></div>
+                        <div class="proj-metric"><span class="pm-val">3</span><span class="pm-lab">Models Fused</span></div>
+                        <div class="proj-metric"><span class="pm-val">640px</span><span class="pm-lab">Resolution</span></div>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/arofenitra/clear-path-detection" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        <a href="https://youtu.be/ereZdrV9BoE" target="_blank"><i class="fab fa-youtube"></i> Demo</a>
+                    </div>
                 </div>
             </article>
 
-            <!-- ─── P5: AI Image Compression Study ─── -->
-            <article class="proj-card" data-category="cv research" data-aos="fade-up" data-aos-delay="300">
-                <div class="proj-header">
-                    <div class="proj-icon-bg proj-icon-pink">
-                        <i class="fas fa-compress-arrows-alt"></i>
+            <!-- P5 -->
+            <article class="proj-card gsap-reveal" data-category="cv research">
+                <div class="proj-media">
+                    <img src="https://placehold.co/640x360/5B6B4F/F4F0E6?text=Compression+Study" alt="AI image compression CV task impact study placeholder" loading="lazy">
+                </div>
+                <div class="proj-body">
+                    <div class="proj-header">
+                        <div class="proj-badges">
+                            <span class="badge-research">Research Study</span>
+                        </div>
                     </div>
-                    <div class="proj-badges">
-                        <span class="badge-research">Research Study</span>
+                    <h3 class="proj-title">AI Image Compression: CV Task Impact</h3>
+                    <p class="proj-desc proj-desc-clamped">
+                        Systematic study of how neural codecs degrade downstream vision tasks. Tested object
+                        detection, OCR, and medical image classification across 6 datasets at variable
+                        compression rates, finding that perceptually-optimized codecs can paradoxically
+                        improve downstream task accuracy at moderate bitrates by suppressing sensor noise.
+                    </p>
+                    <button class="read-more-btn" type="button">Read more <i class="fas fa-chevron-down"></i></button>
+                    <div class="proj-stack">
+                        <span>Python</span><span>CompressAI</span><span>HED</span><span>OpenCV</span><span>Matplotlib</span>
                     </div>
-                </div>
-                <h3 class="proj-title">AI Image Compression: CV Task Impact</h3>
-                <p class="proj-desc">
-                    Systematic study of how neural codecs degrade downstream vision tasks. Tested object detection, 
-                    OCR, and medical image classification across 6 datasets at variable compression rates.
-                </p>
-                <div class="proj-stack">
-                    <span>Python</span><span>CompressAI</span><span>HED</span><span>OpenCV</span><span>Matplotlib</span>
-                </div>
-                <div class="proj-metrics-row">
-                    <div class="proj-metric"><span class="pm-val">20%</span><span class="pm-lab">Medical Accuracy ↑</span></div>
-                    <div class="proj-metric"><span class="pm-val">12.3%</span><span class="pm-lab">OCR Improvement</span></div>
-                    <div class="proj-metric"><span class="pm-val">6</span><span class="pm-lab">Datasets</span></div>
-                </div>
-                <div class="proj-links">
-                    <a href="https://github.com/arofenitra/AI-Image-and-video-compression" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <div class="proj-metrics-row">
+                        <div class="proj-metric"><span class="pm-val">20%</span><span class="pm-lab">Medical Accuracy ↑</span></div>
+                        <div class="proj-metric"><span class="pm-val">12.3%</span><span class="pm-lab">OCR Improvement</span></div>
+                        <div class="proj-metric"><span class="pm-val">6</span><span class="pm-lab">Datasets</span></div>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/arofenitra/AI-Image-and-video-compression" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
                 </div>
             </article>
 
-            <!-- ─── P6 NEW: LLM Hallucination Localization Benchmark ─── -->
-            <article class="proj-card proj-card-new" data-category="llm genai" data-aos="fade-up" data-aos-delay="100">
-                <div class="proj-header">
-                    <div class="proj-icon-bg proj-icon-cyan">
-                        <i class="fas fa-map-marked-alt"></i>
+            <!-- P6 -->
+            <article class="proj-card proj-card-new gsap-reveal" data-category="llm genai">
+                <div class="proj-media">
+                    <img src="https://placehold.co/640x360/1C1B19/F4F0E6?text=HalluLocate" alt="HalluLocate token-level hallucination localization placeholder" loading="lazy">
+                </div>
+                <div class="proj-body">
+                    <div class="proj-header">
+                        <div class="proj-badges">
+                            <span class="badge-new">New</span>
+                            <span class="badge-pub">Research</span>
+                        </div>
                     </div>
-                    <div class="proj-badges">
-                        <span class="badge-new">New</span>
-                        <span class="badge-pub">Research</span>
+                    <h3 class="proj-title">HalluLocate: Token-Level Hallucination Localization</h3>
+                    <p class="proj-desc proj-desc-clamped">
+                        Fine-grained token-level localization of LLM hallucinations using attention-head
+                        importance scores and hidden-state trajectory analysis. Benchmarks across TruthfulQA,
+                        HaluEval, and custom STEM fact datasets. Proposes a new metric, the Hallucination
+                        Onset Score (HOS), to quantify exactly where in a generated sequence a model first
+                        departs from grounded fact.
+                    </p>
+                    <button class="read-more-btn" type="button">Read more <i class="fas fa-chevron-down"></i></button>
+                    <div class="proj-stack">
+                        <span>Python</span><span>Transformers</span><span>Qwen/LLaMA</span><span>TruthfulQA</span><span>HaluEval</span>
                     </div>
-                </div>
-                <h3 class="proj-title">HalluLocate: Token-Level Hallucination Localization</h3>
-                <p class="proj-desc">
-                    Fine-grained token-level localization of LLM hallucinations using attention-head importance scores 
-                    and hidden-state trajectory analysis. Benchmarks across TruthfulQA, HaluEval, and custom STEM fact datasets.
-                    Proposes a new metric: Hallucination Onset Score (HOS).
-                </p>
-                <div class="proj-stack">
-                    <span>Python</span><span>Transformers</span><span>Qwen/LLaMA</span><span>TruthfulQA</span><span>HaluEval</span>
-                </div>
-                <div class="proj-metrics-row">
-                    <div class="proj-metric"><span class="pm-val">Token</span><span class="pm-lab">Granularity</span></div>
-                    <div class="proj-metric"><span class="pm-val">3</span><span class="pm-lab">Benchmarks</span></div>
-                    <div class="proj-metric"><span class="pm-val">New</span><span class="pm-lab">HOS Metric</span></div>
-                </div>
-                <div class="proj-links">
-                    <a href="https://github.com/arofenitra/hallulocate" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <div class="proj-metrics-row">
+                        <div class="proj-metric"><span class="pm-val">Token</span><span class="pm-lab">Granularity</span></div>
+                        <div class="proj-metric"><span class="pm-val">3</span><span class="pm-lab">Benchmarks</span></div>
+                        <div class="proj-metric"><span class="pm-val">New</span><span class="pm-lab">HOS Metric</span></div>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/arofenitra/hallulocate" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
                 </div>
             </article>
 
-            <!-- ─── P7 NEW: RAG Hallucination Guard ─── -->
-            <article class="proj-card proj-card-new" data-category="llm genai" data-aos="fade-up" data-aos-delay="150">
-                <div class="proj-header">
-                    <div class="proj-icon-bg proj-icon-green">
-                        <i class="fas fa-shield-virus"></i>
+            <!-- P7 -->
+            <article class="proj-card proj-card-new gsap-reveal" data-category="llm genai">
+                <div class="proj-media">
+                    <img src="https://placehold.co/640x360/8C1F28/F4F0E6?text=RAGGuard" alt="RAGGuard hallucination-aware RAG pipeline placeholder" loading="lazy">
+                </div>
+                <div class="proj-body">
+                    <div class="proj-header">
+                        <div class="proj-badges">
+                            <span class="badge-new">New</span>
+                            <span class="badge-eng">Engineering</span>
+                        </div>
                     </div>
-                    <div class="proj-badges">
-                        <span class="badge-new">New</span>
-                        <span class="badge-eng">Engineering</span>
+                    <h3 class="proj-title">RAGGuard: Hallucination-Aware Retrieval-Augmented Generation</h3>
+                    <p class="proj-desc proj-desc-clamped">
+                        A production-ready RAG pipeline with built-in hallucination detection. Combines dense
+                        retrieval (FAISS + sentence-transformers) with a faithfulness probe to flag responses
+                        that diverge from retrieved context. Includes a FastAPI serving layer and Gradio demo
+                        UI, packaged for one-command Docker deployment in front of any open-weight LLM.
+                    </p>
+                    <button class="read-more-btn" type="button">Read more <i class="fas fa-chevron-down"></i></button>
+                    <div class="proj-stack">
+                        <span>Python</span><span>FAISS</span><span>FastAPI</span><span>LangChain</span><span>Gradio</span><span>Docker</span>
                     </div>
-                </div>
-                <h3 class="proj-title">RAGGuard: Hallucination-Aware Retrieval-Augmented Generation</h3>
-                <p class="proj-desc">
-                    A production-ready RAG pipeline with built-in hallucination detection. Combines dense retrieval 
-                    (FAISS + sentence-transformers) with a faithfulness probe to flag responses that diverge from 
-                    retrieved context. Includes a FastAPI serving layer and Gradio demo UI.
-                </p>
-                <div class="proj-stack">
-                    <span>Python</span><span>FAISS</span><span>FastAPI</span><span>LangChain</span><span>Gradio</span><span>Docker</span>
-                </div>
-                <div class="proj-metrics-row">
-                    <div class="proj-metric"><span class="pm-val">&lt;200ms</span><span class="pm-lab">Latency</span></div>
-                    <div class="proj-metric"><span class="pm-val">REST</span><span class="pm-lab">API Ready</span></div>
-                    <div class="proj-metric"><span class="pm-val">Docker</span><span class="pm-lab">Containerized</span></div>
-                </div>
-                <div class="proj-links">
-                    <a href="https://github.com/arofenitra/ragguard" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <div class="proj-metrics-row">
+                        <div class="proj-metric"><span class="pm-val">&lt;200ms</span><span class="pm-lab">Latency</span></div>
+                        <div class="proj-metric"><span class="pm-val">REST</span><span class="pm-lab">API Ready</span></div>
+                        <div class="proj-metric"><span class="pm-val">Docker</span><span class="pm-lab">Containerized</span></div>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/arofenitra/ragguard" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
                 </div>
             </article>
 
-            <!-- ─── P8 NEW: Generative Image Compression ─── -->
-            <article class="proj-card proj-card-new" data-category="cv genai" data-aos="fade-up" data-aos-delay="200">
-                <div class="proj-header">
-                    <div class="proj-icon-bg proj-icon-orange">
-                        <i class="fas fa-paint-brush"></i>
+            <!-- P8 -->
+            <article class="proj-card proj-card-new gsap-reveal" data-category="cv genai">
+                <div class="proj-media">
+                    <img src="https://placehold.co/640x360/5B6B4F/F4F0E6?text=GenCodec" alt="GenCodec diffusion-guided image compression placeholder" loading="lazy">
+                </div>
+                <div class="proj-body">
+                    <div class="proj-header">
+                        <div class="proj-badges">
+                            <span class="badge-new">New</span>
+                            <span class="badge-eng">GenAI</span>
+                        </div>
                     </div>
-                    <div class="proj-badges">
-                        <span class="badge-new">New</span>
-                        <span class="badge-eng">GenAI</span>
+                    <h3 class="proj-title">GenCodec: Diffusion-Guided Extreme Image Compression</h3>
+                    <p class="proj-desc proj-desc-clamped">
+                        Ultra-low bitrate image compression (0.05–0.1 bpp) enhanced by stable diffusion priors.
+                        The codec encodes a semantic sketch plus quantized latents; a conditioned diffusion
+                        decoder reconstructs perceptually faithful images even at bitrates where conventional
+                        codecs collapse into block artifacts. Evaluated on the CLIC and Kodak benchmarks.
+                    </p>
+                    <button class="read-more-btn" type="button">Read more <i class="fas fa-chevron-down"></i></button>
+                    <div class="proj-stack">
+                        <span>Python</span><span>PyTorch</span><span>Diffusers</span><span>CompressAI</span><span>CLIP</span>
                     </div>
-                </div>
-                <h3 class="proj-title">GenCodec: Diffusion-Guided Extreme Image Compression</h3>
-                <p class="proj-desc">
-                    Ultra-low bitrate image compression (0.05–0.1 bpp) enhanced by stable diffusion priors. 
-                    The codec encodes semantic sketch + quantized latents; a conditioned diffusion decoder 
-                    reconstructs perceptually faithful images. Evaluated on CLIC and Kodak benchmarks.
-                </p>
-                <div class="proj-stack">
-                    <span>Python</span><span>PyTorch</span><span>Diffusers</span><span>CompressAI</span><span>CLIP</span>
-                </div>
-                <div class="proj-metrics-row">
-                    <div class="proj-metric"><span class="pm-val">0.05 bpp</span><span class="pm-lab">Bitrate</span></div>
-                    <div class="proj-metric"><span class="pm-val">LPIPS↑</span><span class="pm-lab">Perceptual</span></div>
-                    <div class="proj-metric"><span class="pm-val">CLIC</span><span class="pm-lab">Benchmark</span></div>
-                </div>
-                <div class="proj-links">
-                    <a href="https://github.com/arofenitra/gencodec" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <div class="proj-metrics-row">
+                        <div class="proj-metric"><span class="pm-val">0.05 bpp</span><span class="pm-lab">Bitrate</span></div>
+                        <div class="proj-metric"><span class="pm-val">LPIPS↑</span><span class="pm-lab">Perceptual</span></div>
+                        <div class="proj-metric"><span class="pm-val">CLIC</span><span class="pm-lab">Benchmark</span></div>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/arofenitra/gencodec" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
                 </div>
             </article>
 
-            <!-- ─── P9 NEW: Neural ODE Parameter Inference ─── -->
-            <article class="proj-card proj-card-new" data-category="math research" data-aos="fade-up" data-aos-delay="250">
-                <div class="proj-header">
-                    <div class="proj-icon-bg proj-icon-violet">
-                        <i class="fas fa-infinity"></i>
+            <!-- P9 -->
+            <article class="proj-card proj-card-new gsap-reveal" data-category="math research">
+                <div class="proj-media">
+                    <img src="https://placehold.co/640x360/1C1B19/F4F0E6?text=NODE-Infer" alt="Neural ODE parameter identification placeholder" loading="lazy">
+                </div>
+                <div class="proj-body">
+                    <div class="proj-header">
+                        <div class="proj-badges">
+                            <span class="badge-new">New</span>
+                            <span class="badge-research">Scientific ML</span>
+                        </div>
                     </div>
-                    <div class="proj-badges">
-                        <span class="badge-new">New</span>
-                        <span class="badge-research">Scientific ML</span>
+                    <h3 class="proj-title">NODE-Infer: Neural ODE Parameter Identification</h3>
+                    <p class="proj-desc proj-desc-clamped">
+                        Differentiable ODE solvers combined with neural networks to identify system parameters
+                        from sparse, noisy measurements. Applied to epidemiological SIR models, Lorenz
+                        attractors, and pendulum dynamics, with uncertainty quantification via ensemble neural
+                        ODEs to give calibrated confidence intervals on every recovered parameter.
+                    </p>
+                    <button class="read-more-btn" type="button">Read more <i class="fas fa-chevron-down"></i></button>
+                    <div class="proj-stack">
+                        <span>Python</span><span>PyTorch</span><span>torchdiffeq</span><span>JAX</span><span>NumPy/SciPy</span>
                     </div>
-                </div>
-                <h3 class="proj-title">NODE-Infer: Neural ODE Parameter Identification</h3>
-                <p class="proj-desc">
-                    Differentiable ODE solvers combined with neural networks to identify system parameters from sparse, 
-                    noisy measurements. Applied to epidemiological SIR models, Lorenz attractors, and pendulum dynamics. 
-                    Uncertainty quantification via ensemble neural ODEs.
-                </p>
-                <div class="proj-stack">
-                    <span>Python</span><span>PyTorch</span><span>torchdiffeq</span><span>JAX</span><span>NumPy/SciPy</span>
-                </div>
-                <div class="proj-metrics-row">
-                    <div class="proj-metric"><span class="pm-val">3</span><span class="pm-lab">Dynamical Systems</span></div>
-                    <div class="proj-metric"><span class="pm-val">UQ</span><span class="pm-lab">Uncertainty Quant.</span></div>
-                    <div class="proj-metric"><span class="pm-val">Sparse</span><span class="pm-lab">Data Regime</span></div>
-                </div>
-                <div class="proj-links">
-                    <a href="https://github.com/arofenitra/node-infer" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <div class="proj-metrics-row">
+                        <div class="proj-metric"><span class="pm-val">3</span><span class="pm-lab">Dynamical Systems</span></div>
+                        <div class="proj-metric"><span class="pm-val">UQ</span><span class="pm-lab">Uncertainty Quant.</span></div>
+                        <div class="proj-metric"><span class="pm-val">Sparse</span><span class="pm-lab">Data Regime</span></div>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/arofenitra/node-infer" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
                 </div>
             </article>
 
-            <!-- ─── P10 NEW: LLM STEM Tutor ─── -->
-            <article class="proj-card proj-card-new" data-category="llm genai" data-aos="fade-up" data-aos-delay="300">
-                <div class="proj-header">
-                    <div class="proj-icon-bg proj-icon-cyan">
-                        <i class="fas fa-atom"></i>
+            <!-- P10 -->
+            <article class="proj-card proj-card-new gsap-reveal" data-category="llm genai">
+                <div class="proj-media">
+                    <img src="https://placehold.co/640x360/8C1F28/F4F0E6?text=PhysicsMind" alt="PhysicsMind LLM-powered STEM tutor placeholder" loading="lazy">
+                </div>
+                <div class="proj-body">
+                    <div class="proj-header">
+                        <div class="proj-badges">
+                            <span class="badge-new">New</span>
+                            <span class="badge-eng">LLM App</span>
+                        </div>
                     </div>
-                    <div class="proj-badges">
-                        <span class="badge-new">New</span>
-                        <span class="badge-eng">LLM App</span>
+                    <h3 class="proj-title">PhysicsMind: LLM-Powered STEM Tutor with Fact Grounding</h3>
+                    <p class="proj-desc proj-desc-clamped">
+                        An LLM-based tutoring assistant for physics and mathematics that uses
+                        retrieval-augmented generation over a curated knowledge base (textbooks, Wikipedia)
+                        and applies the SMILES hallucination probe to verify factual claims before presenting
+                        answers to students — closing the loop between research output and a deployable tool.
+                    </p>
+                    <button class="read-more-btn" type="button">Read more <i class="fas fa-chevron-down"></i></button>
+                    <div class="proj-stack">
+                        <span>Python</span><span>OpenAI API</span><span>FAISS</span><span>LangChain</span><span>Streamlit</span>
                     </div>
-                </div>
-                <h3 class="proj-title">PhysicsMind: LLM-Powered STEM Tutor with Fact Grounding</h3>
-                <p class="proj-desc">
-                    An LLM-based tutoring assistant for physics and mathematics that uses retrieval-augmented generation 
-                    over a curated knowledge base (textbooks, Wikipedia) and applies the SMILES hallucination probe 
-                    to verify factual claims before presenting answers to students.
-                </p>
-                <div class="proj-stack">
-                    <span>Python</span><span>OpenAI API</span><span>FAISS</span><span>LangChain</span><span>Streamlit</span>
-                </div>
-                <div class="proj-metrics-row">
-                    <div class="proj-metric"><span class="pm-val">RAG</span><span class="pm-lab">Grounded</span></div>
-                    <div class="proj-metric"><span class="pm-val">Probe</span><span class="pm-lab">Hallucination Check</span></div>
-                    <div class="proj-metric"><span class="pm-val">UI</span><span class="pm-lab">Streamlit App</span></div>
-                </div>
-                <div class="proj-links">
-                    <a href="https://github.com/arofenitra/physicsmind" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <div class="proj-metrics-row">
+                        <div class="proj-metric"><span class="pm-val">RAG</span><span class="pm-lab">Grounded</span></div>
+                        <div class="proj-metric"><span class="pm-val">Probe</span><span class="pm-lab">Hallucination Check</span></div>
+                        <div class="proj-metric"><span class="pm-val">UI</span><span class="pm-lab">Streamlit App</span></div>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/arofenitra/physicsmind" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
                 </div>
             </article>
 
-            <!-- ─── P11 NEW: Vision-Language Alignment ─── -->
-            <article class="proj-card proj-card-new" data-category="cv genai llm" data-aos="fade-up" data-aos-delay="100">
-                <div class="proj-header">
-                    <div class="proj-icon-bg proj-icon-pink">
-                        <i class="fas fa-eye"></i>
+            <!-- P11 -->
+            <article class="proj-card proj-card-new gsap-reveal" data-category="cv genai llm">
+                <div class="proj-media">
+                    <img src="https://placehold.co/640x360/5B6B4F/F4F0E6?text=CLIP-Probe" alt="CLIP-Probe vision-language hallucination detection placeholder" loading="lazy">
+                </div>
+                <div class="proj-body">
+                    <div class="proj-header">
+                        <div class="proj-badges">
+                            <span class="badge-new">New</span>
+                            <span class="badge-pub">Multimodal</span>
+                        </div>
                     </div>
-                    <div class="proj-badges">
-                        <span class="badge-new">New</span>
-                        <span class="badge-pub">Multimodal</span>
+                    <h3 class="proj-title">CLIP-Probe: Detecting Hallucinations in Vision-Language Models</h3>
+                    <p class="proj-desc proj-desc-clamped">
+                        Extension of hallucination probing to multimodal LLMs (LLaVA, InstructBLIP). We detect
+                        when vision-language models confabulate image content by analyzing cross-attention
+                        divergence between visual tokens and text generation, and introduce the VLM-HalluBench
+                        dataset to standardize evaluation across model families.
+                    </p>
+                    <button class="read-more-btn" type="button">Read more <i class="fas fa-chevron-down"></i></button>
+                    <div class="proj-stack">
+                        <span>Python</span><span>LLaVA</span><span>CLIP</span><span>PyTorch</span><span>HuggingFace</span>
                     </div>
-                </div>
-                <h3 class="proj-title">CLIP-Probe: Detecting Hallucinations in Vision-Language Models</h3>
-                <p class="proj-desc">
-                    Extension of hallucination probing to multimodal LLMs (LLaVA, InstructBLIP). 
-                    We detect when vision-language models confabulate image content by analyzing 
-                    cross-attention divergence between visual tokens and text generation. 
-                    Introduces the VLM-HalluBench dataset.
-                </p>
-                <div class="proj-stack">
-                    <span>Python</span><span>LLaVA</span><span>CLIP</span><span>PyTorch</span><span>HuggingFace</span>
-                </div>
-                <div class="proj-metrics-row">
-                    <div class="proj-metric"><span class="pm-val">VLM</span><span class="pm-lab">Multimodal</span></div>
-                    <div class="proj-metric"><span class="pm-val">Cross-Attn</span><span class="pm-lab">Method</span></div>
-                    <div class="proj-metric"><span class="pm-val">New Dataset</span><span class="pm-lab">Benchmark</span></div>
-                </div>
-                <div class="proj-links">
-                    <a href="https://github.com/arofenitra/clip-probe" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <div class="proj-metrics-row">
+                        <div class="proj-metric"><span class="pm-val">VLM</span><span class="pm-lab">Multimodal</span></div>
+                        <div class="proj-metric"><span class="pm-val">Cross-Attn</span><span class="pm-lab">Method</span></div>
+                        <div class="proj-metric"><span class="pm-val">New Dataset</span><span class="pm-lab">Benchmark</span></div>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/arofenitra/clip-probe" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
                 </div>
             </article>
 
-            <!-- ─── P12 NEW: Embox RTOS ─── -->
-            <article class="proj-card" data-category="research" data-aos="fade-up" data-aos-delay="150">
-                <div class="proj-header">
-                    <div class="proj-icon-bg proj-icon-green">
-                        <i class="fas fa-microchip"></i>
+            <!-- P12 -->
+            <article class="proj-card gsap-reveal" data-category="research">
+                <div class="proj-media">
+                    <img src="https://placehold.co/640x360/1C1B19/F4F0E6?text=Embox+RTOS" alt="Embox RTOS embedded systems internship placeholder" loading="lazy">
+                </div>
+                <div class="proj-body">
+                    <div class="proj-header">
+                        <div class="proj-badges">
+                            <span class="badge-eng">Industry</span>
+                            <span class="badge-eng">Open Source</span>
+                        </div>
                     </div>
-                    <div class="proj-badges">
-                        <span class="badge-eng">Industry</span>
-                        <span class="badge-eng">Open Source</span>
+                    <h3 class="proj-title">Embox RTOS: Embedded Systems Internship</h3>
+                    <p class="proj-desc proj-desc-clamped">
+                        Contributed to Embox, an open-source RTOS for resource-constrained embedded systems.
+                        Optimized memory scheduling for microcontrollers, ported subsystems to ARM Cortex-M,
+                        and added IoT connectivity modules — grounding theoretical systems knowledge in a
+                        widely-used open-source codebase.
+                    </p>
+                    <button class="read-more-btn" type="button">Read more <i class="fas fa-chevron-down"></i></button>
+                    <div class="proj-stack">
+                        <span>C</span><span>C++</span><span>ARM</span><span>Bash</span><span>Linux</span><span>GDB</span>
                     </div>
-                </div>
-                <h3 class="proj-title">Embox RTOS: Embedded Systems Internship</h3>
-                <p class="proj-desc">
-                    Contributed to Embox, an open-source RTOS for resource-constrained embedded systems. 
-                    Optimized memory scheduling for microcontrollers, ported subsystems to ARM Cortex-M, 
-                    and added IoT connectivity modules.
-                </p>
-                <div class="proj-stack">
-                    <span>C</span><span>C++</span><span>ARM</span><span>Bash</span><span>Linux</span><span>GDB</span>
-                </div>
-                <div class="proj-metrics-row">
-                    <div class="proj-metric"><span class="pm-val">RTOS</span><span class="pm-lab">Real-Time OS</span></div>
-                    <div class="proj-metric"><span class="pm-val">ARM</span><span class="pm-lab">Architecture</span></div>
-                    <div class="proj-metric"><span class="pm-val">OSS</span><span class="pm-lab">Contributor</span></div>
-                </div>
-                <div class="proj-links">
-                    <a href="https://github.com/arofenitra/embox_arofenitra" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    <div class="proj-metrics-row">
+                        <div class="proj-metric"><span class="pm-val">RTOS</span><span class="pm-lab">Real-Time OS</span></div>
+                        <div class="proj-metric"><span class="pm-val">ARM</span><span class="pm-lab">Architecture</span></div>
+                        <div class="proj-metric"><span class="pm-val">OSS</span><span class="pm-lab">Contributor</span></div>
+                    </div>
+                    <div class="proj-links">
+                        <a href="https://github.com/arofenitra/embox_arofenitra" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
                 </div>
             </article>
 
@@ -642,42 +728,44 @@
     </div>
 </section>
 
-<!-- ═══════════════════════ SKILLS ═══════════════════════ -->
+<!-- ═══════════════════ SKILLS ═══════════════════ -->
 <section id="skills" class="section skills-section">
     <div class="container">
-        <div class="section-label" data-aos="fade-up">// technical_stack</div>
-        <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Skills &amp; Tools</h2>
+        <div class="section-head">
+            <span class="section-fig">Fig. 04</span>
+            <h2 class="section-title">Skills &amp; Tools</h2>
+        </div>
 
         <div class="skills-layout">
 
-            <div class="skill-col" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="skill-col-title"><i class="fas fa-code"></i> Languages</h3>
+            <div class="skill-col gsap-reveal">
+                <h3 class="skill-col-title">Languages</h3>
                 <div class="skill-bar-list">
                     <div class="skill-row">
-                        <div class="skill-name"><i class="fab fa-python"></i> Python</div>
+                        <div class="skill-name">Python</div>
                         <div class="skill-track"><div class="skill-fill" data-w="95"></div></div>
                         <span class="skill-pct">95%</span>
                     </div>
                     <div class="skill-row">
-                        <div class="skill-name"><i class="fas fa-copyright"></i> C / C++</div>
+                        <div class="skill-name">C / C++</div>
                         <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
                         <span class="skill-pct">80%</span>
                     </div>
                     <div class="skill-row">
-                        <div class="skill-name"><i class="fas fa-terminal"></i> Bash / Linux</div>
+                        <div class="skill-name">Bash / Linux</div>
                         <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
                         <span class="skill-pct">75%</span>
                     </div>
                     <div class="skill-row">
-                        <div class="skill-name"><i class="fas fa-square-root-alt"></i> MATLAB / Julia</div>
+                        <div class="skill-name">MATLAB / Julia</div>
                         <div class="skill-track"><div class="skill-fill" data-w="65"></div></div>
                         <span class="skill-pct">65%</span>
                     </div>
                 </div>
             </div>
 
-            <div class="skill-col" data-aos="fade-up" data-aos-delay="150">
-                <h3 class="skill-col-title"><i class="fas fa-brain"></i> ML / DL Frameworks</h3>
+            <div class="skill-col gsap-reveal">
+                <h3 class="skill-col-title">ML / DL Frameworks</h3>
                 <div class="skill-tags-cloud">
                     <span class="stag stag-hot">PyTorch</span>
                     <span class="stag stag-hot">HuggingFace</span>
@@ -694,8 +782,8 @@
                 </div>
             </div>
 
-            <div class="skill-col" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="skill-col-title"><i class="fas fa-eye"></i> Computer Vision</h3>
+            <div class="skill-col gsap-reveal">
+                <h3 class="skill-col-title">Computer Vision</h3>
                 <div class="skill-tags-cloud">
                     <span class="stag stag-hot">OpenCV</span>
                     <span class="stag stag-hot">YOLOv8</span>
@@ -709,8 +797,8 @@
                 </div>
             </div>
 
-            <div class="skill-col" data-aos="fade-up" data-aos-delay="250">
-                <h3 class="skill-col-title"><i class="fas fa-robot"></i> LLM / NLP</h3>
+            <div class="skill-col gsap-reveal">
+                <h3 class="skill-col-title">LLM / NLP</h3>
                 <div class="skill-tags-cloud">
                     <span class="stag stag-hot">Transformers</span>
                     <span class="stag stag-hot">LLaMA / Qwen</span>
@@ -723,8 +811,8 @@
                 </div>
             </div>
 
-            <div class="skill-col" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="skill-col-title"><i class="fas fa-cloud"></i> MLOps &amp; Infra</h3>
+            <div class="skill-col gsap-reveal">
+                <h3 class="skill-col-title">MLOps &amp; Infra</h3>
                 <div class="skill-tags-cloud">
                     <span class="stag stag-hot">Docker</span>
                     <span class="stag">Git / GitHub</span>
@@ -737,8 +825,8 @@
                 </div>
             </div>
 
-            <div class="skill-col" data-aos="fade-up" data-aos-delay="350">
-                <h3 class="skill-col-title"><i class="fas fa-square-root-alt"></i> Mathematics</h3>
+            <div class="skill-col gsap-reveal">
+                <h3 class="skill-col-title">Mathematics</h3>
                 <div class="skill-tags-cloud">
                     <span class="stag stag-hot">Linear Algebra</span>
                     <span class="stag stag-hot">Optimization</span>
@@ -754,25 +842,17 @@
     </div>
 </section>
 
-<!-- ═══════════════════════ ACHIEVEMENTS ═══════════════════════ -->
+<!-- ═══════════════════ ACHIEVEMENTS / TIMELINE ═══════════════════ -->
 <section id="achievements" class="section achievements-section">
     <div class="container">
-        <div class="section-label" data-aos="fade-up">// my_journey</div>
-        <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Achievements &amp; Timeline</h2>
+        <div class="section-head">
+            <span class="section-fig">Fig. 05</span>
+            <h2 class="section-title">Achievements &amp; Timeline</h2>
+        </div>
 
         <div class="timeline-list">
 
-            <div class="tl-item" data-aos="fade-right" data-aos-delay="100">
-                <div class="tl-dot"></div>
-                <div class="tl-date">2023</div>
-                <div class="tl-body">
-                    <h4>SMILES 2026</h4>
-                    <p>Participate in SMILES summer school 2026.</p>
-                    <div class="tl-tags"><span>Competitive Programming and research.</span><span>Algorithms</span></div>
-                </div>
-            </div>
-
-            <div class="tl-item" data-aos="fade-right" data-aos-delay="100">
+            <div class="tl-item gsap-reveal">
                 <div class="tl-dot"></div>
                 <div class="tl-date">2026</div>
                 <div class="tl-body">
@@ -782,17 +862,7 @@
                 </div>
             </div>
 
-            <div class="tl-item" data-aos="fade-left" data-aos-delay="100">
-                <div class="tl-dot"></div>
-                <div class="tl-date">2025</div>
-                <div class="tl-body">
-                    <h4>Master's Thesis: Hallucination Detection in LLMs</h4>
-                    <p>Completed M.Sc. at Skoltech with thesis on probing-based hallucination detection and localization in Qwen2.5 LLMs.</p>
-                    <div class="tl-tags"><span>LLMs</span><span>Interpretability</span><span>Skoltech</span></div>
-                </div>
-            </div>
-
-            <div class="tl-item" data-aos="fade-right" data-aos-delay="100">
+            <div class="tl-item gsap-reveal">
                 <div class="tl-dot"></div>
                 <div class="tl-date">2026</div>
                 <div class="tl-body">
@@ -802,7 +872,17 @@
                 </div>
             </div>
 
-            <div class="tl-item" data-aos="fade-left" data-aos-delay="100">
+            <div class="tl-item gsap-reveal">
+                <div class="tl-dot"></div>
+                <div class="tl-date">2025</div>
+                <div class="tl-body">
+                    <h4>Master's Thesis: Hallucination Detection in LLMs</h4>
+                    <p>Completed M.Sc. at Skoltech with thesis on probing-based hallucination detection and localization in Qwen2.5 LLMs.</p>
+                    <div class="tl-tags"><span>LLMs</span><span>Interpretability</span><span>Skoltech</span></div>
+                </div>
+            </div>
+
+            <div class="tl-item gsap-reveal">
                 <div class="tl-dot"></div>
                 <div class="tl-date">2025</div>
                 <div class="tl-body">
@@ -813,7 +893,17 @@
                 </div>
             </div>
 
-            <div class="tl-item" data-aos="fade-right" data-aos-delay="100">
+            <div class="tl-item gsap-reveal">
+                <div class="tl-dot"></div>
+                <div class="tl-date">2023</div>
+                <div class="tl-body">
+                    <h4>SMILES 2026</h4>
+                    <p>Participated in the SMILES summer school 2026.</p>
+                    <div class="tl-tags"><span>Competitive Programming</span><span>Algorithms</span></div>
+                </div>
+            </div>
+
+            <div class="tl-item gsap-reveal">
                 <div class="tl-dot"></div>
                 <div class="tl-date">2023</div>
                 <div class="tl-body">
@@ -823,7 +913,7 @@
                 </div>
             </div>
 
-            <div class="tl-item" data-aos="fade-left" data-aos-delay="100">
+            <div class="tl-item gsap-reveal">
                 <div class="tl-dot"></div>
                 <div class="tl-date">2023</div>
                 <div class="tl-body">
@@ -833,7 +923,7 @@
                 </div>
             </div>
 
-            <div class="tl-item" data-aos="fade-left" data-aos-delay="100">
+            <div class="tl-item gsap-reveal">
                 <div class="tl-dot"></div>
                 <div class="tl-date">Ongoing</div>
                 <div class="tl-body">
@@ -848,18 +938,19 @@
     </div>
 </section>
 
-<!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+<!-- ═══════════════════ CONTACT ═══════════════════ -->
 <section id="contact" class="section contact-section">
     <div class="container">
-        <div class="section-label" data-aos="fade-up">// lets_connect</div>
-        <h2 class="section-title" data-aos="fade-up" data-aos-delay="50">Get in Touch</h2>
-        <p class="contact-lead" data-aos="fade-up" data-aos-delay="100">
-            I'm actively looking for <strong>PhD programs</strong> (AI, Math, Physics, CS) and 
-            <strong>remote / side roles</strong> in ML, LLM Engineering, GenAI, and Computer Vision. 
+        <div class="section-head">
+            <span class="section-fig">Fig. 06</span>
+            <h2 class="section-title">Get in Touch</h2>
+        </div>
+        <p class="contact-lead gsap-reveal">
+            I'm actively looking for <strong>PhD programs</strong> (AI, Math, Physics, CS) and/or <strong> remote / side engineering roles</strong> in ML, LLM Engineering, GenAI, and Computer Vision.
             If you're working on something interesting, I'd love to hear from you.
         </p>
 
-        <div class="contact-cards" data-aos="fade-up" data-aos-delay="150">
+        <div class="contact-cards gsap-reveal">
             <a href="mailto:arofenitraramarari(at)gmail.com" class="contact-card-item">
                 <div class="cc-icon"><i class="fas fa-envelope"></i></div>
                 <div class="cc-body">
@@ -888,14 +979,14 @@
     </div>
 </section>
 
-<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
 <footer class="footer">
     <div class="container footer-inner">
         <div class="footer-left">
-            <span class="footer-logo"><span class="logo-bracket">[</span>AR<span class="logo-bracket">]</span></span>
+            <span class="footer-logo">A.R.</span>
             <span class="footer-name">Arofenitra Rarivonjy</span>
         </div>
-        <p class="footer-copy">&copy; 2026 · Built with passion for Research in Maths and Machine Learning · Open to opportunities worldwide</p>
+        <p class="footer-copy">&copy; 2026 · Built with passion for research in Mathematics and Machine Learning · Open to opportunities worldwide</p>
         <div class="footer-social">
             <a href="https://github.com/arofenitra" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
             <a href="https://www.researchgate.net/profile/Arofenitra-Rarivonjy" target="_blank" aria-label="ResearchGate"><i class="fas fa-graduation-cap"></i></a>
@@ -904,13 +995,14 @@
     </div>
 </footer>
 
-<!-- ═══════════════════════ BACK TO TOP ═══════════════════════ -->
+<!-- ═══════════════════ BACK TO TOP ═══════════════════ -->
 <button class="back-top" id="backTop" aria-label="Back to top">
     <i class="fas fa-chevron-up"></i>
 </button>
 
-<!-- AOS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
