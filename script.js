@@ -5,131 +5,161 @@
 
 'use strict';
 
-// ─── AOS INIT (kept as a no-conflict fallback; GSAP drives the real reveals) ───
-if (window.AOS) {
-    AOS.init({ duration: 1, once: true, disable: true });
-}
+// ─── THEME TOGGLE ───
+(function initTheme() {
+    const toggle = document.getElementById('themeToggle');
+    const html   = document.documentElement;
+
+    // Persist preference
+    const saved = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', saved);
+
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+        const current = html.getAttribute('data-theme');
+        const next    = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+
+        // Update canvas colors when theme changes
+        updateCanvasColors(next);
+    });
+})();
 
 // ─── SCROLL PROGRESS BAR ───
 const scrollBar = document.getElementById('scrollBar');
-window.addEventListener('scroll', () => {
-    const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
-    scrollBar.style.width = pct + '%';
-});
+if (scrollBar) {
+    window.addEventListener('scroll', () => {
+        const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+        scrollBar.style.width = pct + '%';
+    }, { passive: true });
+}
 
 // ─── CUSTOM CURSOR (pen-nib) ───
-const dot = document.getElementById('cursorDot');
+const dot  = document.getElementById('cursorDot');
 const ring = document.getElementById('cursorRing');
 
-if (window.matchMedia('(hover: hover)').matches) {
+if (dot && ring && window.matchMedia('(hover: hover)').matches) {
     let mx = 0, my = 0, rx = 0, ry = 0;
 
     document.addEventListener('mousemove', e => {
         mx = e.clientX; my = e.clientY;
         dot.style.left = mx + 'px';
-        dot.style.top = my + 'px';
+        dot.style.top  = my + 'px';
     });
 
     function animRing() {
         rx += (mx - rx) * 0.16;
         ry += (my - ry) * 0.16;
         ring.style.left = rx + 'px';
-        ring.style.top = ry + 'px';
+        ring.style.top  = ry + 'px';
         requestAnimationFrame(animRing);
     }
     animRing();
 
     document.querySelectorAll('a, button, .proj-card, .pub-card, .info-card, .contact-card-item').forEach(el => {
         el.addEventListener('mouseenter', () => {
-            ring.style.width = '40px';
+            ring.style.width  = '40px';
             ring.style.height = '40px';
-            ring.style.borderColor = 'rgba(140,31,40,0.6)';
         });
         el.addEventListener('mouseleave', () => {
-            ring.style.width = '26px';
+            ring.style.width  = '26px';
             ring.style.height = '26px';
-            ring.style.borderColor = 'rgba(140,31,40,0.35)';
         });
     });
 } else {
-    if (dot) dot.style.display = 'none';
+    if (dot)  dot.style.display  = 'none';
     if (ring) ring.style.display = 'none';
 }
 
-// ─── MANUSCRIPT CONSTELLATION CANVAS ───
-// A quiet, sparse node-and-line field — evokes a citation graph / star chart
-// rather than a "neural network" cliché. Crimson/ink on paper, low opacity.
+// ─── CONSTELLATION CANVAS ───
+// Adapts to dark/light theme. Low opacity, ink-on-paper star-chart aesthetic.
+let canvasNodes = [];
+let canvasAnimId;
+let currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+
+function updateCanvasColors(theme) {
+    currentTheme = theme;
+}
+
 (function initConstellationCanvas() {
     const canvas = document.getElementById('neural-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    let W, H, nodes = [], animId;
-
-    const NODE_COUNT = 32;
-    const CONNECT_DIST = 150;
-    const SPEED = 0.12;
+    let W, H;
+    const NODE_COUNT  = 30;
+    const CONNECT_DIST = 140;
+    const SPEED       = 0.14;
 
     function resize() {
-        W = canvas.width = canvas.offsetWidth;
+        W = canvas.width  = canvas.offsetWidth;
         H = canvas.height = canvas.offsetHeight;
     }
 
     function createNodes() {
-        nodes = [];
+        canvasNodes = [];
         for (let i = 0; i < NODE_COUNT; i++) {
-            nodes.push({
-                x: Math.random() * W,
-                y: Math.random() * H,
+            canvasNodes.push({
+                x:  Math.random() * W,
+                y:  Math.random() * H,
                 vx: (Math.random() - 0.5) * SPEED,
                 vy: (Math.random() - 0.5) * SPEED,
-                r: Math.random() * 1.4 + 0.8,
+                r:  Math.random() * 1.2 + 0.6,
             });
         }
     }
 
+    function getColors() {
+        // Dark theme: crimson lines on dark paper
+        // Light theme: muted warm lines on light paper
+        if (currentTheme === 'light') {
+            return { line: 'rgba(168,52,40,', node: 'rgba(60,50,40,0.25)' };
+        }
+        return { line: 'rgba(194,87,74,', node: 'rgba(232,228,218,0.18)' };
+    }
+
     function draw() {
         ctx.clearRect(0, 0, W, H);
+        const { line, node } = getColors();
 
-        for (const n of nodes) {
+        for (const n of canvasNodes) {
             n.x += n.vx;
             n.y += n.vy;
             if (n.x < 0 || n.x > W) n.vx *= -1;
             if (n.y < 0 || n.y > H) n.vy *= -1;
         }
 
-        for (let i = 0; i < nodes.length; i++) {
-            for (let j = i + 1; j < nodes.length; j++) {
-                const dx = nodes[i].x - nodes[j].x;
-                const dy = nodes[i].y - nodes[j].y;
+        for (let i = 0; i < canvasNodes.length; i++) {
+            for (let j = i + 1; j < canvasNodes.length; j++) {
+                const dx   = canvasNodes[i].x - canvasNodes[j].x;
+                const dy   = canvasNodes[i].y - canvasNodes[j].y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
                 if (dist < CONNECT_DIST) {
-                    const alpha = (1 - dist / CONNECT_DIST) * 0.22;
+                    const alpha = (1 - dist / CONNECT_DIST) * 0.2;
                     ctx.beginPath();
-                    ctx.strokeStyle = `rgba(140,31,40,${alpha})`;
-                    ctx.lineWidth = 0.7;
-                    ctx.moveTo(nodes[i].x, nodes[i].y);
-                    ctx.lineTo(nodes[j].x, nodes[j].y);
+                    ctx.strokeStyle = line + alpha + ')';
+                    ctx.lineWidth   = 0.7;
+                    ctx.moveTo(canvasNodes[i].x, canvasNodes[i].y);
+                    ctx.lineTo(canvasNodes[j].x, canvasNodes[j].y);
                     ctx.stroke();
                 }
             }
         }
 
-        for (const n of nodes) {
+        for (const n of canvasNodes) {
             ctx.beginPath();
             ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(28,27,25,0.38)';
+            ctx.fillStyle = node;
             ctx.fill();
         }
 
-        animId = requestAnimationFrame(draw);
+        canvasAnimId = requestAnimationFrame(draw);
     }
 
-    const ro = new ResizeObserver(() => {
-        resize();
-        createNodes();
-    });
+    const ro = new ResizeObserver(() => { resize(); createNodes(); });
     ro.observe(canvas.parentElement);
 
     resize();
@@ -138,11 +168,11 @@ if (window.matchMedia('(hover: hover)').matches) {
     if (!reduceMotion) {
         draw();
     } else {
-        // Render a single static frame, no animation loop.
-        for (const n of nodes) {
+        const { node } = getColors();
+        for (const n of canvasNodes) {
             ctx.beginPath();
             ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(28,27,25,0.3)';
+            ctx.fillStyle = node;
             ctx.fill();
         }
     }
@@ -189,13 +219,17 @@ if (window.matchMedia('(hover: hover)').matches) {
 
 // ─── NAVBAR ───
 (function initNavbar() {
-    const navbar = document.getElementById('navbar');
+    const navbar    = document.getElementById('navbar');
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks  = document.querySelector('.nav-links');
+
+    if (!navbar) return;
 
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 60);
-    });
+    }, { passive: true });
+
+    if (!hamburger || !navLinks) return;
 
     hamburger.addEventListener('click', () => {
         const open = navLinks.classList.toggle('open');
@@ -204,12 +238,10 @@ if (window.matchMedia('(hover: hover)').matches) {
         const bars = hamburger.querySelectorAll('span');
         if (open) {
             bars[0].style.transform = 'rotate(45deg) translateY(6.5px)';
-            bars[1].style.opacity = '0';
+            bars[1].style.opacity   = '0';
             bars[2].style.transform = 'rotate(-45deg) translateY(-6.5px)';
         } else {
-            bars[0].style.transform = '';
-            bars[1].style.opacity = '';
-            bars[2].style.transform = '';
+            bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
         }
     });
 
@@ -218,7 +250,7 @@ if (window.matchMedia('(hover: hover)').matches) {
             navLinks.classList.remove('open');
             hamburger.classList.remove('active');
             document.body.style.overflow = '';
-            hamburger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+            hamburger.querySelectorAll('span').forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
         });
     });
 })();
@@ -231,24 +263,22 @@ if (window.matchMedia('(hover: hover)').matches) {
     const obs = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
-            const el = entry.target;
+            const el     = entry.target;
             const target = +el.getAttribute('data-count');
-            const duration = 1200;
-            const start = performance.now();
+            const dur    = 1200;
+            const start  = performance.now();
+
             function step(now) {
-                const pct = Math.min((now - start) / duration, 1);
-                el.textContent = Math.floor(easeOut(pct) * target);
+                const pct = Math.min((now - start) / dur, 1);
+                el.textContent = Math.round(pct * target);
                 if (pct < 1) requestAnimationFrame(step);
-                else el.textContent = target;
             }
             requestAnimationFrame(step);
             obs.unobserve(el);
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
 
     els.forEach(el => obs.observe(el));
-
-    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
 })();
 
 // ─── SKILL BAR ANIMATION ───
@@ -260,7 +290,7 @@ if (window.matchMedia('(hover: hover)').matches) {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
             const el = entry.target;
-            el.style.width = el.getAttribute('data-w') + '%';
+            el.style.width = (el.getAttribute('data-w') || 0) + '%';
             obs.unobserve(el);
         });
     }, { threshold: 0.3 });
@@ -270,7 +300,7 @@ if (window.matchMedia('(hover: hover)').matches) {
 
 // ─── PROJECT FILTER ───
 (function initProjectFilter() {
-    const btns = document.querySelectorAll('.filter-btn');
+    const btns  = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.proj-card');
 
     btns.forEach(btn => {
@@ -298,7 +328,6 @@ if (window.matchMedia('(hover: hover)').matches) {
         const desc = btn.previousElementSibling;
         if (!desc || !desc.classList.contains('proj-desc-clamped')) return;
 
-        // If the description never actually overflows 3 lines, hide the button.
         requestAnimationFrame(() => {
             if (desc.scrollHeight - desc.clientHeight < 4) {
                 btn.style.display = 'none';
@@ -322,7 +351,7 @@ if (window.matchMedia('(hover: hover)').matches) {
 
     window.addEventListener('scroll', () => {
         btn.classList.toggle('visible', window.scrollY > 400);
-    });
+    }, { passive: true });
 
     btn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -332,7 +361,7 @@ if (window.matchMedia('(hover: hover)').matches) {
 // ─── SMOOTH ACTIVE NAV HIGHLIGHT ───
 (function initNavHighlight() {
     const sections = document.querySelectorAll('section[id]');
-    const links = document.querySelectorAll('.nav-links a[href^="#"]');
+    const links    = document.querySelectorAll('.nav-links a[href^="#"]');
 
     const obs = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -354,12 +383,11 @@ if (window.matchMedia('(hover: hover)').matches) {
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion) {
-        // Respect the user's preference: show everything immediately, no motion.
         gsap.set('.gsap-reveal, .gsap-reveal-side', { opacity: 1, y: 0, x: 0 });
         return;
     }
 
-    // Hero: one orchestrated entrance sequence on load.
+    // Hero entrance
     gsap.set('.hero-text .gsap-reveal', { opacity: 0, y: 22 });
     gsap.set('.hero-margin', { opacity: 0, x: 18 });
 
@@ -368,7 +396,7 @@ if (window.matchMedia('(hover: hover)').matches) {
         .to('.hero-text .gsap-reveal', { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 })
         .to('.hero-margin', { opacity: 1, x: 0, duration: 0.9 }, '-=0.5');
 
-    // Scroll-triggered reveals for everything below the fold.
+    // Section heads
     gsap.utils.toArray('.section-head').forEach(el => {
         gsap.fromTo(el, { opacity: 0, y: 18 }, {
             opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
@@ -376,31 +404,32 @@ if (window.matchMedia('(hover: hover)').matches) {
         });
     });
 
+    // General reveals
     gsap.utils.toArray('.gsap-reveal').forEach(el => {
-        if (el.closest('.hero')) return; // already animated above
+        if (el.closest('.hero')) return;
         gsap.fromTo(el, { opacity: 0, y: 24 }, {
             opacity: 1, y: 0, duration: 0.75, ease: 'power2.out',
             scrollTrigger: { trigger: el, start: 'top 88%' }
         });
     });
 
-    // Stagger project cards within the grid for a slightly orchestrated feel.
+    // Project card stagger
     const grid = document.getElementById('projectsGrid');
     if (grid) {
         gsap.fromTo(grid.querySelectorAll('.proj-card'),
             { opacity: 0, y: 30 },
             {
-                opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', stagger: 0.08,
+                opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', stagger: 0.07,
                 scrollTrigger: { trigger: grid, start: 'top 80%' }
             }
         );
     }
 
-    // Timeline dots: a small "ink landing" pop as each entry arrives.
-    gsap.utils.toArray('.tl-dot').forEach(dot => {
-        gsap.fromTo(dot, { scale: 0 }, {
+    // Timeline dot pop
+    gsap.utils.toArray('.tl-dot').forEach(d => {
+        gsap.fromTo(d, { scale: 0 }, {
             scale: 1, duration: 0.4, ease: 'back.out(3)',
-            scrollTrigger: { trigger: dot, start: 'top 90%' }
+            scrollTrigger: { trigger: d, start: 'top 90%' }
         });
     });
 })();
