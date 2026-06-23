@@ -285,6 +285,9 @@ img { max-width: 100%; display: block; }
     align-items: center;
     gap: 4px;
 }
+
+
+
 .lang-btn {
     font-family: var(--font-mono);
     font-size: 0.7rem;
@@ -306,6 +309,7 @@ img { max-width: 100%; display: block; }
     border-color: var(--crimson-line);
     color: var(--crimson);
     background: var(--crimson-dim);
+    transform: translateY(-1px);
 }
 .lang-btn.active {
     border-color: var(--crimson);
