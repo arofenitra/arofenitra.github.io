@@ -81,6 +81,25 @@ let currentTheme = document.documentElement.getAttribute('data-theme') || 'dark'
 
 function updateCanvasColors(theme) {
     currentTheme = theme;
+    updateNameParticlesColors(theme);
+}
+
+// animation network particles (name hero box)
+// separate state so theme toggle updates both animations
+let nameParticles = null;
+function updateNameParticlesColors(theme) {
+    if (!nameParticles) return;
+    if (theme === 'light') {
+        nameParticles.palette = {
+            line: 'rgba(168,52,40,',
+            node: 'rgba(60,50,40,0.25)',
+        };
+    } else {
+        nameParticles.palette = {
+            line: 'rgba(194,87,74,',
+            node: 'rgba(232,228,218,0.18)',
+        };
+    }
 }
 
 (function initConstellationCanvas() {
@@ -374,6 +393,144 @@ function updateCanvasColors(theme) {
     }, { threshold: 0.45 });
 
     sections.forEach(s => obs.observe(s));
+})();
+
+/*
+ animation network particles
+ - constrained to the Arofenitra Rarivonjy name box via #name-particles-canvas
+*/
+(function initNameParticleNetwork() {
+    const canvas = document.getElementById('name-particles-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let W = 0;
+    let H = 0;
+
+    const PARTICLE_COUNT = 46;
+    const CONNECT_DIST = 92;
+    const SPEED = 0.6;
+    const MARGIN = 6; // keep particles inside visible box
+
+    const state = {
+        nodes: [],
+        rafId: null,
+        palette: getPalette(),
+    };
+
+    function getPalette() {
+        const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+        return theme === 'light'
+            ? { line: 'rgba(168,52,40,', node: 'rgba(60,50,40,0.25)' }
+            : { line: 'rgba(194,87,74,', node: 'rgba(232,228,218,0.18)' };
+    }
+
+    function resize() {
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+    }
+
+    function rand(min, max) {
+        return min + Math.random() * (max - min);
+    }
+
+    function create() {
+        state.nodes = Array.from({ length: PARTICLE_COUNT }).map(() => ({
+            x: rand(MARGIN, W - MARGIN),
+            y: rand(MARGIN, H - MARGIN),
+            vx: rand(-1, 1) * (SPEED / 60),
+            vy: rand(-1, 1) * (SPEED / 60),
+            r: rand(0.9, 2.1),
+        }));
+    }
+
+    function drawFrame() {
+        // clear
+        ctx.clearRect(0, 0, W, H);
+
+        // move with constrained bounce
+        for (const n of state.nodes) {
+            n.x += n.vx;
+            n.y += n.vy;
+
+            if (n.x <= MARGIN) { n.x = MARGIN; n.vx *= -1; }
+            if (n.x >= W - MARGIN) { n.x = W - MARGIN; n.vx *= -1; }
+            if (n.y <= MARGIN) { n.y = MARGIN; n.vy *= -1; }
+            if (n.y >= H - MARGIN) { n.y = H - MARGIN; n.vy *= -1; }
+        }
+
+        // edges between close particles (particle interactions)
+        const { line, node } = state.palette;
+        for (let i = 0; i < state.nodes.length; i++) {
+            for (let j = i + 1; j < state.nodes.length; j++) {
+                const dx = state.nodes[i].x - state.nodes[j].x;
+                const dy = state.nodes[i].y - state.nodes[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < CONNECT_DIST) {
+                    const alpha = (1 - dist / CONNECT_DIST) * 0.18;
+                    ctx.beginPath();
+                    ctx.strokeStyle = line + alpha + ')';
+                    ctx.lineWidth = 0.8;
+                    ctx.moveTo(state.nodes[i].x, state.nodes[i].y);
+                    ctx.lineTo(state.nodes[j].x, state.nodes[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // dots
+        for (const n of state.nodes) {
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+            ctx.fillStyle = node;
+            ctx.fill();
+        }
+    }
+
+    function start() {
+        if (state.rafId) cancelAnimationFrame(state.rafId);
+        const tick = () => {
+            drawFrame();
+            state.rafId = requestAnimationFrame(tick);
+        };
+        tick();
+    }
+
+    function stopAndDrawOnce() {
+        if (state.rafId) cancelAnimationFrame(state.rafId);
+        state.rafId = null;
+        drawFrame();
+    }
+
+    function syncTheme() {
+        state.palette = getPalette();
+        // keep visual consistent after toggle
+        if (reduceMotion) stopAndDrawOnce();
+    }
+
+    resize();
+    create();
+    syncTheme();
+
+    if (reduceMotion) {
+        stopAndDrawOnce();
+    } else {
+        start();
+    }
+
+    const ro = new ResizeObserver(() => {
+        resize();
+        create();
+        syncTheme();
+        if (!reduceMotion) start();
+    });
+    ro.observe(canvas.parentElement);
+
+    // also resync when theme toggles via the existing listener in initTheme()
+    // (updateNameParticlesColors() will set a global if present; we keep local sync too)
+    window.addEventListener('themechange', syncTheme);
 })();
 
 // ─── GSAP SCROLL-TRIGGERED REVEALS ───
